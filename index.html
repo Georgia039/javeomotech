@@ -161,11 +161,20 @@
     .product-card.hidden { display: none; }
 
     .product-icon {
-      height: 160px;
-      background: var(--bg);
+      height: 200px;
+      background: var(--white);
       display: flex; align-items: center; justify-content: center;
-      font-size: 56px;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .product-icon img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      padding: 16px;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-icon img {
+      transform: scale(1.05);
     }
     .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
     .product-tag {
@@ -313,7 +322,7 @@
 
     <!-- Product 1 -->
     <div class="product-card" data-price="500">
-      <div class="product-icon">🔮</div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/317oXf1-EmL._MCnd_AC_.jpg" alt="HolaCube Holographic Display" loading="lazy" /></div>
       <div class="product-body">
         <span class="product-tag tag-under500">Under $500</span>
         <p class="product-name">HolaCube WiFi Holographic Crystal 3D Photo Display — Smart Weather Station & Digital Clock</p>
@@ -328,7 +337,7 @@
 
     <!-- Product 2 -->
     <div class="product-card" data-price="100">
-      <div class="product-icon">⚡</div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/418SW+HhY1L._MCnd_AC_.jpg" alt="CyberDock Wireless Charging Station" loading="lazy" /></div>
       <div class="product-body">
         <span class="product-tag tag-under100">Under $100</span>
         <p class="product-name">CyberDock 3-in-1 Wireless Charging Station — Cybertruck Scale Model with Qi2 15W for iPhone, iWatch & AirPods</p>
@@ -343,7 +352,7 @@
 
     <!-- Product 3 -->
     <div class="product-card" data-price="50">
-      <div class="product-icon">🔧</div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/415PmzJUxcL._MCnd_AC_.jpg" alt="Wowstick Mini Cordless Drill" loading="lazy" /></div>
       <div class="product-body">
         <span class="product-tag tag-under50">Under $50</span>
         <p class="product-name">Wowstick Mini Cordless Drill — USB Rechargeable with 8 Accessories, 40-Min Charge</p>
@@ -358,12 +367,12 @@
 
     <!-- Product 4 -->
     <div class="product-card" data-price="50">
-      <div class="product-icon">🌤️</div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/31OtMP39prL._MCnd_AC_.jpg" alt="Smart Weather Station Mini" loading="lazy" /></div>
       <div class="product-body">
         <span class="product-tag tag-under50">Under $50</span>
         <p class="product-name">Smart Weather Station Mini — WiFi Desktop Clock with IPS LCD Screen Gadget</p>
         <p class="product-note">Clean desk gadget showing time, weather & temperature. Connects to your WiFi.</p>
-        <div class="product-price">$34.99</div>
+        <div class="product-price">$18.99</div>
         <a href="https://amzn.to/4uvZmwj" class="buy-btn" target="_blank" rel="noopener sponsored">
           <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
           View on Amazon
@@ -373,12 +382,12 @@
 
     <!-- Product 5 -->
     <div class="product-card" data-price="500">
-      <div class="product-icon">🤖</div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61vIqOFmZAL._AC_SL1500_.jpg" alt="LOOI Robot AI Desktop Companion" loading="lazy" /></div>
       <div class="product-body">
         <span class="product-tag tag-under500">Under $500</span>
         <p class="product-name">LOOI Robot AI Desktop Companion — ChatGPT & Gemini Voice, 10W Wireless Charging, Memory & Personality</p>
         <p class="product-note">The coolest desk gadget of the year. An AI pet that charges your phone.</p>
-        <div class="product-price">$129.99</div>
+        <div class="product-price">$189.00</div>
         <a href="https://amzn.to/43vrWBT" class="buy-btn" target="_blank" rel="noopener sponsored">
           <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
           View on Amazon
