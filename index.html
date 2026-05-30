@@ -9,260 +9,82 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #f8f7f4;
-      --white: #ffffff;
-      --text: #1a1a1a;
-      --muted: #6b6b6b;
-      --accent: #0057ff;
-      --accent-light: #e8eeff;
-      --border: #e2e0db;
-      --radius: 14px;
-      --tag-green: #e6f4ec;
-      --tag-green-text: #1a6635;
-      --tag-amber: #fef3e2;
-      --tag-amber-text: #7a4d00;
-      --tag-blue: #e8eeff;
-      --tag-blue-text: #0037b3;
+      --bg: #f8f7f4; --white: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+      --accent: #0057ff; --accent-light: #e8eeff; --border: #e2e0db; --radius: 14px;
+      --tag-green: #e6f4ec; --tag-green-text: #1a6635;
+      --tag-amber: #fef3e2; --tag-amber-text: #7a4d00;
+      --tag-blue: #e8eeff; --tag-blue-text: #0037b3;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(248,247,244,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
+      background: rgba(248,247,244,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
     }
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px; font-weight: 800;
-      color: var(--text); text-decoration: none;
-      letter-spacing: -0.5px;
-    }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
     .nav-logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 8px; align-items: center; }
-    .nav-links a {
-      font-size: 13px; font-weight: 500;
-      color: var(--muted); text-decoration: none;
-      padding: 6px 14px; border-radius: 20px;
-      transition: all 0.2s;
-    }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 6px 14px; border-radius: 20px; transition: all 0.2s; }
     .nav-links a:hover { background: var(--white); color: var(--text); }
-    .nav-yt {
-      display: flex; align-items: center; gap: 6px;
-      background: #ff0000 !important; color: white !important;
-      border-radius: 20px; padding: 6px 14px;
-      font-size: 13px; font-weight: 500;
-      text-decoration: none; transition: opacity 0.2s;
-    }
-    .nav-yt:hover { opacity: 0.88; }
+    .nav-yt { display: flex; align-items: center; gap: 6px; background: #ff0000 !important; color: white !important; border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 500; text-decoration: none; }
     .nav-yt svg { width: 16px; height: 16px; fill: white; }
 
-    /* HERO */
-    .hero {
-      padding: 72px 32px 56px;
-      max-width: 900px; margin: 0 auto;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--accent-light); color: var(--accent);
-      font-size: 12px; font-weight: 600;
-      padding: 5px 14px; border-radius: 20px;
-      margin-bottom: 24px; letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 800; line-height: 1.05;
-      letter-spacing: -2px; margin-bottom: 20px;
-    }
+    .hero { padding: 72px 32px 56px; max-width: 900px; margin: 0 auto; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px; }
     .hero h1 em { color: var(--accent); font-style: normal; }
-    .hero p {
-      font-size: 17px; color: var(--muted);
-      max-width: 520px; margin: 0 auto 36px;
-      line-height: 1.65;
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: white;
-      font-size: 14px; font-weight: 600;
-      padding: 13px 28px; border-radius: 30px;
-      text-decoration: none;
-      transition: transform 0.2s, opacity 0.2s;
-    }
+    .hero p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto 36px; line-height: 1.65; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: white; font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 30px; text-decoration: none; transition: transform 0.2s, opacity 0.2s; }
     .hero-cta:hover { transform: translateY(-1px); opacity: 0.92; }
 
-    /* FILTERS */
-    .filters-section {
-      max-width: 960px; margin: 0 auto;
-      padding: 0 32px 32px;
-    }
-    .filters-label {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .filters {
-      display: flex; gap: 8px; flex-wrap: wrap;
-    }
-    .filter-btn {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px; font-weight: 500;
-      padding: 8px 18px; border-radius: 20px;
-      border: 1.5px solid var(--border);
-      background: var(--white); color: var(--muted);
-      cursor: pointer; transition: all 0.18s;
-    }
+    .filters-section { max-width: 960px; margin: 0 auto; padding: 0 32px 32px; }
+    .filters-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.18s; }
     .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-btn.active {
-      background: var(--accent); color: white;
-      border-color: var(--accent);
-    }
+    .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-    /* GRID */
-    .products-section {
-      max-width: 960px; margin: 0 auto;
-      padding: 0 32px 80px;
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
+    .products-section { max-width: 960px; margin: 0 auto; padding: 0 32px 80px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
 
-    /* PRODUCT CARD */
-    .product-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform 0.22s, box-shadow 0.22s;
-      display: flex; flex-direction: column;
-    }
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-    }
+    .product-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.22s, box-shadow 0.22s; display: flex; flex-direction: column; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
     .product-card.hidden { display: none; }
 
-    .product-icon {
-      height: 200px;
-      background: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      border-bottom: 1px solid var(--border);
-      overflow: hidden;
-    }
-    .product-icon img {
-      width: 100%; height: 100%;
-      object-fit: contain;
-      padding: 16px;
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover .product-icon img {
-      transform: scale(1.05);
-    }
+    .product-icon { height: 200px; background: var(--white); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); overflow: hidden; }
+    .product-icon img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform 0.3s ease; }
+    .product-card:hover .product-icon img { transform: scale(1.05); }
+
     .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-    .product-tag {
-      display: inline-block;
-      font-size: 11px; font-weight: 600;
-      padding: 3px 10px; border-radius: 20px;
-      margin-bottom: 12px; letter-spacing: 0.03em;
-    }
+    .product-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; letter-spacing: 0.03em; }
     .tag-under50 { background: var(--tag-green); color: var(--tag-green-text); }
     .tag-under100 { background: var(--tag-amber); color: var(--tag-amber-text); }
     .tag-under500 { background: var(--tag-blue); color: var(--tag-blue-text); }
 
-    .product-name {
-      font-size: 14px; font-weight: 500;
-      line-height: 1.45; color: var(--text);
-      margin-bottom: 8px; flex: 1;
-    }
-    .product-price {
-      font-family: 'Syne', sans-serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--accent); margin-bottom: 16px;
-    }
-    .product-note {
-      font-size: 12px; color: var(--muted);
-      margin-bottom: 16px; line-height: 1.5;
-    }
-    .buy-btn {
-      display: flex; align-items: center; justify-content: center; gap: 6px;
-      width: 100%; padding: 11px;
-      background: var(--accent); color: white;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px; font-weight: 600;
-      border: none; border-radius: 10px;
-      cursor: pointer; text-decoration: none;
-      transition: opacity 0.18s, transform 0.18s;
-    }
+    .product-name { font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--text); margin-bottom: 8px; flex: 1; }
+    .product-price { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
+    .product-note { font-size: 12px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+    .buy-btn { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 11px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; text-decoration: none; transition: opacity 0.18s, transform 0.18s; }
     .buy-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-    .buy-btn svg { width: 14px; height: 14px; fill: white; }
 
-    /* YOUTUBE SECTION */
-    .yt-section {
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      padding: 64px 32px;
-    }
+    .yt-section { background: var(--white); border-top: 1px solid var(--border); padding: 64px 32px; }
     .yt-inner { max-width: 800px; margin: 0 auto; }
-    .section-heading {
-      font-family: 'Syne', sans-serif;
-      font-size: 28px; font-weight: 800;
-      letter-spacing: -0.5px; margin-bottom: 8px;
-    }
-    .section-sub {
-      font-size: 15px; color: var(--muted);
-      margin-bottom: 32px;
-    }
-    .yt-embed {
-      position: relative; padding-top: 56.25%;
-      border-radius: var(--radius); overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .yt-embed iframe {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; border: none;
-    }
-    .yt-channel-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 20px;
-      color: var(--accent); font-size: 14px; font-weight: 500;
-      text-decoration: none;
-    }
+    .section-heading { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .section-sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+    .yt-embed { position: relative; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+    .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .yt-channel-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: none; }
     .yt-channel-link:hover { text-decoration: underline; }
 
-    /* FOOTER */
-    footer {
-      background: var(--text);
-      color: rgba(255,255,255,0.5);
-      padding: 40px 32px;
-      text-align: center;
-      font-size: 13px; line-height: 1.8;
-    }
+    footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 40px 32px; text-align: center; font-size: 13px; line-height: 1.8; }
     footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
     footer strong { color: white; }
 
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .product-card { animation: fadeUp 0.4s ease both; }
     .product-card:nth-child(1) { animation-delay: 0.05s; }
     .product-card:nth-child(2) { animation-delay: 0.1s; }
@@ -282,7 +104,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Javeomo<span>Tech</span></a>
   <div class="nav-links">
@@ -291,13 +112,12 @@
     <a href="#products">Under $500</a>
     <a href="#youtube">YouTube</a>
     <a href="https://www.youtube.com/@JaveomoTech" class="nav-yt" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
       Subscribe
     </a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge">✦ Affiliate Picks</div>
   <h1>Tech picks I <em>actually</em> use</h1>
@@ -305,7 +125,6 @@
   <a href="#products" class="hero-cta">Browse all picks ↓</a>
 </section>
 
-<!-- FILTERS -->
 <section class="filters-section" id="products">
   <p class="filters-label">Filter by price</p>
   <div class="filters">
@@ -316,108 +135,93 @@
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="products-section">
   <div class="products-grid">
 
-    <!-- Product 1 -->
+    <!-- LOOI Robot -->
     <div class="product-card" data-price="500">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/317oXf1-EmL._MCnd_AC_.jpg" alt="HolaCube Holographic Display" loading="lazy" /></div>
+      <div class="product-icon">
+        <img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="LOOI Robot AI Desktop Companion" loading="lazy" />
+      </div>
       <div class="product-body">
         <span class="product-tag tag-under500">Under $500</span>
-        <p class="product-name">HolaCube WiFi Holographic Crystal 3D Photo Display — Smart Weather Station & Digital Clock</p>
-        <p class="product-note">Display GIFs, photos & animations as holograms. Great for your desk setup.</p>
-        <div class="product-price">$49.99</div>
-        <a href="https://amzn.to/4nElORc" class="buy-btn" target="_blank" rel="noopener sponsored">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          View on Amazon
-        </a>
+        <p class="product-name">LOOI Robot — AI Desktop Companion with ChatGPT & Gemini Voice, 10W Wireless Charging</p>
+        <p class="product-note">The coolest desk gadget of the year. An AI companion that charges your phone.</p>
+        <div class="product-price">$189.00</div>
+        <a href="https://amzn.to/4ad7yJx" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
       </div>
     </div>
 
-    <!-- Product 2 -->
-    <div class="product-card" data-price="100">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/418SW+HhY1L._MCnd_AC_.jpg" alt="CyberDock Wireless Charging Station" loading="lazy" /></div>
-      <div class="product-body">
-        <span class="product-tag tag-under100">Under $100</span>
-        <p class="product-name">CyberDock 3-in-1 Wireless Charging Station — Cybertruck Scale Model with Qi2 15W for iPhone, iWatch & AirPods</p>
-        <p class="product-note">Charges everything at once. Doubles as a sick desk display with ambient light.</p>
-        <div class="product-price">$79.99</div>
-        <a href="https://amzn.to/4nRmQt6" class="buy-btn" target="_blank" rel="noopener sponsored">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          View on Amazon
-        </a>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
+    <!-- Wowstick -->
     <div class="product-card" data-price="50">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/415PmzJUxcL._MCnd_AC_.jpg" alt="Wowstick Mini Cordless Drill" loading="lazy" /></div>
+      <div class="product-icon">
+        <img src="https://m.media-amazon.com/images/I/51K5IEafmRL._AC_SL1500_.jpg" alt="Wowstick Mini Cordless Drill" loading="lazy" />
+      </div>
       <div class="product-body">
         <span class="product-tag tag-under50">Under $50</span>
         <p class="product-name">Wowstick Mini Cordless Drill — USB Rechargeable with 8 Accessories, 40-Min Charge</p>
         <p class="product-note">Perfect for DIY and desktop builds. Tiny but powerful, charges via USB.</p>
         <div class="product-price">$29.99</div>
-        <a href="https://amzn.to/4tYkk61" class="buy-btn" target="_blank" rel="noopener sponsored">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          View on Amazon
-        </a>
+        <a href="https://amzn.to/3QdivEe" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
       </div>
     </div>
 
-    <!-- Product 4 -->
+    <!-- HolaCube -->
+    <div class="product-card" data-price="100">
+      <div class="product-icon">
+        <img src="https://m.media-amazon.com/images/I/418SW+HhY1L._AC_SX679_.jpg" alt="HolaCube Holographic Display" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <span class="product-tag tag-under100">Under $100</span>
+        <p class="product-name">HolaCube WiFi Holographic Crystal 3D Photo Display — Smart Weather Station & Digital Clock</p>
+        <p class="product-note">Display GIFs, photos & animations as holograms. Great for your desk setup.</p>
+        <div class="product-price">$49.99</div>
+        <a href="https://amzn.to/4dV8XFK" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+      </div>
+    </div>
+
+    <!-- CyberDock -->
+    <div class="product-card" data-price="100">
+      <div class="product-icon">
+        <img src="https://m.media-amazon.com/images/I/61zVYnUok+L._AC_SL1500_.jpg" alt="CyberDock Wireless Charging Station" loading="lazy" />
+      </div>
+      <div class="product-body">
+        <span class="product-tag tag-under100">Under $100</span>
+        <p class="product-name">CyberDock 3-in-1 Wireless Charging Station — Cybertruck Scale Model with Qi2 15W for iPhone, iWatch & AirPods</p>
+        <p class="product-note">Charges everything at once. Doubles as a sick desk display with ambient light.</p>
+        <div class="product-price">$79.99</div>
+        <a href="https://amzn.to/4dO3UZb" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+      </div>
+    </div>
+
+    <!-- Smart Weather Station -->
     <div class="product-card" data-price="50">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/31OtMP39prL._MCnd_AC_.jpg" alt="Smart Weather Station Mini" loading="lazy" /></div>
+      <div class="product-icon">
+        <img src="https://m.media-amazon.com/images/I/519H5ea5AFL._SL1500_.jpg" alt="Smart Weather Station Mini" loading="lazy" />
+      </div>
       <div class="product-body">
         <span class="product-tag tag-under50">Under $50</span>
-        <p class="product-name">Smart Weather Station Mini — WiFi Desktop Clock with IPS LCD Screen Gadget</p>
+        <p class="product-name">Smart Weather Station Mini — WiFi Desktop Clock with IPS LCD Screen Gadget for Decoration</p>
         <p class="product-note">Clean desk gadget showing time, weather & temperature. Connects to your WiFi.</p>
         <div class="product-price">$18.99</div>
-        <a href="https://amzn.to/4uvZmwj" class="buy-btn" target="_blank" rel="noopener sponsored">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          View on Amazon
-        </a>
-      </div>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="product-card" data-price="500">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61vIqOFmZAL._AC_SL1500_.jpg" alt="LOOI Robot AI Desktop Companion" loading="lazy" /></div>
-      <div class="product-body">
-        <span class="product-tag tag-under500">Under $500</span>
-        <p class="product-name">LOOI Robot AI Desktop Companion — ChatGPT & Gemini Voice, 10W Wireless Charging, Memory & Personality</p>
-        <p class="product-note">The coolest desk gadget of the year. An AI pet that charges your phone.</p>
-        <div class="product-price">$189.00</div>
-        <a href="https://amzn.to/43vrWBT" class="buy-btn" target="_blank" rel="noopener sponsored">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          View on Amazon
-        </a>
+        <a href="https://amzn.to/4e9A3dD" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- YOUTUBE -->
 <section class="yt-section" id="youtube">
   <div class="yt-inner">
     <h2 class="section-heading">Watch on YouTube</h2>
     <p class="section-sub">I review every product you see here on my channel. Check out my latest videos.</p>
     <div class="yt-embed">
-      <iframe
-        src="https://www.youtube.com/embed?listType=user_uploads&list=JaveomoTech&rel=0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        title="JaveomoTech YouTube Channel">
-      </iframe>
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=JaveomoTech&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="JaveomoTech YouTube Channel"></iframe>
     </div>
-    <a href="https://www.youtube.com/@JaveomoTech" class="yt-channel-link" target="_blank" rel="noopener">
-      Visit @JaveomoTech on YouTube →
-    </a>
+    <a href="https://www.youtube.com/@JaveomoTech" class="yt-channel-link" target="_blank" rel="noopener">Visit @JaveomoTech on YouTube →</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p><strong>JaveomoTech</strong></p>
   <p>Tech reviewer sharing the best gadgets & gear.</p>
@@ -435,11 +239,8 @@
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.product-card').forEach(card => {
-      if (range === 'all') {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.toggle('hidden', card.dataset.price !== range);
-      }
+      if (range === 'all') { card.classList.remove('hidden'); }
+      else { card.classList.toggle('hidden', card.dataset.price !== range); }
     });
   }
 </script>
