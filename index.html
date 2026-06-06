@@ -15,109 +15,118 @@
       --tag-green: #e6f4ec; --tag-green-text: #1a6635;
       --tag-amber: #fef3e2; --tag-amber-text: #7a4d00;
       --tag-blue: #e8eeff; --tag-blue-text: #0037b3;
+      --tag-purple: #f3eeff; --tag-purple-text: #5b21b6;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(248,247,244,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border); padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between; height: 64px;
-    }
-    .nav-logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
     .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 8px; align-items: center; }
-    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 6px 14px; border-radius: 20px; transition: all 0.2s; }
-    .nav-links a:hover { background: var(--white); color: var(--text); }
-    .nav-yt { display: flex; align-items: center; gap: 6px; background: #ff0000 !important; color: white !important; border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 500; text-decoration: none; }
-    .nav-yt svg { width: 16px; height: 16px; fill: white; }
+    .nav-yt { display: flex; align-items: center; gap: 6px; background: #ff0000; color: white; border-radius: 20px; padding: 7px 14px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .nav-yt svg { width: 15px; height: 15px; fill: white; }
 
-    .hero { padding: 72px 32px 56px; max-width: 900px; margin: 0 auto; text-align: center; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 0.04em; text-transform: uppercase; }
-    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px; }
+    /* HERO */
+    .hero { padding: 48px 24px 36px; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 8vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 14px; }
     .hero h1 em { color: var(--accent); font-style: normal; }
-    .hero p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto 36px; line-height: 1.65; }
-    .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: white; font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 30px; text-decoration: none; transition: transform 0.2s, opacity 0.2s; }
-    .hero-cta:hover { transform: translateY(-1px); opacity: 0.92; }
+    .hero p { font-size: 15px; color: var(--muted); max-width: 420px; margin: 0 auto 28px; line-height: 1.65; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: white; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 30px; text-decoration: none; }
 
-    .filters-section { max-width: 960px; margin: 0 auto; padding: 0 32px 32px; }
-    .filters-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-    .filter-btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.18s; }
+    /* SEARCH */
+    .search-section { max-width: 600px; margin: 0 auto; padding: 0 24px 32px; }
+    .search-wrap { position: relative; }
+    .search-wrap svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; stroke: var(--muted); fill: none; stroke-width: 2; }
+    .search-input { width: 100%; padding: 14px 16px 14px 46px; border: 1.5px solid var(--border); border-radius: 30px; font-family: 'DM Sans', sans-serif; font-size: 14px; background: var(--white); color: var(--text); outline: none; transition: border-color 0.2s; }
+    .search-input:focus { border-color: var(--accent); }
+    .search-input::placeholder { color: var(--muted); }
+
+    /* DEAL OF THE WEEK */
+    .deal-section { max-width: 960px; margin: 0 auto 40px; padding: 0 24px; }
+    .deal-card { background: linear-gradient(135deg, #0057ff 0%, #0040cc 100%); border-radius: 20px; padding: 24px; display: flex; gap: 20px; align-items: center; color: white; position: relative; overflow: hidden; }
+    .deal-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: rgba(255,255,255,0.06); border-radius: 50%; }
+    .deal-badge { background: #FFD700; color: #1a1a1a; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
+    .deal-img { width: 110px; height: 110px; min-width: 110px; background: rgba(255,255,255,0.15); border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .deal-img img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+    .deal-info { flex: 1; }
+    .deal-name { font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
+    .deal-note { font-size: 12px; opacity: 0.8; margin-bottom: 14px; line-height: 1.5; }
+    .deal-price { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; margin-bottom: 14px; }
+    .deal-btn { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--accent); font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 10px; text-decoration: none; }
+
+    /* FILTERS */
+    .controls-section { max-width: 960px; margin: 0 auto; padding: 0 24px 24px; }
+    .controls-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .filter-btn { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 7px 14px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.18s; white-space: nowrap; }
     .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
     .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-    .products-section { max-width: 960px; margin: 0 auto; padding: 0 32px 80px; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    /* GRID */
+    .products-section { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .no-results { text-align: center; padding: 60px 20px; color: var(--muted); display: none; }
 
+    /* PRODUCT CARD */
     .product-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.22s, box-shadow 0.22s; display: flex; flex-direction: column; }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
     .product-card.hidden { display: none; }
-
-    .product-icon { height: 200px; background: var(--white); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); overflow: hidden; }
+    .product-icon { height: 180px; background: var(--white); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); overflow: hidden; }
     .product-icon img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform 0.3s ease; }
     .product-card:hover .product-icon img { transform: scale(1.05); }
-
-    .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-    .product-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; letter-spacing: 0.03em; }
+    .product-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+    .product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .product-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
     .tag-under50 { background: var(--tag-green); color: var(--tag-green-text); }
     .tag-under100 { background: var(--tag-amber); color: var(--tag-amber-text); }
     .tag-under500 { background: var(--tag-blue); color: var(--tag-blue-text); }
+    .tag-cat { background: var(--tag-purple); color: var(--tag-purple-text); }
+    .product-name { font-size: 13px; font-weight: 500; line-height: 1.45; color: var(--text); margin-bottom: 6px; flex: 1; }
+    .product-note { font-size: 11px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+    .product-price { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+    .buy-btn { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 10px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; text-decoration: none; transition: opacity 0.18s; }
+    .buy-btn:hover { opacity: 0.88; }
 
-    .product-name { font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--text); margin-bottom: 8px; flex: 1; }
-    .product-price { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
-    .product-note { font-size: 12px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
-    .buy-btn { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 11px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; text-decoration: none; transition: opacity 0.18s, transform 0.18s; }
-    .buy-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    .yt-section { background: var(--white); border-top: 1px solid var(--border); padding: 64px 32px; }
+    /* YOUTUBE */
+    .yt-section { background: var(--white); border-top: 1px solid var(--border); padding: 48px 24px; }
     .yt-inner { max-width: 800px; margin: 0 auto; }
-    .section-heading { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
-    .section-sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+    .section-heading { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .section-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
     .yt-embed { position: relative; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
     .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    .yt-channel-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: none; }
-    .yt-channel-link:hover { text-decoration: underline; }
+    .yt-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: none; }
 
-    footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 40px 32px; text-align: center; font-size: 13px; line-height: 1.8; }
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.8; }
     footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
     footer strong { color: white; }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .product-card { animation: fadeUp 0.4s ease both; }
-    .product-card:nth-child(1) { animation-delay: 0.05s; }
-    .product-card:nth-child(2) { animation-delay: 0.1s; }
-    .product-card:nth-child(3) { animation-delay: 0.15s; }
-    .product-card:nth-child(4) { animation-delay: 0.2s; }
-    .product-card:nth-child(5) { animation-delay: 0.25s; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .product-card { animation: fadeUp 0.35s ease both; }
 
-    @media (max-width: 600px) {
-      nav { padding: 0 16px; }
-      .nav-links a:not(.nav-yt) { display: none; }
-      .hero { padding: 48px 20px 40px; }
-      .filters-section, .products-section { padding-left: 20px; padding-right: 20px; }
-      .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .yt-section { padding: 48px 20px; }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .product-icon { height: 140px; }
+      .product-body { padding: 12px; }
+      .deal-card { flex-direction: column; text-align: center; }
+      .deal-img { width: 80px; height: 80px; min-width: 80px; margin: 0 auto; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Javeomo<span>Tech</span></a>
-  <div class="nav-links">
-    <a href="#products">Under $50</a>
-    <a href="#products">Under $100</a>
-    <a href="#products">Under $500</a>
-    <a href="#youtube">YouTube</a>
-    <a href="https://www.youtube.com/@JaveomoTech" class="nav-yt" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
-      Subscribe
-    </a>
-  </div>
+  <a href="https://www.youtube.com/@JaveomoTech" class="nav-yt" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+    YouTube
+  </a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-badge">✦ Affiliate Picks</div>
   <h1>Tech picks I <em>actually</em> use</h1>
@@ -125,26 +134,60 @@
   <a href="#products" class="hero-cta">Browse all picks ↓</a>
 </section>
 
-<section class="filters-section" id="products">
-  <p class="filters-label">Filter by price</p>
-  <div class="filters">
-    <button class="filter-btn active" onclick="filter('all', this)">All picks</button>
-    <button class="filter-btn" onclick="filter('50', this)">Under $50</button>
-    <button class="filter-btn" onclick="filter('100', this)">Under $100</button>
-    <button class="filter-btn" onclick="filter('500', this)">Under $500</button>
+<!-- SEARCH -->
+<div class="search-section">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" class="search-input" placeholder="Search products..." id="searchInput" oninput="handleSearch()" />
+  </div>
+</div>
+
+<!-- DEAL OF THE WEEK -->
+<section class="deal-section">
+  <div class="deal-card">
+    <div class="deal-img">
+      <img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="LOOI Robot" />
+    </div>
+    <div class="deal-info">
+      <span class="deal-badge">🔥 Deal of the Week</span>
+      <p class="deal-name">LOOI Robot — AI Desktop Companion with ChatGPT & Gemini Voice</p>
+      <p class="deal-note">The coolest desk gadget of the year. Charges your phone too.</p>
+      <div class="deal-price">$234.00</div>
+      <a href="https://amzn.to/4ad7yJx" class="deal-btn" target="_blank" rel="noopener sponsored">View on Amazon →</a>
+    </div>
   </div>
 </section>
 
+<!-- FILTERS -->
+<section class="controls-section" id="products">
+  <p class="controls-label">Filter by price</p>
+  <div class="filters" id="priceFilters">
+    <button class="filter-btn active" onclick="filterPrice('all', this)">All picks</button>
+    <button class="filter-btn" onclick="filterPrice('50', this)">Under $50</button>
+    <button class="filter-btn" onclick="filterPrice('100', this)">Under $100</button>
+    <button class="filter-btn" onclick="filterPrice('500', this)">Under $500</button>
+  </div>
+  <p class="controls-label" style="margin-top:16px;">Filter by category</p>
+  <div class="filters" id="catFilters">
+    <button class="filter-btn active" onclick="filterCat('all', this)">All categories</button>
+    <button class="filter-btn" onclick="filterCat('gadgets', this)">Gadgets</button>
+    <button class="filter-btn" onclick="filterCat('collectibles', this)">Collectibles</button>
+    <button class="filter-btn" onclick="filterCat('smarthome', this)">Smart Home</button>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
 <section class="products-section">
-  <div class="products-grid">
+  <div class="products-grid" id="productGrid">
 
     <!-- LOOI Robot -->
-    <div class="product-card" data-price="500">
-      <div class="product-icon">
-        <img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="LOOI Robot AI Desktop Companion" loading="lazy" />
-      </div>
+    <div class="product-card" data-price="500" data-cat="gadgets" data-name="looi robot ai desktop companion chatgpt gemini voice wireless charging">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="LOOI Robot" loading="lazy" /></div>
       <div class="product-body">
-        <span class="product-tag tag-under500">Under $500</span>
+        <div class="product-tags">
+          <span class="product-tag tag-under500">Under $500</span>
+          <span class="product-tag tag-cat">Gadgets</span>
+        </div>
         <p class="product-name">LOOI Robot — AI Desktop Companion with ChatGPT & Gemini Voice, 10W Wireless Charging</p>
         <p class="product-note">The coolest desk gadget of the year. An AI companion that charges your phone.</p>
         <div class="product-price">$234.00</div>
@@ -153,12 +196,13 @@
     </div>
 
     <!-- Wowstick -->
-    <div class="product-card" data-price="50">
-      <div class="product-icon">
-        <img src="https://m.media-amazon.com/images/I/51K5IEafmRL._AC_SL1500_.jpg" alt="Wowstick Mini Cordless Drill" loading="lazy" />
-      </div>
+    <div class="product-card" data-price="100" data-cat="gadgets" data-name="wowstick mini cordless drill usb rechargeable accessories">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/51K5IEafmRL._AC_SL1500_.jpg" alt="Wowstick Drill" loading="lazy" /></div>
       <div class="product-body">
-        <span class="product-tag tag-under50">Under $50</span>
+        <div class="product-tags">
+          <span class="product-tag tag-under100">Under $100</span>
+          <span class="product-tag tag-cat">Gadgets</span>
+        </div>
         <p class="product-name">Wowstick Mini Cordless Drill — USB Rechargeable with 8 Accessories, 40-Min Charge</p>
         <p class="product-note">Perfect for DIY and desktop builds. Tiny but powerful, charges via USB.</p>
         <div class="product-price">$53.98</div>
@@ -167,12 +211,13 @@
     </div>
 
     <!-- HolaCube -->
-    <div class="product-card" data-price="100">
-      <div class="product-icon">
-        <img src="https://m.media-amazon.com/images/I/418SW+HhY1L._AC_SX679_.jpg" alt="HolaCube Holographic Display" loading="lazy" />
-      </div>
+    <div class="product-card" data-price="50" data-cat="gadgets" data-name="holacube holographic crystal 3d photo display weather station digital clock">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/418SW+HhY1L._AC_SX679_.jpg" alt="HolaCube" loading="lazy" /></div>
       <div class="product-body">
-        <span class="product-tag tag-under100">Under $100</span>
+        <div class="product-tags">
+          <span class="product-tag tag-under50">Under $50</span>
+          <span class="product-tag tag-cat">Gadgets</span>
+        </div>
         <p class="product-name">HolaCube WiFi Holographic Crystal 3D Photo Display — Smart Weather Station & Digital Clock</p>
         <p class="product-note">Display GIFs, photos & animations as holograms. Great for your desk setup.</p>
         <div class="product-price">$35.99</div>
@@ -181,12 +226,13 @@
     </div>
 
     <!-- CyberDock -->
-    <div class="product-card" data-price="100">
-      <div class="product-icon">
-        <img src="https://m.media-amazon.com/images/I/61zVYnUok+L._AC_SL1500_.jpg" alt="CyberDock Wireless Charging Station" loading="lazy" />
-      </div>
+    <div class="product-card" data-price="100" data-cat="gadgets" data-name="cyberdock wireless charging station cybertruck qi2 iphone iwatch airpods">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61zVYnUok+L._AC_SL1500_.jpg" alt="CyberDock" loading="lazy" /></div>
       <div class="product-body">
-        <span class="product-tag tag-under100">Under $100</span>
+        <div class="product-tags">
+          <span class="product-tag tag-under100">Under $100</span>
+          <span class="product-tag tag-cat">Gadgets</span>
+        </div>
         <p class="product-name">CyberDock 3-in-1 Wireless Charging Station — Cybertruck Scale Model with Qi2 15W for iPhone, iWatch & AirPods</p>
         <p class="product-note">Charges everything at once. Doubles as a sick desk display with ambient light.</p>
         <div class="product-price">$59.99</div>
@@ -195,12 +241,13 @@
     </div>
 
     <!-- Smart Weather Station -->
-    <div class="product-card" data-price="50">
-      <div class="product-icon">
-        <img src="https://m.media-amazon.com/images/I/519H5ea5AFL._SL1500_.jpg" alt="Smart Weather Station Mini" loading="lazy" />
-      </div>
+    <div class="product-card" data-price="50" data-cat="smarthome" data-name="smart weather station mini wifi desktop clock ips lcd screen decoration">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/519H5ea5AFL._SL1500_.jpg" alt="Smart Weather Station" loading="lazy" /></div>
       <div class="product-body">
-        <span class="product-tag tag-under50">Under $50</span>
+        <div class="product-tags">
+          <span class="product-tag tag-under50">Under $50</span>
+          <span class="product-tag tag-cat">Smart Home</span>
+        </div>
         <p class="product-name">Smart Weather Station Mini — WiFi Desktop Clock with IPS LCD Screen Gadget for Decoration</p>
         <p class="product-note">Clean desk gadget showing time, weather & temperature. Connects to your WiFi.</p>
         <div class="product-price">$18.99</div>
@@ -208,55 +255,84 @@
       </div>
     </div>
 
-    <!--  -->
-<div class="product-card" data-price="50">
-  <div class="product-icon">
-    <img src="https://m.media-amazon.com/images/I/71t+oLOoniL._AC_SL1500_.jpg" alt="PRODUCT NAME" loading="lazy" />
-  </div>
-  <div class="product-body">
-    <span class="product-tag tag-under50">Under $50</span>
-    <p class="product-name">1:12 Motorcycle Model Toy Compatible for Ducati V4S Alloy Metal Diecast Motorbike with Sound and Light Mini Sport Bike Display Gift for Adult Collectors</p>
-    <p class="product-note">Perfect for desk decoration, office display, home shelves, or collector showcases.</p>
-    <div class="product-price">$19.99</div>
-    <a href="https://amzn.to/4uDNl7r" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
-  </div>
-</div>
+    <!-- Ducati Motorcycle Model -->
+    <div class="product-card" data-price="50" data-cat="collectibles" data-name="ducati v4s motorcycle model toy diecast alloy metal sound light sport bike collectible">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71t+oLOoniL._AC_SL1500_.jpg" alt="Ducati V4S Diecast Model" loading="lazy" /></div>
+      <div class="product-body">
+        <div class="product-tags">
+          <span class="product-tag tag-under50">Under $50</span>
+          <span class="product-tag tag-cat">Collectibles</span>
+        </div>
+        <p class="product-name">1:12 Ducati V4S Alloy Diecast Motorcycle Model — Sound & Light, Adult Collectors Display</p>
+        <p class="product-note">Perfect for desk decoration, office display, home shelves, or collector showcases.</p>
+        <div class="product-price">$19.99</div>
+        <a href="https://amzn.to/4uDNl7r" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+      </div>
+    </div>
 
+  </div>
+  <div class="no-results" id="noResults">
+    <p style="font-size:32px;">🔍</p>
+    <p style="margin-top:8px; font-size:15px;">No products found. Try a different search!</p>
   </div>
 </section>
 
+<!-- YOUTUBE -->
 <section class="yt-section" id="youtube">
   <div class="yt-inner">
     <h2 class="section-heading">Watch on YouTube</h2>
-    <p class="section-sub">I review every product you see here on my channel. Check out my latest videos.</p>
+    <p class="section-sub">I review every product on my channel. Check out my latest videos.</p>
     <div class="yt-embed">
       <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=JaveomoTech&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="JaveomoTech YouTube Channel"></iframe>
     </div>
-    <a href="https://www.youtube.com/@JaveomoTech" class="yt-channel-link" target="_blank" rel="noopener">Visit @JaveomoTech on YouTube →</a>
+    <a href="https://www.youtube.com/@JaveomoTech" class="yt-link" target="_blank" rel="noopener">Visit @JaveomoTech on YouTube →</a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p><strong>JaveomoTech</strong></p>
   <p>Tech reviewer sharing the best gadgets & gear.</p>
   <p style="margin-top:12px;">
-    <a href="https://www.youtube.com/@JaveomoTech" target="_blank" rel="noopener">YouTube</a> &nbsp;·&nbsp;
-    <a href="https://linktr.ee/JaveomoTech" target="_blank" rel="noopener">Linktree</a>
+    <a href="https://www.youtube.com/@JaveomoTech" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="https://linktr.ee/JaveomoTech" target="_blank">Linktree</a>
   </p>
-  <p style="margin-top:16px; font-size:11px; opacity:0.5;">
-    This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.
-  </p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.</p>
 </footer>
 
 <script>
-  function filter(range, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  let activePrice = 'all';
+  let activeCat = 'all';
+
+  function applyFilters() {
+    const search = document.getElementById('searchInput').value.toLowerCase().trim();
+    let visible = 0;
     document.querySelectorAll('.product-card').forEach(card => {
-      if (range === 'all') { card.classList.remove('hidden'); }
-      else { card.classList.toggle('hidden', card.dataset.price !== range); }
+      const matchPrice = activePrice === 'all' || card.dataset.price === activePrice;
+      const matchCat = activeCat === 'all' || card.dataset.cat === activeCat;
+      const matchSearch = !search || card.dataset.name.includes(search);
+      const show = matchPrice && matchCat && matchSearch;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
     });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
   }
+
+  function filterPrice(range, btn) {
+    activePrice = range;
+    document.querySelectorAll('#priceFilters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function filterCat(cat, btn) {
+    activeCat = cat;
+    document.querySelectorAll('#catFilters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function handleSearch() { applyFilters(); }
 </script>
 
 </body>
