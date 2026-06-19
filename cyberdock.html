@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberDock Review – JaveomoTech</title>
+  <meta name="description" content="Full review of the CyberDock 12-in-1 USB-C hub. Photos, video, and honest verdict for tech enthusiasts."/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --accent: #0057ff;
+      --accent-light: #e8eeff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --card: #f9fafb;
+      --green: #16a34a;
+      --red: #dc2626;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent); }
+    .back-btn svg { width: 15px; height: 15px; }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      background: linear-gradient(135deg, #0057ff 0%, #0040cc 100%);
+      padding: 36px 20px 28px;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-strip .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      margin-bottom: 14px;
+    }
+    .hero-strip h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(24px, 6vw, 38px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .hero-strip p {
+      font-size: 14px;
+      opacity: 0.85;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
+
+    /* ── PHOTO GALLERY ── */
+    .gallery {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,87,255,0.15);
+    }
+    .gallery img.featured {
+      grid-column: 1 / -1;
+      height: 300px;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+
+    /* ── VIDEO ── */
+    .video-section {
+      margin-top: 28px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 177.78%; /* 9:16 Short */
+      height: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── QUICK VERDICT BAR ── */
+    .verdict-bar {
+      margin-top: 32px;
+      background: var(--accent-light);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .score-circle {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .score-circle .num {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .score-circle .out-of {
+      font-size: 10px;
+      opacity: 0.8;
+    }
+    .verdict-text strong {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .verdict-text span { font-size: 13px; color: var(--muted); }
+
+    /* ── ARTICLE ── */
+    .article {
+      margin-top: 32px;
+    }
+    .article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 28px 0 10px;
+      color: var(--text);
+    }
+    .article h2:first-child { margin-top: 0; }
+    .article p {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 14px;
+    }
+
+    /* ── SPECS TABLE ── */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .specs-table tr:nth-child(even) { background: var(--card); }
+    .specs-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .specs-table td:first-child {
+      font-weight: 600;
+      color: var(--muted);
+      width: 42%;
+    }
+
+    /* ── PROS / CONS ── */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+    .pros, .cons {
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .pros { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .cons { background: #fff1f2; border: 1px solid #fecdd3; }
+    .pros h3, .cons h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .pros h3 { color: var(--green); }
+    .cons h3 { color: var(--red); }
+    .pros ul, .cons ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .pros li, .cons li {
+      font-size: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      line-height: 1.45;
+    }
+    .pros li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .cons li::before { content: "✗"; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+    /* ── BUY CTA ── */
+    .buy-cta {
+      margin-top: 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .buy-cta .price-tag {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .buy-cta .price-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .buy-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .buy-btn:hover { background: #0040cc; transform: translateY(-1px); }
+    .buy-cta .disclaimer {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .gallery img { height: 170px; }
+      .gallery img.featured { height: 220px; }
+      .pros-cons { grid-template-columns: 1fr; }
+      .verdict-bar { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">JaveomoTech</a>
+  <a href="index.html" class="back-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+    All Products
+  </a>
+</nav>
+
+<!-- HERO STRIP -->
+<div class="hero-strip">
+  <div class="tag">Full Review</div>
+  <h1>CyberDock 12-in-1<br/>USB-C Hub</h1>
+  <p>One hub to replace all your cables. Here's the honest breakdown.</p>
+</div>
+
+<div class="page-wrap">
+
+  <!-- PHOTO GALLERY -->
+  <div class="gallery">
+    <img class="featured" src="https://m.media-amazon.com/images/I/71JUT5Hi8qL._AC_SL1500_.jpg" alt="CyberDock USB-C Hub main view" onclick="openLightbox(this.src)"/>
+    <img src="https://m.media-amazon.com/images/I/71VjfuMxwnL._AC_SL1500_.jpg" alt="CyberDock ports close-up" onclick="openLightbox(this.src)"/>
+    <img src="https://luxygears.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-15-at-14.34.44_e934baea.jpg" alt="CyberDock in use" onclick="openLightbox(this.src)"/>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-section">
+    <div class="section-label">Watch the Review</div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/SR0TFgBYNuo"
+        title="CyberDock Review – JaveomoTech"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- VERDICT BAR -->
+  <div class="verdict-bar">
+    <div class="score-circle">
+      <span class="num">8.5</span>
+      <span class="out-of">/10</span>
+    </div>
+    <div class="verdict-text">
+      <strong>Verdict: Solid Buy for Power Users</strong>
+      <span>Great value for a 12-in-1 hub — a few minor heat quirks under heavy load but nothing deal-breaking.</span>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <div class="article">
+
+    <h2>What is the CyberDock?</h2>
+    <p>
+      If your desk looks like a cable graveyard — dongles everywhere, adapters falling behind your monitor — the CyberDock was basically made for you. It's a 12-in-1 USB-C hub that plugs into your laptop and instantly gives you a full workstation setup: HDMI, USB-A ports, SD card slots, Ethernet, and more. One cable. Done.
+    </p>
+    <p>
+      It's aimed squarely at people who refuse to deal with laptop port limitations anymore — whether you're a creator editing video, a developer running multiple monitors, or just someone who's tired of choosing between charging and plugging in a mouse.
+    </p>
+
+    <h2>Tech Specs</h2>
+    <table class="specs-table">
+      <tr><td>Ports</td><td>12-in-1 (HDMI 4K, 3× USB-A, USB-C PD, SD/TF, Ethernet, 3.5mm)</td></tr>
+      <tr><td>HDMI Output</td><td>Up to 4K@30Hz</td></tr>
+      <tr><td>USB-C Power Delivery</td><td>Up to 100W pass-through</td></tr>
+      <tr><td>Ethernet</td><td>Gigabit (1000Mbps)</td></tr>
+      <tr><td>USB-A Speed</td><td>USB 3.0 (5Gbps)</td></tr>
+      <tr><td>SD Card</td><td>SD + MicroSD simultaneously</td></tr>
+      <tr><td>Compatibility</td><td>MacBook, Windows laptops, iPad Pro, Steam Deck</td></tr>
+      <tr><td>Cable Length</td><td>~20cm fixed cable</td></tr>
+      <tr><td>Price</td><td>$59.99</td></tr>
+    </table>
+
+    <h2>What It's Actually Like to Use</h2>
+    <p>
+      Setup is genuinely zero-effort. Plug it into your USB-C port and everything just works — no drivers, no setup screens. Within about 10 seconds I had my external monitor running at 4K, a USB mouse connected, and my phone charging, all at the same time.
+    </p>
+    <p>
+      The build feels solid — it's not cheap plasticky garbage. The aluminum shell matches MacBook aesthetics well, and the ports are spaced enough that you won't have chunky adapters blocking each other. The fixed cable is a pro for me because loose dongles are the enemy.
+    </p>
+    <p>
+      Under heavy load — like 4K display + fast SD card transfer + charging simultaneously — it does get warm. Not alarmingly hot, but noticeable. Something to be aware of if you're leaving it running all day on a desk with bad airflow.
+    </p>
+
+    <h2>Pros & Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>Pros</h3>
+        <ul>
+          <li>True plug-and-play, no drivers needed</li>
+          <li>100W PD pass-through keeps your laptop charging</li>
+          <li>Gigabit Ethernet is rock solid for WFH</li>
+          <li>SD + MicroSD work at the same time</li>
+          <li>Solid aluminum build, doesn't feel cheap</li>
+          <li>Great value for 12 ports at this price</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>Cons</h3>
+        <ul>
+          <li>Gets warm under heavy multi-port load</li>
+          <li>4K capped at 30Hz (not ideal for gaming)</li>
+          <li>Fixed cable means it's not pocketable</li>
+          <li>No USB-C data port (PD only)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Who Should Buy This?</h2>
+    <p>
+      This is a no-brainer if you're a MacBook user with only 2 USB-C ports, a remote worker who needs reliable Ethernet, or a creator who shoots on SD cards and wants everything to flow into one connection. At $59.99 for a 12-in-1, the value is genuinely hard to argue with.
+    </p>
+    <p>
+      If you're a hardcore gamer needing 4K@60Hz display output, look elsewhere — the 30Hz cap will bother you. Everyone else? Just get it.
+    </p>
+
+  </div>
+
+  <!-- BUY CTA -->
+  <div class="buy-cta">
+    <div class="price-tag">$59.99</div>
+    <div class="price-note">Check Amazon for latest price & availability</div>
+    <a href="https://amzn.to/4dO3UZb" class="buy-btn" target="_blank" rel="noopener">
+      Buy on Amazon →
+    </a>
+    <div class="disclaimer">
+      As an Amazon Associate, JaveomoTech earns from qualifying purchases. Price shown at time of review.
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 JaveomoTech · Built for tech enthusiasts, by one.
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="Product photo enlarged"/>
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
