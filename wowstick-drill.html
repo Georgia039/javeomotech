@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wowstick Mini Cordless Drill Review | JaveomoTech</title>
+  <meta name="description" content="Hands-on review of the Wowstick Mini Cordless Drill. USB rechargeable, pen-shaped, 8 bits included. Is $53.98 worth it for small DIY and hobby work?">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #0057ff;
+      --accent-light: #e8efff;
+      --text: #111;
+      --muted: #555;
+      --border: #e2e2e2;
+      --bg: #fff;
+      --card-bg: #f8f9fb;
+      --radius: 12px;
+      --steel: #b0b8c4;
+      --steel-dark: #2c3340;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    nav a.back {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a.back:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(140deg, #1c2230 0%, #2c3340 50%, #1a1f2b 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Machined-metal texture suggestion: subtle diagonal hatching */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 18px,
+        rgba(255,255,255,0.02) 18px,
+        rgba(255,255,255,0.02) 19px
+      );
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--accent) 40%, #6ea4ff 60%, transparent 100%);
+      opacity: 0.7;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.75rem, 5.5vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 620px;
+      margin: 0 auto 14px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #6ea4ff;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.95rem;
+      max-width: 420px;
+      margin: 0 auto 28px;
+    }
+    .hero-price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 100px;
+      padding: 9px 22px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 44px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      border: 1px solid var(--border);
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 18px; right: 22px;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.75;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── YOUTUBE ── */
+    .short-wrap { display: flex; justify-content: center; }
+    .short-wrap iframe {
+      width: 220px;
+      height: 391px;
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    /* ── VERDICT BAR ── */
+    .verdict-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .score-circle {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+    }
+    .score-circle .num { font-size: 1.5rem; line-height: 1; }
+    .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
+    .verdict-text h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .verdict-text p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── ARTICLE ── */
+    .article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 32px 0 10px;
+      letter-spacing: -0.02em;
+    }
+    .article h2:first-child { margin-top: 0; }
+    .article p { margin-bottom: 16px; color: #222; }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* ── SPECS TABLE ── */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 11px 4px; vertical-align: top; }
+    .specs-table td:first-child {
+      color: var(--muted);
+      font-weight: 600;
+      width: 42%;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── PROS / CONS ── */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pros, .cons {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+    .pros h4, .cons h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .pros h4 { color: #1a7a1a; }
+    .cons h4 { color: #b91c1c; }
+    .pros ul, .cons ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pros ul li::before { content: '✓ '; color: #1a7a1a; font-weight: 700; }
+    .cons ul li::before { content: '✗ '; color: #b91c1c; font-weight: 700; }
+    .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
+
+    /* ── CTA ── */
+    .cta-box {
+      background: linear-gradient(140deg, #1c2230 0%, #2c3340 100%);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.6;
+    }
+    .cta-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .cta-box p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 30px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-disclaimer {
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.28);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 560px) {
+      .pros-cons { grid-template-columns: 1fr; }
+      .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .hero { padding: 44px 20px 38px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Javeomo<span>Tech</span></a>
+  <a class="back" href="index.html">← All Reviews</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Tools · DIY & Hobby</div>
+  <h1>A Full Drill That Fits in Your <em>Pocket</em></h1>
+  <p class="hero-sub">Wowstick Mini Cordless Drill — pen-shaped, all-aluminum, USB rechargeable, 8 bits included.</p>
+  <div class="hero-price-badge">
+    <span>Amazon</span>
+    <span class="price">$53.98</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="container">
+  <section>
+    <p class="section-label">Photo Gallery</p>
+    <div class="gallery-grid">
+      <img src="https://m.media-amazon.com/images/I/51K5IEafmRL._AC_SL1500_.jpg" alt="Wowstick Mini Cordless Drill - product shot" onclick="openLightbox(this.src)">
+      <img src="https://media.printables.com/media/prints/810805/images/6269034_dcbe9a23-31c3-4279-bd4e-e0db54581f63_adfb3ccf-c005-45a6-ba8a-22ebbba6035c/thumbs/cover/1200x630/jpg/img_20240318_224619426.jpg" alt="Wowstick Mini Drill in hand showing scale" onclick="openLightbox(this.src)">
+      <img src="https://m.media-amazon.com/images/I/71tOjDGMpIL._AC_SL1500_.jpg" alt="Wowstick Mini Drill with accessories and case" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section>
+    <p class="section-label">Watch the Short</p>
+    <div class="short-wrap">
+      <iframe src="https://www.youtube.com/embed/xX9EtTTOdcU" title="Wowstick Mini Cordless Drill Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- VERDICT BAR -->
+  <section>
+    <p class="section-label">Verdict</p>
+    <div class="verdict-bar">
+      <div class="score-circle">
+        <span class="num">8.0</span>
+        <span class="den">/10</span>
+      </div>
+      <div class="verdict-text">
+        <h3>A precision tool that actually earns its price</h3>
+        <p>Brilliant for hobby work, model making, and small DIY. Just don't expect it to replace your cordless hammer drill.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="article">
+    <p class="section-label">Full Review</p>
+
+    <h2>What Is the Wowstick Mini Drill?</h2>
+    <p>I've used a pin vise — one of those manual twist-drill things — for small hobby work, and while it gets the job done it also gives your fingers a pretty good workout. The Wowstick Mini Drill is basically the motorised answer to that problem. It's shaped like a thick pen, made from aluminium, and runs off a USB-rechargeable battery. You pop in one of the included drill bits, press a button, and it drills small precise holes without you having to manually rotate anything.</p>
+    <p>The pitch is "small projects, big results" — and for that narrow use case, it actually delivers. The key word there is narrow, and I'll get to that.</p>
+
+    <h2>Build Quality and Design</h2>
+    <p>The all-aluminium body immediately separates this from cheap plastic alternatives. It feels like a proper tool in your hand — solid, slightly cool to the touch, with a frosted matte finish that doesn't slip. The pen shape means you hold it the way you'd hold a marker or stylus, which gives you a surprising amount of control over where the bit actually goes. For detail work that's a genuinely better experience than holding a chunky drill body.</p>
+    <p>The pen cap design is clever — the drill bit is hidden inside the cap when not in use, which keeps the tips protected and means it won't accidentally scratch anything if you're carrying it in a bag or toolbox. You can clip it to clothing or a pocket the same way you'd clip a pen, which makes it easy to keep on hand during a project.</p>
+    <p>The case it comes in is a rigid plastic box with foam cutouts for the drill and all eight bits. It's functional — a bit like a miniature version of the kind of case a jeweller's tool set might come in. The lid doesn't latch particularly securely, which a few users have also noticed, but for desk storage it's fine. If you're transporting it around a lot, it's worth knowing the lid doesn't click shut.</p>
+
+    <h2>How It Actually Performs</h2>
+    <p>At 400rpm, this is a low-speed drill — and that's intentional and correct for what it's designed for. High-speed mini drills shred through delicate materials. The Wowstick's low speed gives you control, which is what you want when you're drilling a 0.5mm hole in an acrylic panel or trying to pin a miniature joint without splitting it.</p>
+    <p>The torque is surprisingly good for the size. It drills cleanly through thin wood, acrylic, plastic, and aluminium without much effort. People use this thing for drilling barrels on Warhammer miniatures, for jewellery work, for hanging picture frames, for drilling holes in coins — it handles all of that easily. The slow speed means you can hold steady and place the hole exactly where you want it, which is much harder with a full-size rotary tool running at 15,000rpm.</p>
+    <p>The eight included bits are high-speed steel and cover the range you'd realistically need for small-scale work. Bit changes are quick once you get the chuck feel, though a few users have noted that under sustained pressure — particularly when drilling deeper holes — the bit can work itself slightly loose in the chuck. For short bursts this isn't an issue. For anything requiring real depth or sustained force, you'll want to check the bit is still seated every few holes. It's a minor annoyance, not a dealbreaker, but worth mentioning.</p>
+
+    <h2>Battery and Charging</h2>
+    <p>The 280mAh battery charges in 40 minutes via USB and runs for about two hours of active use. For hobby sessions that's genuinely solid — you're not going to kill the battery mid-project during a normal sitting. The USB charging means the same cable as your phone, laptop, or power bank works fine. No proprietary charger to lose.</p>
+    <p>One thing to note: a USB adapter plug is not included. You need your own wall plug or a laptop/PC to charge from. It's a small omission but the kind of thing that would be frustrating to discover the first time you need to top it up without a laptop nearby.</p>
+
+    <h2>What It's Not Good For</h2>
+    <p>Worth being clear about this because the Amazon listing can make it sound more versatile than it is. The Wowstick is a precision tool for thin and soft materials — wood up to a few millimetres, acrylic, plastic, aluminium sheet, coins. It is not a general-purpose cordless drill. Trying to drill thick hardwood, large-diameter holes, or dense metal will either stall the motor or just not work. Think of it as filling the gap between a manual pin vise and a Dremel — it's not replacing either of them entirely, but for a specific range of delicate work it's better than both.</p>
+
+    <h2>Who Should Buy This?</h2>
+    <p>If you do hobby modelling, miniature painting, jewellery making, electronics, small furniture repairs, or any kind of precision craft work — this is a genuinely excellent tool and $53.98 is fair for the build quality you're getting. The aluminium body and low-speed high-torque motor put it above the cheaper plastic alternatives.</p>
+    <p>If you're after a small drill for general household tasks that involves anything thicker than a thin board or sheet, get a proper compact cordless drill instead. The Wowstick has a specific lane and it owns that lane. Stay in it and you won't be disappointed.</p>
+  </section>
+
+  <!-- SPECS TABLE -->
+  <section>
+    <p class="section-label">Specs</p>
+    <table class="specs-table">
+      <tr><td>Brand</td><td>Wowstick</td></tr>
+      <tr><td>Design</td><td>Pen-shaped, clip included</td></tr>
+      <tr><td>Body Material</td><td>All-aluminium, frosted matte finish</td></tr>
+      <tr><td>Speed</td><td>~400 rpm</td></tr>
+      <tr><td>Battery</td><td>280 mAh lithium-ion</td></tr>
+      <tr><td>Charge Time</td><td>40 minutes (USB)</td></tr>
+      <tr><td>Runtime</td><td>~2 hours active use</td></tr>
+      <tr><td>Included Bits</td><td>8 × high-speed steel drill bits</td></tr>
+      <tr><td>Materials</td><td>Wood, acrylic, plastic, aluminium, coins (thin/soft only)</td></tr>
+      <tr><td>Price</td><td>$53.98</td></tr>
+    </table>
+  </section>
+
+  <!-- PROS / CONS -->
+  <section>
+    <p class="section-label">Pros & Cons</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Pros</h4>
+        <ul>
+          <li>Solid all-aluminium build — feels like a real tool</li>
+          <li>Low speed gives great precision and control</li>
+          <li>Charges in 40 minutes via USB — any cable works</li>
+          <li>~2 hours runtime is enough for most sessions</li>
+          <li>8 bits included, stored safely in the cap</li>
+          <li>Pen-clip design makes it easy to carry</li>
+          <li>Quiet motor — not going to disturb anyone</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Cons</h4>
+        <ul>
+          <li>Bits can loosen under sustained drilling pressure</li>
+          <li>Case lid doesn't latch securely</li>
+          <li>USB adapter plug not included</li>
+          <li>Not suited for thick wood or heavy-duty tasks</li>
+          <li>No variable speed — one setting only</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-bottom: 56px;">
+    <div class="cta-box">
+      <h3>Wowstick Mini Cordless Drill</h3>
+      <p>$53.98 · All-Aluminium · USB Rechargeable · 8 Bits Included</p>
+      <a class="btn-amazon" href="https://amzn.to/3QdivEe" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+        Buy on Amazon
+      </a>
+      <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Product photo enlarged">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 JaveomoTech · <a href="#">Privacy Policy</a> · <a href="#">Contact</a></p>
+  <p style="margin-top:6px;">JaveomoTech is a participant in the Amazon Services LLC Associates Program.</p>
+</footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
