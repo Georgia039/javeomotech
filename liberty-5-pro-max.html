@@ -457,6 +457,62 @@
       color: var(--muted);
     }
     footer a { color: var(--muted); text-decoration: underline; }
+      /* ── STICKY PRICE BAR ── */
+    .sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: #0057ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0,87,255,0.25);
+    }
+    .sticky-bar .sticky-name {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.88rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 360px;
+    }
+    .sticky-bar .sticky-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      color: #0057ff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 8px 18px;
+      border-radius: 100px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: opacity 0.15s ease;
+    }
+    .sticky-bar .sticky-btn:hover { opacity: 0.88; }
+
+    @media (max-width: 600px) {
+      .sticky-bar {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        justify-content: space-between;
+        padding: 10px 16px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+      }
+      .sticky-bar .sticky-name {
+        max-width: 180px;
+        font-size: 0.82rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -466,6 +522,14 @@
   <a class="nav-logo" href="index.html">Javeomo<span>Tech</span></a>
   <a class="back" href="index.html">← All Reviews</a>
 </nav>
+<!-- STICKY PRICE BAR -->
+<div class="sticky-bar">
+  <span class="sticky-name">Soundcore Liberty 5 Pro Max</span>
+  <a class="sticky-btn" href="https://amzn.to/4g2FSej" target="_blank" rel="noopener sponsored">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+    Check Price on Amazon →
+  </a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
