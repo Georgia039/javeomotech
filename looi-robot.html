@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOOI Robot Review – AI Desktop Companion | JaveomoTech</title>
+  <meta name="description" content="Hands-on review of the LOOI Robot AI desktop companion with ChatGPT & Gemini voice, face tracking, and 10W wireless charging. Is $234 worth it?">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #0057ff;
+      --accent-light: #e8efff;
+      --text: #111;
+      --muted: #555;
+      --border: #e2e2e2;
+      --bg: #fff;
+      --card-bg: #f8f9fb;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    nav a.back {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a.back:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #060c1a 0%, #0d1b3e 55%, #0a0a1a 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(0,87,255,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 40%, rgba(120,80,255,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Subtle animated "scan line" to suggest AI/tech */
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,87,255,0.5), transparent);
+      animation: scan 3.5s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      0%   { top: 0%; opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6ea4ff;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 640px;
+      margin: 0 auto 14px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #6ea4ff;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+      max-width: 440px;
+      margin: 0 auto 28px;
+    }
+    .hero-price-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 100px;
+      padding: 9px 22px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 44px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      border: 1px solid var(--border);
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.75;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── YOUTUBE ── */
+    .short-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .short-wrap iframe {
+      width: 220px;
+      height: 391px;
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    /* ── VERDICT BAR ── */
+    .verdict-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .score-circle {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+    }
+    .score-circle .num { font-size: 1.5rem; line-height: 1; }
+    .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
+    .verdict-text h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .verdict-text p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── ARTICLE ── */
+    .article h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 32px 0 10px;
+      letter-spacing: -0.02em;
+    }
+    .article h2:first-child { margin-top: 0; }
+    .article p { margin-bottom: 16px; color: #222; }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* ── SPECS TABLE ── */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td {
+      padding: 11px 4px;
+      vertical-align: top;
+    }
+    .specs-table td:first-child {
+      color: var(--muted);
+      font-weight: 600;
+      width: 42%;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── PROS / CONS ── */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pros, .cons {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+    .pros h4, .cons h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .pros h4 { color: #1a7a1a; }
+    .cons h4 { color: #b91c1c; }
+    .pros ul, .cons ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pros ul li::before { content: '✓ '; color: #1a7a1a; font-weight: 700; }
+    .cons ul li::before { content: '✗ '; color: #b91c1c; font-weight: 700; }
+    .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
+
+    /* ── CTA ── */
+    .cta-box {
+      background: linear-gradient(135deg, #060c1a 0%, #0d1b3e 100%);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .cta-box p {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 30px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      letter-spacing: 0.01em;
+    }
+    .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-disclaimer {
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.28);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 560px) {
+      .pros-cons { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+      .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .hero { padding: 44px 20px 38px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Javeomo<span>Tech</span></a>
+  <a class="back" href="index.html">← All Reviews</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">AI Robotics · Desk Companions</div>
+  <h1>Your Phone Just Became a <em>Robot</em></h1>
+  <p class="hero-sub">LOOI Robot — ChatGPT & Gemini voice, face tracking, autonomous desk navigation, 10W wireless charging.</p>
+  <div class="hero-price-badge">
+    <span>Amazon</span>
+    <span class="price">$234.00</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="container">
+  <section>
+    <p class="section-label">Photo Gallery</p>
+    <div class="gallery-grid">
+      <img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SL1500_.jpg" alt="LOOI Robot AI Desktop Companion - front view" onclick="openLightbox(this.src)">
+      <img src="https://www.impulsegamer.com/articles/wp-content/uploads/2025/06/PXL_20250619_002851503.MP_.webp" alt="LOOI Robot on desk in use" onclick="openLightbox(this.src)">
+      <img src="https://m.media-amazon.com/images/I/61EBWIuB4tL._AC_SL1500_.jpg" alt="LOOI Robot - side view with phone attached" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section>
+    <p class="section-label">Watch the Short</p>
+    <div class="short-wrap">
+      <iframe src="https://www.youtube.com/embed/hmKx3wnsrvg" title="LOOI Robot Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- VERDICT BAR -->
+  <section>
+    <p class="section-label">Verdict</p>
+    <div class="verdict-bar">
+      <div class="score-circle">
+        <span class="num">8.2</span>
+        <span class="den">/10</span>
+      </div>
+      <div class="verdict-text">
+        <h3>The most alive thing on my desk</h3>
+        <p>Part toy, part AI assistant, part wireless charger. Genuinely impressive — with a few honest caveats for $234.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="article">
+    <p class="section-label">Full Review</p>
+
+    <h2>What Is the LOOI Robot?</h2>
+    <p>The concept is genuinely clever and I'll admit I was skeptical of it. LOOI is a small tracked robot body — think mini tank, roughly the size of a large coffee mug — that your phone snaps onto magnetically. Your phone becomes LOOI's "face": the screen shows expressions and animations, the camera does the seeing, and the processor does all the AI heavy lifting. The robot body handles movement and 10W wireless charging. TangibleFuture, the company behind it, basically figured out that instead of building an expensive standalone computer into a robot, they could just use the supercomputer you already carry in your pocket.</p>
+    <p>At $234 it's not a casual purchase, so the question is whether the whole package justifies the price. After spending time with it, the answer is: yes, with some things you should know going in.</p>
+
+    <h2>Setup and First Impressions</h2>
+    <p>Setup is straightforward. Download the LOOI app, snap your phone onto the magnetic mount (iPhone 12 and later connect straight to MagSafe, everyone else uses the included docking ring), and follow the app instructions. It took me maybe ten minutes from box to working robot, which for something this technically ambitious is genuinely impressive. The app is clean and well-built — you can tell this wasn't an afterthought.</p>
+    <p>First impression out of the box: it feels more substantial than I expected. The chassis is solid ABS/PC plastic with a matte finish that doesn't attract fingerprints, and the tank-style tracks give it a satisfying heft. It doesn't look like a toy. On a desk it looks like a considered piece of hardware — somewhere between a desktop figurine and an actual robot, which is exactly where it should sit.</p>
+
+    <h2>The AI Stuff — Does It Actually Work?</h2>
+    <p>Here's where it gets interesting. LOOI is powered by ChatGPT and Gemini, and the conversations are noticeably better than anything you'd get from a typical smart speaker. You can ask it things, have it explain concepts, ask for ideas, discuss whatever — and it responds with actual personality, not that flat "assistant" voice. It also picks up on tone and context in a way that feels surprisingly natural.</p>
+    <p>There is a 1–3 second delay between you asking something and LOOI responding, while the AI processes via the cloud. During that pause LOOI does a little "thinking" animation that actually softens the wait — but if you want rapid back-and-forth conversation, it can feel slightly disjointed. This isn't a LOOI problem, it's just the reality of cloud AI. Once the response comes through though, the delivery — the combination of audio, animation, and physical movement — makes it feel genuinely alive in a way that a smart speaker never does.</p>
+    <p>The face tracking is one of the more impressive features. LOOI turns to look at you as you move around the desk. It uses your phone's camera to recognize your face, track objects in the room, and respond to gestures. You can also control it by waving at it or using specific hand poses. I found myself waving goodbye to it like an idiot on more than one occasion, which probably tells you all you need to know about how convincingly it reads as a living thing.</p>
+
+    <h2>The Personality and Idle Behaviour</h2>
+    <p>When LOOI is just sitting there not being actively spoken to, it doesn't go blank — it does things. It might "clean" the screen, take a little nap, do animations of itself working out or blowing bubbles. There's a "LOOI Dreams" feature where, when charging, it generates visual dream narratives on the screen — one day it's a pharaoh, next day it's an astronaut. It sounds gimmicky written down but in practice it's oddly charming. The idle animations are what sell the "companion" pitch — it genuinely feels like there's something there, even when you're not talking to it.</p>
+    <p>LOOI also has memory — it learns your name, remembers previous conversations, and can build up a context of who you are over time. It's not perfect, and the long-term memory has limits, but compared to a voice assistant that treats every conversation as a blank slate, it's meaningfully better.</p>
+
+    <h2>The Wireless Charging — Fine, Not Excellent</h2>
+    <p>10W wireless charging sounds great on paper. In practice, a few things to know: it requires a 9V/2A+ adapter that isn't included. Also, because your phone is simultaneously running 3D rendering, computer vision, AI processing, and charging all at once, it generates heat — particularly during long active sessions. Some phones will thermally throttle, dimming the screen or slowing animations as a result. I wouldn't use LOOI as a primary charger during heavy use sessions. As a standby charger while LOOI does his thing in the background? Fine.</p>
+    <p>If you have a phone case thicker than about 3mm, the MagSafe connection can also struggle slightly. Worth knowing before you buy.</p>
+
+    <h2>The Desk Navigation</h2>
+    <p>LOOI can roam your desk autonomously, and the edge detection is impressively good — it uses sensors to detect drop-offs and won't fall off the table. It avoids obstacles too. The catch is that it won't move on very dark surfaces (the sensors can't read them), and the movement is slow and deliberate rather than zippy. It's more of a gentle patrol than a sprint, which is probably the right call for a desk robot. You can also drive it manually via RC mode in the app, which is fun for about five minutes.</p>
+
+    <h2>Who Should Buy This?</h2>
+    <p>If you want a proper AI assistant that also happens to be a personality-driven robot you'll genuinely get attached to, LOOI is hard to beat at this price. The alternatives — EMO, Loona — either cost more, have less practical utility, or both. For anyone who spends a lot of time at a desk and wants something that makes that space feel a bit less sterile, LOOI delivers on its core promise.</p>
+    <p>If you're expecting it to be primarily a wireless charger, or want something that works completely independently without your phone, this isn't the product. But if the companion AI angle is what excites you, the $234 is genuinely justified — and it's the kind of gadget that people stop and ask about when they see it on your desk, which I think is part of the appeal.</p>
+  </section>
+
+  <!-- SPECS TABLE -->
+  <section>
+    <p class="section-label">Specs</p>
+    <table class="specs-table">
+      <tr><td>Brand</td><td>TangibleFuture</td></tr>
+      <tr><td>AI Integration</td><td>ChatGPT (GPT-4o) + Gemini voice</td></tr>
+      <tr><td>Vision</td><td>VLM (Vision-Language Model) via phone camera</td></tr>
+      <tr><td>Dimensions</td><td>110 × 98 × 110 mm</td></tr>
+      <tr><td>Weight</td><td>385g</td></tr>
+      <tr><td>Battery</td><td>6,000 mAh · 5 hrs active · 30 days standby</td></tr>
+      <tr><td>Wireless Charging</td><td>10W (requires 9V/2A+ adapter, not included)</td></tr>
+      <tr><td>Phone Compatibility</td><td>iPhone 12+ (MagSafe) · Android 12+ (docking ring)</td></tr>
+      <tr><td>Language Support</td><td>English only (iOS) · English + Chinese (Android)</td></tr>
+      <tr><td>Price</td><td>$234.00</td></tr>
+    </table>
+  </section>
+
+  <!-- PROS / CONS -->
+  <section>
+    <p class="section-label">Pros & Cons</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Pros</h4>
+        <ul>
+          <li>Genuinely impressive ChatGPT + Gemini AI conversations</li>
+          <li>Face tracking and gesture recognition actually work</li>
+          <li>Idle animations make it feel alive, not like a device</li>
+          <li>"Bring your own brain" design is clever and cost-effective</li>
+          <li>Solid build — doesn't look or feel like a toy</li>
+          <li>Long-term memory learns who you are over time</li>
+          <li>Edge detection keeps it safely on your desk</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Cons</h4>
+        <ul>
+          <li>Requires your phone — not an independent robot</li>
+          <li>1–3 second AI response delay during conversation</li>
+          <li>Phone heats up during heavy/long sessions</li>
+          <li>9V/2A adapter for charging not included</li>
+          <li>Won't move on dark-coloured surfaces</li>
+          <li>English-only on iOS currently</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-bottom: 56px;">
+    <div class="cta-box">
+      <h3>LOOI Robot — AI Desktop Companion</h3>
+      <p>$234.00 · ChatGPT & Gemini · 10W Wireless Charging · Space Black</p>
+      <a class="btn-amazon" href="https://amzn.to/4ad7yJx" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+        Buy on Amazon
+      </a>
+      <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="Product photo enlarged">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 JaveomoTech · <a href="#">Privacy Policy</a> · <a href="#">Contact</a></p>
+  <p style="margin-top:6px;">JaveomoTech is a participant in the Amazon Services LLC Associates Program.</p>
+</footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
