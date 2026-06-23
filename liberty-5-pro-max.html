@@ -457,11 +457,17 @@
       color: var(--muted);
     }
     footer a { color: var(--muted); text-decoration: underline; }
-      /* ── STICKY PRICE BAR ── */
+     /* ── STICKY PRICE BAR (FIXED & OVERRIDING BUGS) ── */
     .sticky-bar {
-      position: sticky;
+      /* FIX: Switched to fixed to prevent it from disappearing due to parent overflow rules */
+      position: fixed; 
       top: 0;
-      z-index: 99;
+      left: 0;
+      right: 0;
+      
+      /* FIX: Drastically increased z-index so it sits above all other website content */
+      z-index: 99999; 
+      
       background: #0057ff;
       display: flex;
       align-items: center;
@@ -469,7 +475,9 @@
       padding: 11px 20px;
       gap: 16px;
       box-shadow: 0 2px 12px rgba(0,87,255,0.25);
+      box-sizing: border-box; /* Ensures padding doesn't break full-width */
     }
+
     .sticky-bar .sticky-name {
       color: rgba(255,255,255,0.85);
       font-size: 0.88rem;
@@ -479,6 +487,7 @@
       text-overflow: ellipsis;
       max-width: 360px;
     }
+
     .sticky-bar .sticky-btn {
       display: inline-flex;
       align-items: center;
@@ -494,20 +503,25 @@
       flex-shrink: 0;
       transition: opacity 0.15s ease;
     }
-    .sticky-bar .sticky-btn:hover { opacity: 0.88; }
 
+    .sticky-bar .sticky-btn:hover { 
+      opacity: 0.88; 
+    }
+
+    /* ── MOBILE VIEW (SCREENS UNDER 600px) ── */
     @media (max-width: 600px) {
       .sticky-bar {
         position: fixed;
-        top: auto;
-        bottom: 0;
+        top: auto; /* Clears top positioning */
+        bottom: 0;  /* Pins it to the bottom of mobile screens */
         left: 0;
         right: 0;
         border-top: 1px solid rgba(255,255,255,0.15);
         justify-content: space-between;
         padding: 10px 16px;
-        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        padding-bottom: max(10px, env(safe-area-inset-bottom)); /* Dynamic padding for phone notches */
       }
+      
       .sticky-bar .sticky-name {
         max-width: 180px;
         font-size: 0.82rem;
