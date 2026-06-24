@@ -52,14 +52,14 @@
     .deal-card { background: linear-gradient(135deg, #0057ff 0%, #0040cc 100%); border-radius: 20px; padding: 24px; display: flex; flex-direction: row; align-items: center; gap: 20px; color: white; position: relative; overflow: hidden; }
     .deal-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: rgba(255,255,255,0.06); border-radius: 50%; }
     .deal-badge { background: #FFD700; color: #1a1a1a; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
-    .deal-img { width: 200px; height: 200px; min-width: 110px; background: white; border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.5); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    .deal-img { width: 110px; height: 110px; min-width: 110px; background: white; border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.5); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
     .deal-img img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
     .deal-info { flex: 1; text-align: left; }
     .deal-name { font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
     .deal-note { font-size: 12px; opacity: 0.8; margin-bottom: 14px; line-height: 1.5; }
     .deal-price { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; margin-bottom: 14px; }
     .deal-btn { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--accent); font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 10px; text-decoration: none; }
-    
+
     /* FILTERS */
     .controls-section { max-width: 960px; margin: 0 auto; padding: 0 24px 24px; }
     .controls-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
@@ -87,11 +87,13 @@
     .tag-under100 { background: var(--tag-amber); color: var(--tag-amber-text); }
     .tag-under500 { background: var(--tag-blue); color: var(--tag-blue-text); }
     .tag-cat { background: var(--tag-purple); color: var(--tag-purple-text); }
-    .product-name { font-size: 13px; font-weight: 500; line-height: 1.45; color: var(--text); margin-bottom: 6px; flex: 1; }
+    .product-name { font-size: 13px; font-weight: 600; line-height: 1.45; color: var(--text); margin-bottom: 6px; flex: 1; }
     .product-note { font-size: 11px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
     .product-price { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
     .buy-btn { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 10px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; text-decoration: none; transition: opacity 0.18s; }
     .buy-btn:hover { opacity: 0.88; }
+    .review-btn { display: block; text-align: center; margin-top: 8px; font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    .review-btn:hover { text-decoration: underline; }
 
     /* YOUTUBE */
     .yt-section { background: var(--white); border-top: 1px solid var(--border); padding: 48px 24px; }
@@ -115,10 +117,9 @@
       .product-icon { height: 140px; }
       .product-body { padding: 12px; }
       .deal-card { flex-direction: column; text-align: center; }
-      .deal-img { width: 80px; height: 80px; min-width: 80px; margin: 0 auto; }
+      .deal-img { width: 90px; height: 90px; min-width: 90px; margin: 0 auto; }
+      .deal-info { text-align: center; }
     }
-    .review-btn { display: block; text-align: center; margin-top: 8px; font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 600; }
-    .review-btn:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -187,62 +188,63 @@
   <div class="products-grid" id="productGrid">
 
     <!-- Soundcore Liberty 5 Pro Max -->
-    <div class="product-card" data-price="500" data-cat="gadgets" data-name="soundcore liberty 5 pro max wireless earbuds ai note-taker anc smart case whisper-clear calls guinness world record">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61Gnu96XtdL._AC_SL1500_.jpg" loading="lazy" /></div>
+    <div class="product-card" data-price="500" data-cat="gadgets" data-name="soundcore liberty 5 pro max wireless earbuds ai note-taker anc guinness world record">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61Gnu96XtdL._AC_SL1500_.jpg" loading="lazy" alt="Soundcore Liberty 5 Pro Max" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under500">Under $500</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">Soundcore Liberty 5 Pro Max — AI Note-Taker Earbuds, Guinness World Record Call Clarity</p>
-        <p class="product-note">World-record call quality, AI meeting transcription from the case, 1.78" AMOLED touchscreen, and 5-min charge = 4 hrs playtime.</p>
+        <p class="product-name">Soundcore Liberty 5 Pro Max — AI Note-Taker, World Record Call Clarity</p>
+        <p class="product-note">AMOLED case, AI meeting transcription, 5-min charge = 4 hrs playtime.</p>
         <div class="product-price">$229.99</div>
         <a href="https://amzn.to/4g2FSej" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="liberty-5-pro-max.html" class="review-btn">Read Review →</a>
       </div>
     </div>
-    
-    <!-- True Plasma Lighter Wand  -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="true plasma lighter wand - usb-c rechargeable, flameless, fuel-free, durable aluminum, impact resistant, includes safety lock switch">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/41uwjcK3BUL._AC_SL1200_.jpg" loading="lazy" /></div>
+
+    <!-- True Plasma Lighter Wand -->
+    <div class="product-card" data-price="50" data-cat="gadgets" data-name="true plasma lighter wand usb-c rechargeable flameless fuel-free aluminum">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/41uwjcK3BUL._AC_SL1200_.jpg" loading="lazy" alt="True Plasma Lighter Wand" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under50">Under $50</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">True Plasma Lighter Wand - USB-C Rechargeable, Flameless, Fuel-Free, Durable Aluminum</p>
-        <p class="product-note">Plasma arc technology uses a high-energy electric arc to create a plasma stream that’s perfect for igniting materials.</p>
+        <p class="product-name">True Plasma Lighter Wand — USB-C, Flameless, Fuel-Free</p>
+        <p class="product-note">Electric plasma arc ignition. No fuel, no flame, USB-C rechargeable.</p>
         <div class="product-price">$19.99</div>
         <a href="https://amzn.to/4w27GEn" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="plasma-lighter.html" class="review-btn">Read Review →</a>
       </div>
     </div>
 
-      <!-- TEC Glow Fob  -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="tec accessories - embrite glow fob - anodized aluminum - green embrite glow pellet - key fob - glow sticks - gifts for men">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/51LWg0tiolL._AC_SX679_.jpg" alt="Smart Weather Station" loading="lazy" /></div>
+    <!-- Embrite Glow Fob -->
+    <div class="product-card" data-price="50" data-cat="gadgets" data-name="tec accessories embrite glow fob anodized aluminum key fob glow dark edc">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/51LWg0tiolL._AC_SX679_.jpg" loading="lazy" alt="Embrite Glow Fob" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under50">Under $50</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">TEC Accessories - Embrite Glow Fob - Anodized Aluminum - Green Embrite Glow Pellet - Key Fob - Glow Sticks - Gifts for Men</p>
-        <p class="product-note">The glow feature of this glow key chain ensures you’ll never lose your gear in the dark. Perfect for easily finding keys, camping equipment, or essentials during power outages.</p>
+        <p class="product-name">TEC Accessories Embrite Glow Fob — Anodized Aluminum Key Fob</p>
+        <p class="product-note">Glows in the dark so you never lose your keys again. Solid EDC piece.</p>
         <div class="product-price">$22.95</div>
         <a href="https://amzn.to/4grpEvn" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="embrite-glow-fob.html" class="review-btn">Read Review →</a>
       </div>
-      
-    </div>  <!-- Pry Bar Multitool  -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="edc pry bar multitool with bi-directional ratchet screwdriver everlasting pen wrenches crowbar bottle and box openers">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71btZ-RKQmL._AC_SL1500_.jpg" alt="Smart Weather Station" loading="lazy" /></div>
+    </div>
+
+    <!-- EDC Pry Bar -->
+    <div class="product-card" data-price="50" data-cat="gadgets" data-name="edc pry bar multitool ratchet screwdriver wrench crowbar bottle opener">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71btZ-RKQmL._AC_SL1500_.jpg" loading="lazy" alt="EDC Pry Bar Multitool" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under50">Under $50</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">EDC Pry Bar Multitool with Bi-Directional Ratchet Screwdriver & Everlasting Pen, Wrenches, Crowbar, Bottle and Box Openers</p>
-        <p class="product-note">Designed for convenience, this flat bar pry bar pocket tool includes a removable back clip for easy attachment to a belt or pocket.</p>
+        <p class="product-name">EDC Pry Bar Multitool — Ratchet Screwdriver, Wrench & Bottle Opener</p>
+        <p class="product-note">One pocket tool that does it all. Clips to belt or pocket.</p>
         <div class="product-price">$34.98</div>
         <a href="https://amzn.to/3QIWLjX" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="edc-prybar.html" class="review-btn">Read Review →</a>
@@ -251,13 +253,13 @@
 
     <!-- LOOI Robot -->
     <div class="product-card" data-price="500" data-cat="gadgets" data-name="looi robot ai desktop companion chatgpt gemini voice wireless charging">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="LOOI Robot" loading="lazy" /></div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" loading="lazy" alt="LOOI Robot" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under500">Under $500</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">LOOI Robot — AI Desktop Companion with ChatGPT & Gemini Voice, 10W Wireless Charging</p>
+        <p class="product-name">LOOI Robot — AI Desktop Companion, ChatGPT & Gemini Voice</p>
         <p class="product-note">The coolest desk gadget of the year. An AI companion that charges your phone.</p>
         <div class="product-price">$234.00</div>
         <a href="https://amzn.to/4ad7yJx" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
@@ -266,14 +268,14 @@
     </div>
 
     <!-- Wowstick -->
-    <div class="product-card" data-price="100" data-cat="gadgets" data-name="wowstick mini cordless drill usb rechargeable accessories">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/51K5IEafmRL._AC_SL1500_.jpg" alt="Wowstick Drill" loading="lazy" /></div>
+    <div class="product-card" data-price="100" data-cat="gadgets" data-name="wowstick mini cordless drill usb rechargeable accessories diy">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/51K5IEafmRL._AC_SL1500_.jpg" loading="lazy" alt="Wowstick Mini Drill" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under100">Under $100</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">Wowstick Mini Cordless Drill — USB Rechargeable with 8 Accessories, 40-Min Charge</p>
+        <p class="product-name">Wowstick Mini Cordless Drill — USB Rechargeable, 8 Accessories</p>
         <p class="product-note">Perfect for DIY and desktop builds. Tiny but powerful, charges via USB.</p>
         <div class="product-price">$53.98</div>
         <a href="https://amzn.to/3QdivEe" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
@@ -282,14 +284,14 @@
     </div>
 
     <!-- HolaCube -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="holacube holographic crystal 3d photo display weather station digital clock">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/418SW+HhY1L._AC_SX679_.jpg" alt="HolaCube" loading="lazy" /></div>
+    <div class="product-card" data-price="50" data-cat="gadgets" data-name="holacube holographic crystal 3d photo display weather station digital clock wifi">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/418SW+HhY1L._AC_SX679_.jpg" loading="lazy" alt="HolaCube" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under50">Under $50</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">HolaCube WiFi Holographic Crystal 3D Photo Display — Smart Weather Station & Digital Clock</p>
+        <p class="product-name">HolaCube WiFi 3D Holographic Display — Weather Station & Clock</p>
         <p class="product-note">Display GIFs, photos & animations as holograms. Great for your desk setup.</p>
         <div class="product-price">$35.99</div>
         <a href="https://amzn.to/4dV8XFK" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
@@ -298,13 +300,13 @@
 
     <!-- CyberDock -->
     <div class="product-card" data-price="100" data-cat="gadgets" data-name="cyberdock wireless charging station cybertruck qi2 iphone iwatch airpods">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61zVYnUok+L._AC_SL1500_.jpg" alt="CyberDock" loading="lazy" /></div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61zVYnUok+L._AC_SL1500_.jpg" loading="lazy" alt="CyberDock" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under100">Under $100</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">CyberDock 3-in-1 Wireless Charging Station — Cybertruck Scale Model with Qi2 15W for iPhone, iWatch & AirPods</p>
+        <p class="product-name">CyberDock 3-in-1 Wireless Charger — Cybertruck Model, Qi2 15W</p>
         <p class="product-note">Charges everything at once. Doubles as a sick desk display with ambient light.</p>
         <div class="product-price">$59.99</div>
         <a href="https://amzn.to/4dO3UZb" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
@@ -314,13 +316,13 @@
 
     <!-- Smart Weather Station -->
     <div class="product-card" data-price="50" data-cat="smarthome" data-name="smart weather station mini wifi desktop clock ips lcd screen decoration">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/519H5ea5AFL._SL1500_.jpg" alt="Smart Weather Station" loading="lazy" /></div>
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/519H5ea5AFL._SL1500_.jpg" loading="lazy" alt="Smart Weather Station" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under50">Under $50</span>
           <span class="product-tag tag-cat">Smart Home</span>
         </div>
-        <p class="product-name">Smart Weather Station Mini — WiFi Desktop Clock with IPS LCD Screen Gadget for Decoration</p>
+        <p class="product-name">Smart Weather Station Mini — WiFi Desktop Clock, IPS Screen</p>
         <p class="product-note">Clean desk gadget showing time, weather & temperature. Connects to your WiFi.</p>
         <div class="product-price">$18.99</div>
         <a href="https://amzn.to/4e9A3dD" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
@@ -328,20 +330,19 @@
     </div>
 
     <!-- Ducati Motorcycle Model -->
-    <div class="product-card" data-price="50" data-cat="collectibles" data-name="ducati v4s motorcycle model toy diecast alloy metal sound light sport bike collectible">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71t+oLOoniL._AC_SL1500_.jpg" alt="Ducati V4S Diecast Model" loading="lazy" /></div>
+    <div class="product-card" data-price="50" data-cat="collectibles" data-name="ducati v4s motorcycle model diecast alloy metal sound light sport bike collectible">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71t+oLOoniL._AC_SL1500_.jpg" loading="lazy" alt="Ducati V4S Diecast Model" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-under50">Under $50</span>
           <span class="product-tag tag-cat">Collectibles</span>
         </div>
-        <p class="product-name">1:12 Ducati V4S Alloy Diecast Motorcycle Model — Sound & Light, Adult Collectors Display</p>
+        <p class="product-name">1:12 Ducati V4S Diecast Model — Sound & Light, Collectors Display</p>
         <p class="product-note">Perfect for desk decoration, office display, home shelves, or collector showcases.</p>
         <div class="product-price">$19.99</div>
         <a href="https://amzn.to/4uDNl7r" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
       </div>
     </div>
-    
 
   </div>
   <div class="no-results" id="noResults">
