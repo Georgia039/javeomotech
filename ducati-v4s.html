@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1:12 Ducati V4S Diecast Model Review — JaveomoTech</title>
+  <meta name="description" content="Honest review of the 1:12 Ducati V4S Diecast Model with sound and light. A surprisingly solid desk collectible for $19.99. Full breakdown by JaveomoTech." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f8f7f4; --white: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+      --accent: #0057ff; --accent-light: #e8eeff; --border: #e2e0db; --radius: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-yt { display: flex; align-items: center; gap: 6px; background: #ff0000; color: white; border-radius: 20px; padding: 7px 14px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .nav-yt svg { width: 15px; height: 15px; fill: white; }
+
+    /* STICKY BAR */
+    .sticky-bar { position: fixed; top: 60px; left: 0; right: 0; max-width: 700px; width: 90%; margin: 0 auto; border-radius: 12px; z-index: 99999; background: #0057ff; display: flex; align-items: center; justify-content: center; padding: 11px 20px; gap: 16px; box-shadow: 0 4px 16px rgba(0,87,255,0.3); box-sizing: border-box; }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .sticky-bar { top: auto; bottom: 0; left: 0; right: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
+    }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #1a0000 0%, #3d0000 50%, #cc0000 100%); color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+    .hero::after { content: ''; position: absolute; bottom: -80px; left: -40px; width: 220px; height: 220px; background: rgba(200,0,0,0.25); border-radius: 50%; }
+    .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(26px, 6vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+    .hero-sub { font-size: 15px; opacity: 0.75; line-height: 1.65; max-width: 520px; margin: 0 auto 28px; }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .hero-price { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; }
+    .hero-score { display: flex; align-items: center; gap: 10px; }
+    .score-circle { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 3px solid rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; }
+    .score-label { font-size: 12px; opacity: 0.75; text-align: left; line-height: 1.4; }
+
+    /* GALLERY */
+    .gallery-section { max-width: 800px; margin: 0 auto; padding: 48px 24px 32px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .gallery-thumb { border-radius: 10px; overflow: hidden; cursor: pointer; border: 1.5px solid var(--border); background: var(--white); aspect-ratio: 1; }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 8px; transition: transform 0.3s; }
+    .gallery-thumb:hover img { transform: scale(1.06); }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; color: white; font-size: 32px; cursor: pointer; line-height: 1; }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* VIDEO */
+    .video-section { max-width: 480px; margin: 0 auto; padding: 0 24px 40px; text-align: center; }
+    .video-section h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .video-section p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .short-wrap { border-radius: 16px; overflow: hidden; border: 1.5px solid var(--border); background: #000; width: 220px; margin: 0 auto; }
+    .short-wrap iframe { display: block; width: 220px; height: 391px; border: none; }
+
+    /* VERDICT */
+    .verdict-section { max-width: 800px; margin: 0 auto; padding: 0 24px 40px; }
+    .verdict-bar { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .verdict-score { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; }
+    .verdict-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-light); border: 4px solid var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; color: var(--accent); }
+    .verdict-score-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .verdict-text h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .verdict-text p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ARTICLE */
+    .article-section { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .article-section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 32px 0 12px; }
+    .article-section p { font-size: 15px; line-height: 1.75; color: #2a2a2a; margin-bottom: 14px; }
+
+    /* SPECS */
+    .specs-section { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .specs-section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table td { padding: 11px 14px; }
+    .specs-table td:first-child { font-weight: 600; color: var(--muted); width: 38%; background: var(--bg); }
+    .specs-table tr:last-child { border-bottom: none; }
+
+    /* PROS CONS */
+    .proscons-section { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .proscons-section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+    .proscons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pros-box, .cons-box { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .pros-box { border-top: 4px solid #22c55e; }
+    .cons-box { border-top: 4px solid #ef4444; }
+    .proscons-title { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px; }
+    .pros-box .proscons-title { color: #16a34a; }
+    .cons-box .proscons-title { color: #dc2626; }
+    .proscons-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .proscons-list li { font-size: 13.5px; line-height: 1.5; display: flex; gap: 8px; }
+    .proscons-list li::before { flex-shrink: 0; margin-top: 2px; }
+    .pros-box .proscons-list li::before { content: '✓'; color: #16a34a; font-weight: 700; }
+    .cons-box .proscons-list li::before { content: '✗'; color: #dc2626; font-weight: 700; }
+    @media (max-width: 500px) { .proscons-grid { grid-template-columns: 1fr; } }
+
+    /* CTA */
+    .cta-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+    .cta-box { background: linear-gradient(135deg, #0057ff, #0040cc); border-radius: 20px; padding: 32px; text-align: center; color: white; }
+    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .cta-box p { font-size: 14px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6; }
+    .cta-price { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; margin-bottom: 20px; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--accent); font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 12px; text-decoration: none; }
+    .cta-disclaimer { margin-top: 14px; font-size: 11px; opacity: 0.55; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer strong { color: white; }
+  </style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span class="sticky-name">1:12 Ducati V4S Diecast Model</span>
+  <a href="https://amzn.to/4uDNl7r" class="sticky-btn" target="_blank" rel="noopener sponsored">
+    Check Price on Amazon
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Javeomo<span>Tech</span></a>
+  <a href="https://www.youtube.com/@JaveomoTech" class="nav-yt" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    YouTube
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🏍️ Collectibles Review</div>
+    <h1>1:12 Ducati V4S Diecast Model — Sound &amp; Light</h1>
+    <p class="hero-sub">Twenty bucks for a Ducati on your desk. The detail is genuinely impressive, the sound is genuinely terrible, and I still love it.</p>
+    <div class="hero-meta">
+      <div class="hero-price">$19.99</div>
+      <div class="hero-score">
+        <div class="score-circle">9.5</div>
+        <div class="score-label">JaveomoTech<br>Score / 10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-grid">
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://m.media-amazon.com/images/I/61gzlA4r8wL.jpg" alt="Ducati V4S model front" />
+    </div>
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://m.media-amazon.com/images/I/61e9wW4XqhL.jpg" alt="Ducati V4S model side" />
+    </div>
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://m.media-amazon.com/images/I/71A62mTLrWL.jpg" alt="Ducati V4S model detail" />
+    </div>
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://m.media-amazon.com/images/I/61kNJFdqNlL.jpg" alt="Ducati V4S model packaging" />
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLight()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged product photo" />
+</div>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <h2>Watch the Short</h2>
+  <p>The Ducati on my desk in under 60 seconds.</p>
+  <div class="short-wrap">
+    <iframe src="https://www.youtube.com/embed/ImE_hNQAmu4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Ducati V4S Diecast Model Review Short"></iframe>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="verdict-section">
+  <div class="verdict-bar">
+    <div class="verdict-score">
+      <div class="verdict-circle">9.5</div>
+      <div class="verdict-score-label">Our Score</div>
+    </div>
+    <div class="verdict-text">
+      <h3>Best $20 desk piece I've bought in a while</h3>
+      <p>The detail on this thing is ridiculous for the price. Yes, the sound effects are awful — disable them immediately — and some units have minor QC issues. But as a display piece, it punches way above its weight class.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<article class="article-section">
+
+  <h2>Twenty dollars for a Ducati. Really.</h2>
+  <p>I wasn't expecting much. When something costs $19.99 and ships with a Ducati V4S badge on the box, your brain kind of prepares for disappointment. Cheap plastic, muddy paint, proportions that look vaguely motorcycle-shaped but nothing specific. I've been burned before.</p>
+  <p>So when I actually pulled this out of the packaging and held it under decent light, I genuinely stopped and looked at it for a moment. The fairing detail is crisp. The red paint has real depth to it. The proportions are accurate — this actually looks like a V4S, not a generic sportbike with Ducati branding slapped on. I was not expecting that.</p>
+
+  <h2>The detail that makes it worth it</h2>
+  <p>At 1:12 scale, this sits at about 15cm long, which is the sweet spot for a desk model — substantial enough to actually look at, small enough not to take over your space. The die-cast metal body has real weight to it. The frame, the swingarm, the exhaust — all properly detailed. It doesn't feel like a toy when you pick it up.</p>
+  <p>The wheels spin freely. The front forks look right. Even the brake disc detail on the front wheel is there. I've seen officially licensed models that put less effort into the small stuff than this thing does.</p>
+
+  <h2>About those sound effects — turn them off</h2>
+  <p>There's a button on the bottom that triggers the light and sound feature. The lights — fine, actually nice, the headlight LEDs look good. The sound? It's bad. Like, aggressively, impressively bad. It's some kind of compressed engine audio that comes out of a tiny speaker and sounds like a blender full of gravel. I pressed it once, got the full experience, and immediately went looking for the battery compartment to disconnect it.</p>
+  <p>You need a tiny screwdriver to open the battery cover. Once you pull the battery, it's just a silent, beautiful display piece and that's exactly what I wanted anyway. So — minor inconvenience, totally worth it.</p>
+
+  <h2>The one real caveat: QC</h2>
+  <p>Some people have received units with glue visible in the headlight housing. A couple of reviewers mentioned this, and I've seen photos — it's clearly a quality control issue that happens on a portion of units, not all of them. Mine was clean, but it's worth knowing going in. If you receive one with obvious defects, the price point makes a return pretty easy to justify.</p>
+  <p>Is the headlight glue issue annoying? Yes. Does it ruin what is otherwise a genuinely impressive $20 model? I don't think so — but I get that some people care more about perfection than I do.</p>
+
+  <h2>Who is this actually for?</h2>
+  <p>If you want a conversation piece on your desk, something that looks great in photos, or a gift for someone who loves motorcycles — this is a fantastic pick at this price. It's not a high-end collector's model and it's not trying to be. But it earns its place on a shelf easily. I keep mine next to my monitor and it gets more comments from people on video calls than anything else in my setup.</p>
+
+</article>
+
+<!-- SPECS -->
+<section class="specs-section">
+  <h2>Specs</h2>
+  <table class="specs-table">
+    <tr><td>Scale</td><td>1:12</td></tr>
+    <tr><td>Material</td><td>Die-cast alloy metal + plastic components</td></tr>
+    <tr><td>Features</td><td>LED headlights, engine sound effect</td></tr>
+    <tr><td>Approximate length</td><td>~15cm</td></tr>
+    <tr><td>Battery</td><td>Included (pre-installed)</td></tr>
+    <tr><td>Best for</td><td>Desk display, shelf décor, gift</td></tr>
+    <tr><td>Price</td><td>$19.99</td></tr>
+  </table>
+</section>
+
+<!-- PROS/CONS -->
+<section class="proscons-section">
+  <h2>Pros &amp; Cons</h2>
+  <div class="proscons-grid">
+    <div class="pros-box">
+      <div class="proscons-title">👍 Pros</div>
+      <ul class="proscons-list">
+        <li>Incredible detail for a $20 model</li>
+        <li>Die-cast metal body — has real weight and presence</li>
+        <li>Accurate Ducati V4S proportions and styling</li>
+        <li>LED headlights look great as a display piece</li>
+        <li>Battery included and pre-installed</li>
+        <li>Great gift option for motorcycle fans</li>
+      </ul>
+    </div>
+    <div class="cons-box">
+      <div class="proscons-title">👎 Cons</div>
+      <ul class="proscons-list">
+        <li>Sound effect is genuinely terrible — disable it</li>
+        <li>Some units arrive with visible glue in headlight housing</li>
+        <li>Needs a tiny screwdriver to remove battery</li>
+        <li>More fragile than it looks — not for young kids</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h3>1:12 Ducati V4S Diecast Model</h3>
+    <p>Turn off the sound, put it on your desk, and enjoy one of the best value display pieces you can buy for under $20.</p>
+    <div class="cta-price">$19.99</div>
+    <a href="https://amzn.to/4uDNl7r" class="cta-btn" target="_blank" rel="noopener sponsored">
+      🛒 Check Price on Amazon
+    </a>
+    <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>JaveomoTech</strong></p>
+  <p>Tech reviewer sharing the best gadgets &amp; gear.</p>
+  <p style="margin-top:12px;">
+    <a href="https://www.youtube.com/@JaveomoTech" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="index.html">← All Reviews</a>
+  </p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.</p>
+</footer>
+
+<script>
+  function openLight(el) {
+    const src = el.querySelector('img').src;
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLight() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLight(); });
+</script>
+
+</body>
+</html>

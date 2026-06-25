@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Weather Station Mini Review — JaveomoTech</title>
+  <meta name="description" content="Honest review of the Smart Weather Station Mini WiFi Desktop Clock with IPS screen. Is this $18.99 desk gadget worth it? Full breakdown by JaveomoTech." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f8f7f4; --white: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+      --accent: #0057ff; --accent-light: #e8eeff; --border: #e2e0db; --radius: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-yt { display: flex; align-items: center; gap: 6px; background: #ff0000; color: white; border-radius: 20px; padding: 7px 14px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .nav-yt svg { width: 15px; height: 15px; fill: white; }
+
+    /* STICKY BAR */
+    .sticky-bar { position: fixed; top: 60px; left: 0; right: 0; max-width: 700px; width: 90%; margin: 0 auto; border-radius: 12px; z-index: 99999; background: #0057ff; display: flex; align-items: center; justify-content: center; padding: 11px 20px; gap: 16px; box-shadow: 0 4px 16px rgba(0,87,255,0.3); box-sizing: border-box; }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .sticky-bar { top: auto; bottom: 0; left: 0; right: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
+    }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #0a1628 0%, #0d2247 60%, #0057ff 100%); color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+    .hero::after { content: ''; position: absolute; bottom: -80px; left: -40px; width: 220px; height: 220px; background: rgba(0,87,255,0.2); border-radius: 50%; }
+    .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(26px, 6vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
+    .hero-sub { font-size: 15px; opacity: 0.75; line-height: 1.65; max-width: 520px; margin: 0 auto 28px; }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .hero-price { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; }
+    .hero-score { display: flex; align-items: center; gap: 10px; }
+    .score-circle { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 3px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; }
+    .score-label { font-size: 12px; opacity: 0.75; text-align: left; line-height: 1.4; }
+
+    /* GALLERY */
+    .gallery-section { max-width: 800px; margin: 0 auto; padding: 48px 24px 32px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .gallery-thumb { border-radius: 10px; overflow: hidden; cursor: pointer; border: 1.5px solid var(--border); background: var(--white); aspect-ratio: 1; }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 8px; transition: transform 0.3s; }
+    .gallery-thumb:hover img { transform: scale(1.06); }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; color: white; font-size: 32px; cursor: pointer; line-height: 1; }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* VIDEO */
+    .video-section { max-width: 480px; margin: 0 auto; padding: 0 24px 40px; text-align: center; }
+    .video-section h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .video-section p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .short-wrap { border-radius: 16px; overflow: hidden; border: 1.5px solid var(--border); background: #000; width: 220px; margin: 0 auto; }
+    .short-wrap iframe { display: block; width: 220px; height: 391px; border: none; }
+
+    /* VERDICT */
+    .verdict-section { max-width: 800px; margin: 0 auto; padding: 0 24px 40px; }
+    .verdict-bar { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .verdict-score { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; }
+    .verdict-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-light); border: 4px solid var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; color: var(--accent); }
+    .verdict-score-label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .verdict-text h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .verdict-text p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ARTICLE */
+    .article-section { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .article-section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin: 32px 0 12px; }
+    .article-section p { font-size: 15px; line-height: 1.75; color: #2a2a2a; margin-bottom: 14px; }
+
+    /* SPECS */
+    .specs-section { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .specs-section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table td { padding: 11px 14px; }
+    .specs-table td:first-child { font-weight: 600; color: var(--muted); width: 38%; background: var(--bg); }
+    .specs-table tr:last-child { border-bottom: none; }
+
+    /* PROS CONS */
+    .proscons-section { max-width: 720px; margin: 0 auto; padding: 0 24px 48px; }
+    .proscons-section h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+    .proscons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pros-box, .cons-box { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .pros-box { border-top: 4px solid #22c55e; }
+    .cons-box { border-top: 4px solid #ef4444; }
+    .proscons-title { font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px; }
+    .pros-box .proscons-title { color: #16a34a; }
+    .cons-box .proscons-title { color: #dc2626; }
+    .proscons-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .proscons-list li { font-size: 13.5px; line-height: 1.5; display: flex; gap: 8px; }
+    .proscons-list li::before { flex-shrink: 0; margin-top: 2px; }
+    .pros-box .proscons-list li::before { content: '✓'; color: #16a34a; font-weight: 700; }
+    .cons-box .proscons-list li::before { content: '✗'; color: #dc2626; font-weight: 700; }
+    @media (max-width: 500px) { .proscons-grid { grid-template-columns: 1fr; } }
+
+    /* CTA */
+    .cta-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+    .cta-box { background: linear-gradient(135deg, #0057ff, #0040cc); border-radius: 20px; padding: 32px; text-align: center; color: white; }
+    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .cta-box p { font-size: 14px; opacity: 0.8; margin-bottom: 24px; line-height: 1.6; }
+    .cta-price { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; margin-bottom: 20px; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--accent); font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 12px; text-decoration: none; }
+    .cta-disclaimer { margin-top: 14px; font-size: 11px; opacity: 0.55; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer strong { color: white; }
+  </style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span class="sticky-name">Smart Weather Station Mini</span>
+  <a href="https://amzn.to/4e9A3dD" class="sticky-btn" target="_blank" rel="noopener sponsored">
+    Check Price on Amazon
+  </a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Javeomo<span>Tech</span></a>
+  <a href="https://www.youtube.com/@JaveomoTech" class="nav-yt" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    YouTube
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📺 Smart Home Review</div>
+    <h1>Smart Weather Station Mini — WiFi Desktop Clock, IPS Screen</h1>
+    <p class="hero-sub">A tiny desk gadget that tells you the time, weather, and indoor temperature all at once. But does the $18.99 price tag mean compromise?</p>
+    <div class="hero-meta">
+      <div class="hero-price">$18.99</div>
+      <div class="hero-score">
+        <div class="score-circle">8.0</div>
+        <div class="score-label">JaveomoTech<br>Score / 10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-grid">
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://m.media-amazon.com/images/I/519H5ea5AFL._SL1500_.jpg" alt="Weather Station front view" />
+    </div>
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://www.sandokcha.com/cdn/shop/files/w3.jpg?v=1766774000&width=990" alt="Weather Station side view" />
+    </div>
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://i.ebayimg.com/images/g/C7IAAOSwZntll9aG/s-l1600.webp" alt="Weather Station display close-up" />
+    </div>
+    <div class="gallery-thumb" onclick="openLight(this)">
+      <img src="https://s.alicdn.com/@sc04/kf/He16dfec89b314928bb8648262c12580cM.jpg?avif=close&webp=close" alt="Weather Station desk setup" />
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLight()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged product photo" />
+</div>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <h2>Watch the Short</h2>
+  <p>My quick take on the weather station in under 60 seconds.</p>
+  <div class="short-wrap">
+    <iframe src="https://www.youtube.com/embed/zwTtXaB72RM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Smart Weather Station Review Short"></iframe>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="verdict-section">
+  <div class="verdict-bar">
+    <div class="verdict-score">
+      <div class="verdict-circle">8.0</div>
+      <div class="verdict-score-label">Our Score</div>
+    </div>
+    <div class="verdict-text">
+      <h3>A surprisingly capable desk gadget for under $20</h3>
+      <p>The IPS screen looks great, the WiFi setup is painless, and it gives you genuinely useful info at a glance. A few rough edges in the app, but at this price, hard to complain.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<article class="article-section">
+
+  <h2>First impressions out of the box</h2>
+  <p>I'll be honest — when I ordered this, I expected it to feel like a $10 toy. You know the kind: slightly wobbly, screen that looks washed out at any angle, instructions printed in a font that requires a magnifying glass. But the Smart Weather Station Mini actually surprised me straight out of the box.</p>
+  <p>The build is compact but solid. It fits neatly on a desk corner without taking over your space, and the IPS screen is genuinely sharp and readable from across the room. Colors pop. Text is crisp. I put it next to a budget smart display I already had and this one honestly looked better.</p>
+
+  <h2>Setup — is the WiFi part annoying?</h2>
+  <p>WiFi gadgets under $20 can go one of two ways with setup: surprisingly smooth, or a nightmare of resets and app crashes. This one falls in the first camp, mostly. You download the companion app, connect it to your 2.4GHz network (no 5GHz, which is standard for budget smart home stuff), and within a couple of minutes it's pulling in live weather data for your location.</p>
+  <p>The app itself is fine but not pretty. It does what it needs to — lets you set your city, pick between Celsius and Fahrenheit, tweak brightness schedules. I wouldn't call it polished, but I also never need to open it once the device is configured, so it doesn't really matter.</p>
+
+  <h2>What it actually shows you</h2>
+  <p>The main display gives you the current time (large, dead center), indoor temperature and humidity from the built-in sensor, and a live weather readout for your area — condition icon, outdoor temperature, and a forecast strip. You can also flip it between a 12-hour and 24-hour clock depending on your preference.</p>
+  <p>The indoor sensor is accurate enough for casual use. I compared it against a dedicated thermometer and it was within half a degree. Nothing lab-grade, but definitely useful to know if your room is getting stuffy without realizing it.</p>
+
+  <h2>Day-to-day: does it earn its desk space?</h2>
+  <p>After a couple of weeks, I genuinely glance at this thing every morning before deciding what to wear. It's become part of that half-awake routine where you're standing there with coffee and need to know if it's actually cold outside or if you're just groggy. At 7am that little forecast strip is more useful than unlocking my phone.</p>
+  <p>The auto-brightness is a nice touch — it dims at night so it's not blasting your face at 2am. Am I overthinking how much I appreciate this? Maybe. But it works, and it's quiet, and it just sits there doing its job without demanding attention.</p>
+
+  <h2>Where it shows its budget roots</h2>
+  <p>A few things are worth flagging. The weather data updates on a fixed interval, not in real time, so if a storm rolls in quickly it might lag a bit. The app doesn't have great English localization — some menus read like they were translated by someone who was in a hurry. And the stand is a simple angle that you can't adjust, which might bother you depending on where you place it on your desk.</p>
+  <p>Also, the device pulls weather from an online service, so if your internet goes down or the service changes, you lose the outdoor data. The clock and indoor sensor still work offline, at least.</p>
+
+</article>
+
+<!-- SPECS -->
+<section class="specs-section">
+  <h2>Specs</h2>
+  <table class="specs-table">
+    <tr><td>Display</td><td>IPS color screen</td></tr>
+    <tr><td>Connectivity</td><td>WiFi 2.4GHz</td></tr>
+    <tr><td>Sensors</td><td>Indoor temperature & humidity</td></tr>
+    <tr><td>Weather data</td><td>Live via app, city-based forecast</td></tr>
+    <tr><td>Clock modes</td><td>12h / 24h</td></tr>
+    <tr><td>Brightness</td><td>Auto-dimming / manual</td></tr>
+    <tr><td>Power</td><td>USB-C (cable included)</td></tr>
+    <tr><td>Price</td><td>$18.99</td></tr>
+  </table>
+</section>
+
+<!-- PROS/CONS -->
+<section class="proscons-section">
+  <h2>Pros &amp; Cons</h2>
+  <div class="proscons-grid">
+    <div class="pros-box">
+      <div class="proscons-title">👍 Pros</div>
+      <ul class="proscons-list">
+        <li>Sharp IPS screen, readable at any angle</li>
+        <li>Quick WiFi setup — works in minutes</li>
+        <li>Accurate indoor temp and humidity sensor</li>
+        <li>Auto-brightness is genuinely useful</li>
+        <li>Compact — doesn't take over your desk</li>
+        <li>Great value for the price</li>
+      </ul>
+    </div>
+    <div class="cons-box">
+      <div class="proscons-title">👎 Cons</div>
+      <ul class="proscons-list">
+        <li>2.4GHz only — no 5GHz support</li>
+        <li>Companion app feels unpolished</li>
+        <li>Weather updates aren't real-time</li>
+        <li>Stand angle is fixed, not adjustable</li>
+        <li>Loses outdoor data if internet drops</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h3>Smart Weather Station Mini</h3>
+    <p>A surprisingly solid desk companion for weather, time, and indoor climate — all for under $20.</p>
+    <div class="cta-price">$18.99</div>
+    <a href="https://amzn.to/4e9A3dD" class="cta-btn" target="_blank" rel="noopener sponsored">
+      🛒 Check Price on Amazon
+    </a>
+    <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>JaveomoTech</strong></p>
+  <p>Tech reviewer sharing the best gadgets &amp; gear.</p>
+  <p style="margin-top:12px;">
+    <a href="https://www.youtube.com/@JaveomoTech" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="index.html">← All Reviews</a>
+  </p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.</p>
+</footer>
+
+<script>
+  function openLight(el) {
+    const src = el.querySelector('img').src;
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLight() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLight(); });
+</script>
+
+</body>
+</html>
