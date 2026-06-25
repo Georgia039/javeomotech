@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — JaveomoTech</title>
+  <meta name="description" content="Get in touch with JaveomoTech. Product suggestions, questions, or just want to say hi — reach out." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f8f7f4; --white: #ffffff; --text: #1a1a1a; --muted: #6b6b6b;
+      --accent: #0057ff; --accent-light: #e8eeff; --border: #e2e0db; --radius: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(248,247,244,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-yt { display: flex; align-items: center; gap: 6px; background: #ff0000; color: white; border-radius: 20px; padding: 7px 14px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .nav-yt svg { width: 15px; height: 15px; fill: white; }
+
+    .hero { background: linear-gradient(135deg, #0a1628 0%, #0d2247 60%, #0057ff 100%); color: white; padding: 72px 24px 56px; text-align: center; }
+    .hero-inner { max-width: 560px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.07em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(28px, 7vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px; }
+    .hero-sub { font-size: 15px; opacity: 0.75; line-height: 1.65; }
+
+    .content { max-width: 600px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .contact-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; padding: 36px; margin-bottom: 24px; }
+    .contact-card h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .contact-card p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .email-link { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: white; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 12px; text-decoration: none; transition: opacity 0.18s; }
+    .email-link:hover { opacity: 0.88; }
+
+    .alt-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .alt-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px; text-decoration: none; color: var(--text); transition: transform 0.2s, box-shadow 0.2s; }
+    .alt-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
+    .alt-card-icon { font-size: 24px; margin-bottom: 10px; }
+    .alt-card-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+    .alt-card-sub { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    .response-note { background: var(--accent-light); border-radius: var(--radius); padding: 18px 22px; margin-top: 24px; font-size: 14px; color: #0040cc; line-height: 1.6; }
+
+    @media (max-width: 480px) { .alt-cards { grid-template-columns: 1fr; } }
+
+    footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.8; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer strong { color: white; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Javeomo<span>Tech</span></a>
+  <a href="https://www.youtube.com/@JaveomoTech" class="nav-yt" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    YouTube
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✉️ Contact</div>
+    <h1>Get in touch</h1>
+    <p class="hero-sub">Product suggestions, questions, feedback — I read everything. Drop me a message.</p>
+  </div>
+</section>
+
+<div class="content">
+
+  <div class="contact-card">
+    <h2>Send me an email</h2>
+    <p>The best way to reach me directly. Whether you've got a product you'd like me to review, spotted something wrong on the site, or just want to say hi — email is the place.</p>
+    <a href="mailto:javeomotech@gmail.com" class="email-link">
+      ✉️ javeomotech@gmail.com
+    </a>
+  </div>
+
+  <div class="alt-cards">
+    <a href="https://www.youtube.com/@JaveomoTech" class="alt-card" target="_blank" rel="noopener">
+      <div class="alt-card-icon">▶️</div>
+      <div class="alt-card-title">YouTube</div>
+      <div class="alt-card-sub">Watch my Shorts and subscribe at @JaveomoTech</div>
+    </a>
+    <a href="index.html" class="alt-card">
+      <div class="alt-card-icon">🔍</div>
+      <div class="alt-card-title">Browse Reviews</div>
+      <div class="alt-card-sub">Read all my product reviews and find your next gadget</div>
+    </a>
+  </div>
+
+  <div class="response-note">
+    💬 I try to respond within a few days. If you're suggesting a product for review, let me know what you love (or hate) about it — that's the most useful starting point.
+  </div>
+
+</div>
+
+<footer>
+  <p><strong>JaveomoTech</strong></p>
+  <p>Tech reviewer sharing the best gadgets &amp; gear.</p>
+  <p style="margin-top:12px;">
+    <a href="https://www.youtube.com/@JaveomoTech" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="index.html">← All Reviews</a>
+  </p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you.</p>
+</footer>
+
+</body>
+</html>
