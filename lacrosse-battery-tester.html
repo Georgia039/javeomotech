@@ -6,43 +6,32 @@
   <title>La Crosse Battery Tester Review — Best Digital Battery Tester? | JaveomoTech</title>
   <meta name="description" content="Full review of the La Crosse 911-65557-INT Portable Digital Battery Tester. Tests AA, AAA, C, D, 9V and button batteries. Is $15.99 worth it?">
 
-  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=orbitron:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --accent: #0057ff;
-      --accent-light: #e8efff;
-      --text: #111;
-      --muted: #555;
-      --border: #e2e2e2;
-      --bg: #fff;
-      --card-bg: #f8f9fb;
-      --radius: 12px;
-      --orange: #ff6a00;
-      --orange-light: #fff4ee;
+      --accent: #0057ff; --accent-light: #e8efff; --text: #111; --muted: #555;
+      --border: #e2e2e2; --bg: #fff; --card-bg: #f8f9fb; --radius: 12px;
+      --orange: #ff6a00; --orange-light: #fff4ee;
     }
-
     body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; font-size: 17px; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); z-index: 100; }
-    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo { font-family: 'orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
     .nav-logo span { color: var(--accent); }
     nav a.back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
     nav a.back:hover { color: var(--accent); }
 
-    /* ── STICKY BAR ── */
+    /* STICKY BAR */
     .sticky-bar { position: fixed; top: 60px; left: 0; right: 0; max-width: 700px; width: 90%; margin: 0 auto; border-radius: 12px; z-index: 99999; background: #0057ff; display: flex; align-items: center; justify-content: center; padding: 11px 20px; gap: 16px; box-shadow: 0 4px 16px rgba(0,87,255,0.3); box-sizing: border-box; }
     .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
     .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
@@ -52,12 +41,12 @@
       .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero { background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 50%, #111 100%); color: #fff; padding: 60px 24px 52px; text-align: center; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(255,106,0,0.12) 0%, transparent 55%), radial-gradient(ellipse at 70% 30%, rgba(0,87,255,0.10) 0%, transparent 50%); pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--orange) 35%, #ffaa66 50%, var(--orange) 65%, transparent 100%); opacity: 0.7; }
     .hero-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #ff9a55; margin-bottom: 14px; }
-    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
+    .hero h1 { font-family: 'orbitron', sans-serif; font-size: clamp(1.7rem, 5vw, 2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
     .hero h1 em { font-style: normal; color: #ff9a55; }
     .hero-sub { color: rgba(255,255,255,0.52); font-size: 0.97rem; max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
     .value-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,106,0,0.15); border: 1px solid rgba(255,106,0,0.35); border-radius: 100px; padding: 10px 22px; margin-bottom: 20px; }
@@ -65,72 +54,77 @@
     .hero-price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 9px 22px; font-size: 1rem; font-weight: 600; color: #fff; }
     .hero-price-badge .price { font-size: 1.25rem; color: #ff9a55; }
 
-    /* ── LAYOUT ── */
+    /* LAYOUT */
     .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
     section { padding: 44px 0; }
     section + section { border-top: 1px solid var(--border); }
     .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 
-    /* ── GALLERY ── */
+    /* GALLERY */
     .gallery-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .gallery-grid-2 img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; cursor: pointer; transition: transform 0.18s ease, box-shadow 0.18s ease; border: 1px solid var(--border); }
     .gallery-grid-2 img:hover { transform: scale(1.03); box-shadow: 0 6px 24px rgba(0,0,0,0.14); }
 
-    /* ── INLINE IMAGE ── */
+    /* INLINE IMAGE */
     .review-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); cursor: pointer; margin: 20px 0; display: block; transition: transform 0.18s ease; }
     .review-img:hover { transform: scale(1.01); }
     .review-img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: -12px; margin-bottom: 20px; }
 
-    /* Lightbox */
+    /* LIGHTBOX */
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
     .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; }
     .lightbox-close:hover { opacity: 1; }
 
-    /* ── YOUTUBE ── */
+    /* YOUTUBE */
     .short-wrap { display: flex; justify-content: center; }
     .short-wrap iframe { width: 220px; height: 391px; border-radius: 14px; border: none; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
 
-    /* ── CALLOUT ── */
+    /* CALLOUT */
     .tip-callout { background: var(--orange-light); border: 1.5px solid #ffb380; border-radius: var(--radius); padding: 22px 24px; display: flex; align-items: flex-start; gap: 16px; margin: 28px 0; }
     .tip-callout .icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
-    .tip-callout-body h4 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 800; color: #a03a00; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tip-callout-body h4 { font-family: 'orbitron', sans-serif; font-size: 0.95rem; font-weight: 800; color: #a03a00; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
     .tip-callout-body p { font-size: 0.9rem; color: #7a2e00; line-height: 1.6; }
 
-    /* ── FEATURES GRID ── */
+    /* FEATURES */
     .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
     .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
     .feature-card .feat-icon { font-size: 1.4rem; margin-bottom: 8px; }
-    .feature-card h4 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .feature-card h4 { font-family: 'orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
     .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
-    /* ── VERDICT BAR ── */
+    /* VERDICT */
     .verdict-bar { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; }
+    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'orbitron', sans-serif; font-weight: 800; }
     .score-circle .num { font-size: 1.5rem; line-height: 1; }
     .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
-    .verdict-text h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .verdict-text h3 { font-family: 'orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
     .verdict-text p { font-size: 0.9rem; color: var(--muted); }
 
-    /* ── ARTICLE ── */
-    .article h2 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
+    /* ARTICLE */
+    .article h2 { font-family: 'orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
     .article h2:first-child { margin-top: 0; }
     .article p { margin-bottom: 16px; color: #222; }
     .article p:last-child { margin-bottom: 0; }
 
+    /* READ MORE */
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn { display: block; margin: 24px auto 0; background: none; border: 1.5px solid var(--accent); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; padding: 10px 28px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
+    .read-more-btn:hover { background: var(--accent); color: white; }
 
-    /* ── SPECS TABLE ── */
+    /* SPECS */
     .specs-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
     .specs-table tr { border-bottom: 1px solid var(--border); }
     .specs-table tr:last-child { border-bottom: none; }
     .specs-table td { padding: 11px 4px; vertical-align: top; }
     .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 42%; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
 
-    /* ── PROS / CONS ── */
+    /* PROS / CONS */
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .pros, .cons { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
-    .pros h4, .cons h4 { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+    .pros h4, .cons h4 { font-family: 'orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
     .pros h4 { color: #1a7a1a; }
     .cons h4 { color: #b91c1c; }
     .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -138,31 +132,24 @@
     .cons ul li::before { content: '✗ '; color: #b91c1c; font-weight: 700; }
     .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
 
-    /* ── CTA ── */
+    /* CTA */
     .cta-box { background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 100%); border-radius: var(--radius); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; }
     .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 110%, rgba(255,106,0,0.15) 0%, transparent 60%); pointer-events: none; }
     .cta-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--orange), transparent); opacity: 0.7; }
-    .cta-box h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .cta-box h3 { font-family: 'orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
     .cta-box p { color: rgba(255,255,255,0.42); font-size: 0.9rem; margin-bottom: 24px; }
     .btn-amazon { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 15px 34px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s ease, transform 0.15s ease; }
     .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
     .cta-disclaimer { margin-top: 14px; font-size: 0.75rem; color: rgba(255,255,255,0.28); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 560px) {
       .pros-cons { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
     }
 
-    /* ── FOOTER ── */
     footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); }
     footer a { color: var(--muted); text-decoration: underline; }
-
-    .article-more { display: none; }
-    .article-more.open { display: block; }
-    .read-more-btn { display: block; margin: 24px auto 0; background: none; border: 1.5px solid var(--accent); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; padding: 10px 28px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
-    .read-more-btn:hover { background: var(--accent); color: white; }
   </style>
 </head>
 <body>
@@ -193,8 +180,9 @@
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="container">
+
+  <!-- GALLERY -->
   <section>
     <p class="section-label">Photo Gallery</p>
     <div class="gallery-grid-2">
@@ -237,17 +225,17 @@
       <div class="feature-card">
         <div class="feat-icon">🔋</div>
         <h4>Tests Almost Every Size</h4>
-        <p>AA, AAA, C, D, 9V, plus a huge range of silver oxide, lithium, and alkaline button batteries. One tool covers your whole battery drawer.</p>
+        <p>AA, AAA, C, D, 9V, plus silver oxide, lithium, and alkaline button batteries. One tool covers your whole battery drawer.</p>
       </div>
       <div class="feature-card">
         <div class="feat-icon">📟</div>
         <h4>Real Voltage Readout</h4>
-        <p>Shows actual voltage — not just "good" or "empty." Much more useful if you know what voltage your device needs to function.</p>
+        <p>Shows actual voltage — not just "good" or "empty." Much more useful if you know what voltage your device needs.</p>
       </div>
       <div class="feature-card">
         <div class="feat-icon">⚡</div>
         <h4>No Power Source Needed</h4>
-        <p>The battery being tested powers the tester. No cables, no batteries required to run it — just slide and read.</p>
+        <p>The battery being tested powers the tester. No cables, no batteries required — just slide and read.</p>
       </div>
       <div class="feature-card">
         <div class="feat-icon">📐</div>
@@ -257,12 +245,12 @@
       <div class="feature-card">
         <div class="feat-icon">🎚️</div>
         <h4>Sliding Adjustable Clamp</h4>
-        <p>Orange terminal slides to fit different battery sizes. One motion — extend, place, push back, read. No fiddling with wires.</p>
+        <p>Orange terminal slides to fit different battery sizes. One motion — extend, place, push back, read.</p>
       </div>
       <div class="feature-card">
         <div class="feat-icon">🏗️</div>
         <h4>More Durable Than a Voltmeter</h4>
-        <p>No dangling probes or cables to break. More rugged than a traditional multimeter for basic battery checking tasks.</p>
+        <p>No dangling probes or cables to break. More rugged than a traditional multimeter for basic battery checking.</p>
       </div>
     </div>
   </section>
@@ -271,52 +259,54 @@
   <section class="article">
     <p class="section-label">Full Review</p>
 
+    <!-- Always visible: first intro paragraph only -->
     <h2>What Is the La Crosse Battery Tester?</h2>
     <p>If your junk drawer has a pile of batteries you're not sure about, you already need this. The La Crosse 911-65557-INT is a compact digital battery tester — about 3.5 inches long — that works on almost every common battery size without needing its own power source. The battery being tested powers the device itself, so there's nothing to charge, no cables to untangle, and nothing to replace. You extend the orange sliding terminal, place your battery inside, push the slide back in until it contacts both ends, and the digital display shows you the voltage and a charge level indicator instantly.</p>
-    <!-- Hidden by default -->
-  <div class="article-more" id="articleMore">
-    <h2>How It Works</h2>
-    <p>...</p>
-    <p>There are a lot of battery testers on Amazon. Most of them are generic designs from the same few factories, relabelled under different brand names. The La Crosse stands out because it has a genuinely unique design with a clean digital readout and a build quality noticeably above the cheap caliper-style testers that dominate the listings. If you've been scrolling through pages of identical "zigzag" style testers trying to pick one — skip it and just get this.</p>
 
-    <img class="review-img"
-      src="https://m.media-amazon.com/images/I/610kYuGwBqL._AC_SL1500_.jpg"
-      alt="La Crosse battery tester size reference"
-      onclick="openLightbox(this.src)">
-    <p class="review-img-caption">At 8.98cm / 3.54 inches it fits easily in any tool kit or drawer.</p>
+    <!-- Read More button -->
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
 
-    <h2>How It Works</h2>
-    <p>Using it is genuinely simple. Slide the orange terminal out wide enough to fit your battery, place the battery against the inner contact, push the orange slide back in until it presses against the other end of the battery, and read the display. The whole process takes about three seconds. There's no button to press — contact completes the circuit automatically and the reading appears.</p>
-    <p>The digital display shows the actual voltage, which is more useful than the vague "good / okay / replace" indicators on cheaper testers. If you're testing NiMH batteries, for example, 1.2V–1.31V is considered full — knowing the real number lets you make an informed decision rather than guessing from a colour bar. It also shows a visual charge level indicator for quick reference if you just want a fast yes/no.</p>
+    <!-- Hidden section — expands on click -->
+    <div class="article-more" id="articleMore">
 
-    <div class="tip-callout">
-      <div class="icon">💡</div>
-      <div class="tip-callout-body">
-        <h4>Voltage Reference Guide</h4>
-        <p>Alkaline AA/AAA: full at ~1.5V, replace below ~1.2V. NiMH AA/AAA: full at 1.2–1.31V. 9V alkaline: full at 9V, replace below ~7V. Button cells vary by chemistry — check your device specs if in doubt. The La Crosse reads about 25–30mV below true open-circuit voltage, so add that mentally if precision matters.</p>
+      <p>There are a lot of battery testers on Amazon. Most of them are generic designs from the same few factories, relabelled under different brand names. The La Crosse stands out because it has a genuinely unique design with a clean digital readout and a build quality noticeably above the cheap caliper-style testers that dominate the listings. If you've been scrolling through pages of identical "zigzag" style testers trying to pick one — skip it and just get this.</p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/610kYuGwBqL._AC_SL1500_.jpg" alt="La Crosse battery tester size reference" onclick="openLightbox(this.src)">
+      <p class="review-img-caption">At 8.98cm / 3.54 inches it fits easily in any tool kit or drawer.</p>
+
+      <h2>How It Works</h2>
+      <p>Using it is genuinely simple. Slide the orange terminal out wide enough to fit your battery, place the battery against the inner contact, push the orange slide back in until it presses against the other end of the battery, and read the display. The whole process takes about three seconds. There's no button to press — contact completes the circuit automatically and the reading appears.</p>
+      <p>The digital display shows the actual voltage, which is more useful than the vague "good / okay / replace" indicators on cheaper testers. If you're testing NiMH batteries, for example, 1.2V–1.31V is considered full — knowing the real number lets you make an informed decision rather than guessing from a colour bar.</p>
+
+      <div class="tip-callout">
+        <div class="icon">💡</div>
+        <div class="tip-callout-body">
+          <h4>Voltage Reference Guide</h4>
+          <p>Alkaline AA/AAA: full at ~1.5V, replace below ~1.2V. NiMH AA/AAA: full at 1.2–1.31V. 9V alkaline: full at 9V, replace below ~7V. Button cells vary by chemistry. The La Crosse reads about 25–30mV below true open-circuit voltage, so add that mentally if precision matters.</p>
+        </div>
       </div>
+
+      <h2>Battery Size Coverage</h2>
+      <p>The sliding design handles an impressive range: AA, AAA, C, D, 9V, and a large variety of button batteries including silver oxide, lithium, and alkaline coin cells. That last category is where a lot of testers fall short — button batteries are fiddly to test with clamp-style testers, but the La Crosse handles them cleanly.</p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/71RIqBjCD1L.jpg" alt="Testing a small button battery with the La Crosse tester" onclick="openLightbox(this.src)">
+      <p class="review-img-caption">Handles button cells cleanly — a weak point for most competing testers.</p>
+
+      <h2>Accuracy</h2>
+      <p>It's accurate enough for practical use, with one caveat worth knowing. Testing against a calibrated Fluke 117 multimeter, the La Crosse reads about 25–30mV below the true open-circuit voltage. That's a small but consistent offset — if you need precise voltage measurements, just add about 30mV to whatever it displays. For the vast majority of use cases — checking if a battery is worth keeping or throwing away — this level of accuracy is completely fine.</p>
+
+      <h2>Build Quality & Portability</h2>
+      <p>It feels solid. The orange sliding mechanism moves smoothly and holds position — batteries don't slip out mid-reading the way they can with cheaper spring-loaded testers. At 3.54 inches it's small enough to live in a tool kit, gig bag, or kitchen drawer without taking up meaningful space. It's the kind of thing you buy once and forget about until you need it, and when you do need it, it just works.</p>
+
+      <h2>What It's Missing</h2>
+      <p>No complaints about what it does — just a few things it doesn't do. There's no way to calibrate it yourself, so that consistent 25–30mV offset is something you have to account for mentally. It doesn't test rechargeable lithium-ion cells (laptop batteries, phone batteries, 18650s). And it only comes in black.</p>
+
+      <h2>Who Should Buy This?</h2>
+      <p>Anyone who goes through batteries regularly and is tired of guessing. Households with kids and remotes and toys. Anyone who does watch repair, photography, or any hobby involving small electronics. At $15.99 the question isn't really whether it's worth it. It is. The question is why you don't already have one.</p>
+
     </div>
+    <!-- end article-more -->
 
-    <h2>Battery Size Coverage</h2>
-    <p>The sliding design handles an impressive range: AA, AAA, C, D, 9V, and a large variety of button batteries including silver oxide, lithium, and alkaline coin cells. That last category is where a lot of testers fall short — button batteries are fiddly to test with clamp-style testers, but the La Crosse handles them cleanly. If you work on watches, hearing aids, remotes, or any device that uses small specialty cells, this is the tester for that job.</p>
-
-    <img class="review-img"
-      src="https://m.media-amazon.com/images/I/71RIqBjCD1L.jpg"
-      alt="Testing a small button battery with the La Crosse tester"
-      onclick="openLightbox(this.src)">
-    <p class="review-img-caption">Handles button cells cleanly — a weak point for most competing testers.</p>
-
-    <h2>Accuracy</h2>
-    <p>It's accurate enough for practical use, with one caveat worth knowing. Testing against a calibrated Fluke 117 multimeter, the La Crosse reads about 25–30mV below the true open-circuit voltage. That's a small but consistent offset — if you need precise voltage measurements, just add about 30mV to whatever it displays. The tester load itself causes about 5mV of additional drop, which is negligible. For the vast majority of use cases — checking if a battery is worth keeping or throwing away — this level of accuracy is completely fine. It would only matter if you were doing precision electronics work, and for that you'd be using a proper multimeter anyway.</p>
-
-    <h2>Build Quality & Portability</h2>
-    <p>It feels solid. The orange sliding mechanism moves smoothly and holds position — batteries don't slip out mid-reading the way they can with cheaper spring-loaded testers. At 3.54 inches it's small enough to live in a tool kit, gig bag, or kitchen drawer without taking up meaningful space. The build is more rugged than a traditional voltmeter with dangling probe cables, and there's nothing to break or lose. It's the kind of thing you buy once and forget about until you need it, and when you do need it, it just works.</p>
-
-    <h2>What It's Missing</h2>
-    <p>No complaints about what it does — just a few things it doesn't do. There's no way to calibrate it yourself, so that consistent 25–30mV offset is something you have to account for mentally if it bothers you. It doesn't test rechargeable lithium-ion cells (laptop batteries, phone batteries, 18650s) — those need a dedicated tester or multimeter. And it only comes in black, which won't matter to most people but is worth noting if you're buying for a colour-coded tool kit.</p>
-
-    <h2>Who Should Buy This?</h2>
-    <p>Anyone who goes through batteries regularly and is tired of guessing. Households with kids and remotes and toys. Anyone who does watch repair, photography, or any hobby involving small electronics. It's especially useful if you have a mix of battery chemistries — alkaline, NiMH, lithium, button cells — because it handles all of them with the same tool. At $15.99 the question isn't really whether it's worth it. It is. The question is why you don't already have one.</p>
   </section>
 
   <!-- MORE PHOTOS -->
@@ -327,13 +317,6 @@
       <img src="https://m.media-amazon.com/images/I/71+g+iUpgNL.jpg" alt="Testing AAA battery" onclick="openLightbox(this.src)">
     </div>
   </section>
-
-  </div>
-  <!-- Toggle button -->
-  <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">
-    Read Full Review ↓
-  </button>
-</section>
 
   <!-- SPECS -->
   <section>
@@ -372,7 +355,7 @@
       <div class="cons">
         <h4>Cons</h4>
         <ul>
-          <li>Reads ~25–30mV below true voltage (consistent but requires mental adjustment)</li>
+          <li>Reads ~25–30mV below true voltage (requires mental adjustment)</li>
           <li>No self-calibration option</li>
           <li>Doesn't test lithium-ion / 18650 cells</li>
           <li>Only available in black</li>
@@ -390,6 +373,7 @@
       <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
     </div>
   </section>
+
 </div>
 
 <!-- LIGHTBOX -->
@@ -416,11 +400,11 @@
     if (e.key === 'Escape') closeLightbox();
   });
   function toggleArticle() {
-  const more = document.getElementById('articleMore');
-  const btn = document.getElementById('readMoreBtn');
-  more.classList.toggle('open');
-  btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
-}
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
 </script>
 
 </body>
