@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=orbitron:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,17 +54,38 @@
       backdrop-filter: blur(6px);
       z-index: 100;
     }
-    .nav-logo {
-      font-family: 'orbitron', sans-serif;
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
     .nav-logo span { color: var(--accent); }
     nav a.back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
     nav a.back:hover { color: var(--accent); }
+
+    /* ── STICKY BAR ── */
+    .sticky-bar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      max-width: 700px;
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 12px;
+      z-index: 99999;
+      background: #0057ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(0,87,255,0.3);
+      box-sizing: border-box;
+    }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+    .sticky-bar .sticky-btn:hover { opacity: 0.88; }
+    @media (max-width: 600px) {
+      .sticky-bar { top: auto; bottom: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
+    }
 
     /* ── HERO ── */
     .hero {
@@ -84,7 +105,6 @@
         radial-gradient(ellipse at 80% 30%, rgba(212,160,18,0.10) 0%, transparent 45%);
       pointer-events: none;
     }
-    /* Gold shimmer line at bottom */
     .hero::after {
       content: '';
       position: absolute;
@@ -93,283 +113,108 @@
       background: linear-gradient(90deg, transparent 0%, var(--gold) 35%, #ffe082 50%, var(--gold) 65%, transparent 100%);
       opacity: 0.8;
     }
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #d4a012;
-      margin-bottom: 14px;
-    }
-    .hero h1 {
-      font-family: 'orbitron', sans-serif;
-      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      max-width: 680px;
-      margin: 0 auto 16px;
-    }
+    .hero-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #d4a012; margin-bottom: 14px; }
+    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 4.5vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
     .hero h1 em { font-style: normal; color: #6ea4ff; }
-    .hero-sub {
-      color: rgba(255,255,255,0.52);
-      font-size: 0.97rem;
-      max-width: 460px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
-    }
-    /* World Record badge */
-    .wr-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, rgba(212,160,18,0.18), rgba(212,160,18,0.06));
-      border: 1px solid rgba(212,160,18,0.45);
-      border-radius: 100px;
-      padding: 10px 22px;
-      margin-bottom: 20px;
-    }
-    .wr-badge .trophy { font-size: 1.1rem; }
-    .wr-badge span {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .hero-price-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 100px;
-      padding: 9px 22px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-    }
+    .hero-sub { color: rgba(255,255,255,0.52); font-size: 0.97rem; max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
+    .wr-badge { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(212,160,18,0.18), rgba(212,160,18,0.06)); border: 1px solid rgba(212,160,18,0.45); border-radius: 100px; padding: 10px 22px; margin-bottom: 20px; }
+    .wr-badge span { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gold); }
+    .hero-price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 9px 22px; font-size: 1rem; font-weight: 600; color: #fff; }
     .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
 
     /* ── LAYOUT ── */
     .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
     section { padding: 44px 0; }
     section + section { border-top: 1px solid var(--border); }
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 
-    /* ── GALLERY ── */
-    .gallery-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .gallery-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .gallery-grid-2 img,
-    .gallery-grid-3 img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      border: 1px solid var(--border);
-    }
-    .gallery-grid-2 img:hover,
-    .gallery-grid-3 img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.14);
-    }
-
-    /* ── INLINE REVIEW IMAGE ── */
+    /* ── REVIEW IMAGES ── */
     .review-img {
       width: 100%;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       cursor: pointer;
-      margin: 20px 0;
+      margin: 20px 0 8px;
       display: block;
-      transition: transform 0.18s ease;
+      object-fit: contain;
+      background: #f5f7ff;
+      transition: opacity 0.18s ease;
     }
-    .review-img:hover { transform: scale(1.01); }
-    .review-img-caption {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: -12px;
-      margin-bottom: 20px;
-    }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
+
+    /* ── APP STRIP ── */
+    .app-strip { background: #f0f2f6; border-radius: var(--radius); padding: 20px; margin: 24px 0; }
+    .app-strip img { width: 100%; border-radius: 8px; display: block; object-fit: contain; cursor: pointer; }
+    .app-strip .img-caption { margin-top: 12px; margin-bottom: 0; }
 
     /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999999; align-items: center; justify-content: center; padding: 20px; }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
-    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; }
     .lightbox-close:hover { opacity: 1; }
 
     /* ── YOUTUBE ── */
     .short-wrap { display: flex; justify-content: center; }
-    .short-wrap iframe {
-      width: 220px;
-      height: 391px;
-      border-radius: 14px;
-      border: none;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    }
+    .short-wrap iframe { width: 220px; height: 391px; border-radius: 14px; border: none; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
 
     /* ── WORLD RECORD CALLOUT ── */
-    .wr-callout {
-      background: var(--gold-light);
-      border: 1.5px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 22px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin: 28px 0;
-    }
+    .wr-callout { background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: var(--radius); padding: 22px 24px; display: flex; align-items: flex-start; gap: 16px; margin: 28px 0; }
     .wr-callout .icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
-    .wr-callout-body h4 {
-      font-family: 'orbitron', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #7a5a00;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    .wr-callout-body h4 { font-family: 'Orbitron', sans-serif; font-size: 0.95rem; font-weight: 800; color: #7a5a00; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
     .wr-callout-body p { font-size: 0.9rem; color: #5a4000; line-height: 1.6; }
 
-    /* ── KEY FEATURES GRID ── */
-    .features-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 24px 0;
-    }
-    .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-    }
+    /* ── KEY FEATURES ── */
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
     .feature-card .feat-icon { font-size: 1.4rem; margin-bottom: 8px; }
-    .feature-card h4 {
-      font-family: 'orbitron', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
+    .feature-card h4 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
     .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
     /* ── VERDICT BAR ── */
-    .verdict-bar {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .score-circle {
-      flex-shrink: 0;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: 'orbitron', sans-serif;
-      font-weight: 800;
-    }
+    .verdict-bar { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Orbitron', sans-serif; font-weight: 800; }
     .score-circle .num { font-size: 1.5rem; line-height: 1; }
     .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
-    .verdict-text h3 { font-family: 'orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .verdict-text h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
     .verdict-text p { font-size: 0.9rem; color: var(--muted); }
 
     /* ── ARTICLE ── */
-    .article h2 {
-      font-family: 'orbitron', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin: 36px 0 10px;
-      letter-spacing: -0.02em;
-    }
+    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
     .article h2:first-child { margin-top: 0; }
     .article p { margin-bottom: 16px; color: #222; }
     .article p:last-child { margin-bottom: 0; }
 
-    /* ── APP SCREENSHOTS STRIP ── */
-    .app-strip {
-      background: #f0f2f6;
-      border-radius: var(--radius);
-      padding: 20px;
-      margin: 24px 0;
-    }
-    .app-strip p.caption {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 12px;
-      margin-bottom: 0;
-    }
-    .app-strip img {
-      width: 100%;
-      border-radius: 8px;
+    /* ── READ MORE TOGGLE ── */
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn {
       display: block;
+      margin: 24px auto 0;
+      background: none;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 28px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s;
     }
+    .read-more-btn:hover { background: var(--accent); color: #fff; }
 
     /* ── SPECS TABLE ── */
     .specs-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
     .specs-table tr { border-bottom: 1px solid var(--border); }
     .specs-table tr:last-child { border-bottom: none; }
     .specs-table td { padding: 11px 4px; vertical-align: top; }
-    .specs-table td:first-child {
-      color: var(--muted);
-      font-weight: 600;
-      width: 42%;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
+    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 42%; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
 
     /* ── SUBSCRIPTION TABLE ── */
     .sub-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 12px; }
-    .sub-table th {
-      text-align: left;
-      padding: 9px 8px;
-      background: var(--card-bg);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-    }
+    .sub-table th { text-align: left; padding: 9px 8px; background: var(--card-bg); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); border-bottom: 1px solid var(--border); }
     .sub-table td { padding: 10px 8px; border-bottom: 1px solid var(--border); }
     .sub-table tr:last-child td { border-bottom: none; }
     .sub-table .plan-name { font-weight: 700; }
@@ -377,20 +222,8 @@
 
     /* ── PROS / CONS ── */
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .pros, .cons {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 20px;
-      border: 1px solid var(--border);
-    }
-    .pros h4, .cons h4 {
-      font-family: 'orbitron', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
+    .pros, .cons { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
+    .pros h4, .cons h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
     .pros h4 { color: #1a7a1a; }
     .cons h4 { color: #b91c1c; }
     .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -399,44 +232,12 @@
     .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
 
     /* ── CTA ── */
-    .cta-box {
-      background: linear-gradient(145deg, #08090f 0%, #0f1424 100%);
-      border-radius: var(--radius);
-      padding: 40px 28px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-box::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.18) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .cta-box::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.7;
-    }
-    .cta-box h3 { font-family: 'orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .cta-box { background: linear-gradient(145deg, #08090f 0%, #0f1424 100%); border-radius: var(--radius); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; }
+    .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.18) 0%, transparent 60%); pointer-events: none; }
+    .cta-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.7; }
+    .cta-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
     .cta-box p { color: rgba(255,255,255,0.42); font-size: 0.9rem; margin-bottom: 24px; }
-    .btn-amazon {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 15px 34px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: opacity 0.15s ease, transform 0.15s ease;
-    }
+    .btn-amazon { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 15px 34px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s ease, transform 0.15s ease; }
     .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
     .cta-disclaimer { margin-top: 14px; font-size: 0.75rem; color: rgba(255,255,255,0.28); }
 
@@ -444,101 +245,12 @@
     @media (max-width: 560px) {
       .pros-cons { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid-2 { grid-template-columns: 1fr 1fr; }
       .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
     }
 
     /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 24px;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); }
     footer a { color: var(--muted); text-decoration: underline; }
-     /* ── STICKY PRICE BAR (FIXED & OVERRIDING BUGS) ── */
-    .sticky-bar {
-      /* FIX: Switched to fixed to prevent it from disappearing due to parent overflow rules */
-      position: fixed; 
-      top: 60px;
-      left: 0;
-      right: 0;
-      box-shadow: 0 4px 16px rgba(0,87,255,0.3);
-
-    /* ── ADJUST WIDTH HERE ── */
-      max-width: 700px;        /* Limits how wide the bar can get */
-      width: 90%;               /* Ensures it looks good on slightly smaller desktop screens */
-      margin: 0px auto;        /* Centers it horizontally & adds a sleek floating gap from the top */
-      border-radius: 12px;      /* Gives it rounded corners so it looks like a premium floating badge */
-      /* ─────────────────────── */
-      
-      /* FIX: Drastically increased z-index so it sits above all other website content */
-      z-index: 99999; 
-      
-      background: #0057ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 20px;
-      gap: 16px;
-      box-shadow: 0 2px 12px rgba(0,87,255,0.25);
-      box-sizing: border-box; /* Ensures padding doesn't break full-width */
-    }
-
-    .sticky-bar .sticky-name {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.88rem;
-      font-weight: 500;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 360px;
-    }
-
-    .sticky-bar .sticky-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #fff;
-      color: #0057ff;
-      font-weight: 700;
-      font-size: 0.88rem;
-      padding: 8px 18px;
-      border-radius: 100px;
-      text-decoration: none;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: opacity 0.15s ease;
-    }
-
-    .sticky-bar .sticky-btn:hover { 
-      opacity: 0.88; 
-    }
-
-    /* ── MOBILE VIEW (SCREENS UNDER 600px) ── */
-    @media (max-width: 600px) {
-      .sticky-bar {
-        position: fixed;
-        top: auto; /* Clears top positioning */
-        bottom: 0;  /* Pins it to the bottom of mobile screens */
-        left: 0;
-        right: 0;
-        border-top: 1px solid rgba(255,255,255,0.15);
-        justify-content: space-between;
-        padding: 10px 16px;
-        padding-bottom: max(10px, env(safe-area-inset-bottom)); /* Dynamic padding for phone notches */
-      }
-      
-      .sticky-bar .sticky-name {
-        max-width: 180px;
-        font-size: 0.82rem;
-      }
-    }
-    .sticky-bar { position: fixed; top: 60px; left: 0; right: 0; max-width: 700px; width: 90%; margin: 0 auto; border-radius: 12px; z-index: 99999; background: #0057ff; display: flex; align-items: center; justify-content: center; padding: 11px 20px; gap: 16px; box-shadow: 0 4px 16px rgba(0,87,255,0.3); box-sizing: border-box; }
-      .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
-      .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-      @media (max-width: 600px) { .sticky-bar { top: auto; bottom: 0; left: 0; right: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); } .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; } }
   </style>
 </head>
 <body>
@@ -548,21 +260,18 @@
   <a class="nav-logo" href="index.html">Javeomo<span>Tech</span></a>
   <a class="back" href="index.html">← All Reviews</a>
 </nav>
-<!-- STICKY PRICE BAR -->
+
+<!-- STICKY BAR -->
 <div class="sticky-bar">
   <span class="sticky-name">Soundcore Liberty 5 Pro Max</span>
-  <a class="sticky-btn" href="https://amzn.to/4g2FSej" target="_blank" rel="noopener sponsored">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
-    Check Price on Amazon →
-  </a>
+  <a class="sticky-btn" href="https://amzn.to/4g2FSej" target="_blank" rel="noopener sponsored">Check Price on Amazon →</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Earbuds · AI Audio · Productivity</div>
   <div class="wr-badge">
-    <span class="trophy">🏆</span>
-    <span>Guinness World Record — Call Clarity · April 2026</span>
+    <span>🏆 &nbsp;Guinness World Record — Call Clarity · April 2026</span>
   </div>
   <h1>The Earbuds That <em>Record Your Meetings</em> — and Hold a World Record Doing It</h1>
   <p class="hero-sub">Soundcore Liberty 5 Pro Max — AI note-taker case, AMOLED touchscreen, Guinness-certified call clarity, 5-min fast charge.</p>
@@ -572,25 +281,25 @@
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="container">
+
+  <!-- HERO IMAGE -->
   <section>
-    <p class="section-label">Photo Gallery</p>
-    <div class="gallery-grid-2">
-      <img src="https://m.media-amazon.com/images/I/61Gnu96XtdL._AC_SL1500_.jpg" alt="Soundcore Liberty 5 Pro Max earbuds and case" onclick="openLightbox(this.src)">
-      <img src="https://www.cnet.com/a/img/resize/9796c94001471f915845bc71b827fbb55a93e705/hub/2026/05/21/d40c79dc-ea6a-432c-a4e0-94a86189c34e/anker-soundcore-liberty-5-pro-max-promo.jpg?auto=webp&width=1200" alt="Soundcore Liberty 5 Pro Max promo lifestyle shot" onclick="openLightbox(this.src)">
-    </div>
+    <img class="review-img"
+      src="https://m.media-amazon.com/images/I/61Gnu96XtdL._AC_SL1500_.jpg"
+      alt="Soundcore Liberty 5 Pro Max earbuds and case"
+      onclick="openLightbox(this.src)" loading="eager" style="margin-top:0;" />
   </section>
 
   <!-- YOUTUBE -->
   <section>
     <p class="section-label">Watch the Short</p>
     <div class="short-wrap">
-      <iframe src="https://www.youtube.com/embed/ozgxgKLepBk" title="Soundcore Liberty 5 Pro Max Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ozgxgKLepBk" title="Soundcore Liberty 5 Pro Max Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
 
-  <!-- VERDICT BAR -->
+  <!-- VERDICT -->
   <section>
     <p class="section-label">Verdict</p>
     <div class="verdict-bar">
@@ -605,7 +314,7 @@
     </div>
   </section>
 
-  <!-- KEY FEATURES QUICK GRID -->
+  <!-- KEY FEATURES -->
   <section>
     <p class="section-label">Key Features</p>
     <div class="features-grid">
@@ -647,87 +356,94 @@
     <p class="section-label">Full Review</p>
 
     <h2>What Are the Soundcore Liberty 5 Pro Max?</h2>
-    <p>I've been pretty sceptical of earbuds that lean heavily into gimmick features — the "AI" label gets slapped onto everything these days and usually means "there's an app that adjusts your EQ." The Soundcore Liberty 5 Pro Max is different, and I say that having expected to be underwhelmed. This is a genuinely new category of product: premium earbuds where the charging case itself is also a smart device, and where the AI features are backed by the kind of third-party certification that doesn't just exist on a marketing slide.</p>
-    <p>The headline is the Guinness World Record. In April 2026, the Liberty 5 Pro was independently certified as the earbuds with the highest speech quality score (G-MOS) of any true wireless earbuds ever tested — using the ETSI TS 103 106 objective standard, tested against 14 competing flagship models. The Liberty 5 Pro Max uses the exact same earbud units, so that certification carries across. At $229.99, you're paying for the Pro Max's upgraded case — the 1.78" AMOLED touchscreen and the AI note-taker — on top of earbuds that already hold a verifiable world record for call clarity.</p>
+    <p>
+      I've been pretty sceptical of earbuds that lean heavily into gimmick features — the "AI" label gets slapped onto everything these days and usually means "there's an app that adjusts your EQ." The Soundcore Liberty 5 Pro Max is different, and I say that having expected to be underwhelmed. This is a genuinely new category of product: premium earbuds where the charging case itself is also a smart device, and where the AI features are backed by the kind of third-party certification that doesn't just exist on a marketing slide.
+    </p>
 
-    <!-- INLINE IMAGE 1 - in-ear lifestyle shot -->
+    <!-- Lifestyle image -->
     <img class="review-img"
-      src="https://www.blessthisstuff.com/imagens/stuff/soundcore-anker-liberty-5-pro-max-3.jpg"
-      alt="Soundcore Liberty 5 Pro Max worn in ear - lifestyle"
-      onclick="openLightbox(this.src)">
-    <p class="review-img-caption">The Liberty 5 Pro Max earbuds are shaped to sit flush — no stem sticking out awkwardly.</p>
+      src="https://www.cnet.com/a/img/resize/9796c94001471f915845bc71b827fbb55a93e705/hub/2026/05/21/d40c79dc-ea6a-432c-a4e0-94a86189c34e/anker-soundcore-liberty-5-pro-max-promo.jpg?auto=webp&width=1200"
+      alt="Soundcore Liberty 5 Pro Max lifestyle promo"
+      onclick="openLightbox(this.src)" loading="lazy" />
+    <p class="img-caption">The Liberty 5 Pro Max — earbuds plus a case that's genuinely doing something.</p>
 
-    <h2>The World Record Call Quality — What It Actually Means</h2>
-    <p>The G-MOS score isn't a marketing figure. It's a composite standard used by telecom standards bodies to measure speech quality — combining voice clarity (S-MOS) and background noise suppression (N-MOS) into a single objective number. Soundcore hit a G-MOS of 3.76, verified against 14 rival earbuds from other flagship brands. That's a real benchmark, not a company-run test, and it's the same methodology carriers use to evaluate phone call quality.</p>
+    <div class="article-more" id="articleMore">
 
-    <div class="wr-callout">
-      <div class="icon">🏆</div>
-      <div class="wr-callout-body">
-        <h4>Guinness World Record — April 2026</h4>
-        <p>The Soundcore Liberty 5 Pro was certified by Guinness World Records as having the "Highest speech quality score (G-MOS) for TWS earbuds (objective test)." G-MOS score of 3.76, measured using the ETSI TS 103 106 standard against 14 competing flagship earbuds. The Liberty 5 Pro Max uses the same earbud units, delivering identical call performance.</p>
+      <h2>The World Record Call Quality — What It Actually Means</h2>
+      <p>
+        The G-MOS score isn't a marketing figure. It's a composite standard used by telecom standards bodies to measure speech quality — combining voice clarity and background noise suppression into a single objective number. Soundcore hit a G-MOS of 3.76, verified against 14 rival earbuds from other flagship brands. That's a real benchmark, not a company-run test, and it's the same methodology carriers use to evaluate phone call quality.
+      </p>
+
+      <div class="wr-callout">
+        <div class="icon">🏆</div>
+        <div class="wr-callout-body">
+          <h4>Guinness World Record — April 2026</h4>
+          <p>Certified as having the "Highest speech quality score (G-MOS) for TWS earbuds (objective test)." G-MOS score of 3.76, measured using the ETSI TS 103 106 standard against 14 competing flagship earbuds.</p>
+        </div>
       </div>
-    </div>
 
-    <p>How does it achieve this? The Thus AI chip combines data from 10 sensors — eight microphones plus two bone conduction sensors that detect skull vibrations from your voice — and runs on-device AI to isolate your voice and suppress background noise. The bone conduction piece is what makes this different. Most earbuds only have external mics. The bone conduction sensors give the chip a second clean signal that confirms what your voice actually sounds like, independent of ambient noise. In 100dB+ environments — a busy street, a construction site, an open-plan office — callers report your voice comes through cleanly. I've tested this on a windy commute and in a coffee shop and both times got a reaction from the other person along the lines of "where are you? It sounds like you're inside."</p>
+      <p>
+        How does it achieve this? The Thus AI chip combines data from 10 sensors — eight microphones plus two bone conduction sensors that detect skull vibrations from your voice. The bone conduction piece is what makes this different. Most earbuds only have external mics. The bone conduction sensors give the chip a second clean signal that confirms what your voice actually sounds like, independent of ambient noise. In 100dB+ environments — a busy street, a construction site, an open-plan office — callers report your voice comes through cleanly. I've tested this on a windy commute and in a coffee shop and both times got a reaction from the other person along the lines of "where are you? It sounds like you're inside."
+      </p>
 
-    <h2>The AI Note-Taker — The Real Reason to Buy the Pro Max</h2>
-    <p>The standard Liberty 5 Pro doesn't have the note-taker — that's the $60 Pro Max premium. The case has a built-in microphone that records room audio during in-person meetings. When the meeting is done, you double-tap a button on the back of the case, it syncs to the Soundcore app, and within a few minutes you have a full transcript with speaker identification, key points extracted, and action items listed. It supports 154 languages.</p>
-    <p>This is a real workflow shift for meetings and lectures. You're already carrying the case. You don't need a separate device, you don't need to prop your phone on the table, and you don't need to remember to open an app before the meeting starts. It just records. The AI summary quality is genuinely good — it pulls out the things you'd actually want to remember rather than giving you a wall of transcript text to scroll through.</p>
+      <!-- In-ear lifestyle shot -->
+      <img class="review-img"
+        src="https://www.blessthisstuff.com/imagens/stuff/soundcore-anker-liberty-5-pro-max-3.jpg"
+        alt="Soundcore Liberty 5 Pro Max worn in ear"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">The earbuds sit flush — no awkward stem sticking out.</p>
 
-    <!-- INLINE IMAGE 2 - app screenshots -->
-    <div class="app-strip">
-      <img src="https://m.media-amazon.com/images/I/716LMdDqFXL._AC_SL1500_.jpg"
-        alt="Soundcore Liberty 5 Pro Max app features and controls"
-        onclick="openLightbox(this.src)">
-      <p class="caption">The Soundcore app gives you ANC levels, custom EQ via HearID 5.0, sound presets, and AI note management — all in one place.</p>
-    </div>
+      <h2>The AI Note-Taker — The Real Reason to Buy the Pro Max</h2>
+      <p>
+        The standard Liberty 5 Pro doesn't have the note-taker — that's the $60 Pro Max premium. The case has a built-in microphone that records room audio during in-person meetings. When the meeting is done, you double-tap a button on the back of the case, it syncs to the Soundcore app, and within a few minutes you have a full transcript with speaker identification, key points extracted, and action items listed. It supports 154 languages.
+      </p>
+      <p>
+        This is a real workflow shift for meetings and lectures. You're already carrying the case. You don't need a separate device, you don't need to prop your phone on the table, and you don't need to remember to open an app before the meeting starts. It just records. The AI summary quality is genuinely good — it pulls out the things you'd actually want to remember rather than giving you a wall of transcript text to scroll through.
+      </p>
 
-    <p>A few things worth knowing about the note-taker before you buy: it only captures in-room audio through the case microphone. It does not — at least not yet — capture Zoom calls, Teams meetings, or phone calls. Soundcore says that feature is coming around September 2026 via a firmware/app update, which I'd classify as "confirmed but not here yet." If you primarily need to transcribe remote meetings, this isn't the right tool right now. For in-person meetings, workshops, lectures, and interviews, it works exactly as promised.</p>
-    <p>The free Starter Plan gives you 120 minutes of AI transcription per month for 24 months, which covers occasional meeting use comfortably. If you're in meetings all day, the Pro tier at $99.99/year (1,200 minutes/month) is probably what you need. The subscription pricing is a legitimate part of the total cost calculus — it's not predatory but it's also not nothing.</p>
+      <!-- App screenshot -->
+      <div class="app-strip">
+        <img src="https://m.media-amazon.com/images/I/716LMdDqFXL._AC_SL1500_.jpg"
+          alt="Soundcore app features and controls"
+          onclick="openLightbox(this.src)" />
+        <p class="img-caption">The Soundcore app covers ANC levels, custom EQ via HearID 5.0, sound presets, and AI note management.</p>
+      </div>
 
-    <h2>The AMOLED Case — Genuinely Useful, Not a Gimmick</h2>
-    <p>I fully expected the 1.78" touchscreen case to be a gimmick. It isn't. Being able to adjust ANC level, switch between sound modes, start a recording, or check battery status without touching your phone is legitimately convenient during commutes and in meetings. The screen is bright, responsive, and reads clearly in daylight. You can also add custom wallpapers, which is a small thing but gives it a more personal feel than a generic matte case.</p>
-    <p>The case design itself is what Soundcore calls a "squircular" shape — somewhere between square and round — and it's noticeably compact given everything packed into it. At 59 × 60 × 30mm it fits in a jeans pocket without the awkward square-edge problem some smart cases have. The sliding lid reveal mechanism feels satisfying. Build quality is premium throughout — this doesn't feel like a $100 product with features bolted on, it feels like a single cohesive thing.</p>
+      <p>
+        The free Starter Plan gives you 120 minutes of AI transcription per month for 24 months, which covers occasional meeting use comfortably. If you're in meetings all day, the Pro tier at $99.99/year is probably what you need. And worth being upfront about: the note-taker currently only captures in-room audio. It does not capture Zoom calls or Teams meetings yet — Soundcore says that's coming around September 2026 via firmware update. For in-person meetings, it works exactly as promised.
+      </p>
 
-    <!-- INLINE IMAGE 3 - ebay/side angle -->
-    <img class="review-img"
-      src="https://i.ebayimg.com/images/g/-fwAAeSwqyxqDTIh/s-l400.png"
-      alt="Soundcore Liberty 5 Pro Max case and earbuds from side angle"
-      onclick="openLightbox(this.src)">
-    <p class="review-img-caption">The AMOLED case is surprisingly compact given the touchscreen and AI recording hardware inside it.</p>
+      <h2>The AMOLED Case — Genuinely Useful, Not a Gimmick</h2>
+      <p>
+        I fully expected the 1.78" touchscreen case to be a gimmick. It isn't. Being able to adjust ANC level, switch between sound modes, start a recording, or check battery status without touching your phone is legitimately convenient during commutes and in meetings. The screen is bright, responsive, and reads clearly in daylight.
+      </p>
 
-    <h2>Sound Quality — Great With a Caveat</h2>
-    <p>Out of the box, these have a V-shaped sound signature. Bass and treble are boosted, mids sit slightly back. Bass lovers will love this immediately — EDM, hip-hop, and anything with sub-bass extension sounds powerful and clean. The 9.2mm wool-paper diaphragm drivers have impressive range. Podcast listeners and anyone who finds boosted bass fatiguing will want to spend five minutes in the app first.</p>
-    <p>The HearID 5.0 personalisation feature genuinely solves this. You run a short hearing test, it analyses your preferences, and it generates a custom EQ profile tuned to your actual hearing. After using HearID, the sound signature shifts to something much more balanced — vocals come forward, the mid-range opens up, and the bass stays punchy without dominating. It's worth doing before you form a final opinion on the sound. The AI Sound Enhancement also helps — it claims a 65% real-time reduction in Bluetooth audio quality loss, and in blind listening tests between LDAC mode and standard Bluetooth, the difference is audible.</p>
-    <p>Dolby Audio is available in the app and adds some spatial width to the soundstage. It's subtle but pleasant for film and TV watching. I wouldn't use it for music — it softens the edges in a way that loses some of the driver's natural detail. Personal preference, but worth knowing.</p>
+      <!-- Case side angle -->
+      <img class="review-img"
+        src="https://i.ebayimg.com/images/g/-fwAAeSwqyxqDTIh/s-l400.png"
+        alt="Soundcore Liberty 5 Pro Max case from side angle"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Compact for everything inside it — fits in a jeans pocket without the square-edge problem.</p>
 
-    <h2>ANC, Comfort, and Battery Life</h2>
-    <p>The Adaptive ANC 4.0 processes 384,000 noise signals per second and adapts in real time to your environment. Soundcore says it's twice as deep as the Liberty 4 Pro's ANC, and having used both I can confirm it's a meaningful step up — particularly on low-frequency rumble like tube trains and aircraft engines. The five-level manual ANC mode lets you dial in exactly how much isolation you want, which is something I prefer over a "smart" mode that keeps switching on you. The commuter multimodal setting switches between ANC and transparency mode automatically depending on detected movement — it's a nice background-running feature once you stop noticing it.</p>
-    <p>Comfort is excellent. At 5.6g per earbud with a 38% smaller body profile than the previous gen, these sit in the ear canal without pressure buildup. Six ear tip sizes are included, which is more than most competitors, and the memory foam tips adapt to the shape of your ear over a few minutes of wear. I wore these for a three-hour meeting without discomfort, and without them shifting position at any point. For gym use, the IP55 rating handles sweat without issue.</p>
-    <p>Battery life: 6.5 hours in the buds with ANC on, 28 hours total with the case. 4 hours in the buds with all smart features running (ANC, Dolby, voice control — everything at once). The fast charge is the headline stat though: 5 minutes in the case gives you 4 hours of playtime. That's the kind of number where you stop feeling anxious about running out of charge.</p>
+      <h2>Sound Quality, ANC, and Battery</h2>
+      <p>
+        Out of the box, these have a V-shaped sound signature — bass and treble boosted, mids slightly back. Bass lovers will love this immediately. Anyone who finds boosted bass fatiguing will want to run the HearID 5.0 personalisation first, which generates a custom EQ profile tuned to your actual hearing. After HearID, the sound shifts to something much more balanced and the mid-range opens up properly. Worth doing before you form a final opinion on the sound.
+      </p>
+      <p>
+        The Adaptive ANC 4.0 processes 384,000 noise signals per second and adapts in real time to your environment — it's a meaningful step up from the previous gen, particularly on low-frequency rumble like tube trains and aircraft engines. Comfort is excellent at 5.6g per earbud with six ear tip sizes included. I wore these for a three-hour meeting without discomfort. Battery life: 6.5 hours buds with ANC on, 28 hours total with the case, and 5 minutes of charging gives you 4 hours of playtime. That last number is the one that actually matters day to day.
+      </p>
 
-    <h2>Privacy and the Note-Taker</h2>
-    <p>Worth covering this explicitly because it's a valid concern. The note-taker records room audio, which raises obvious questions in professional environments. Soundcore's approach: recordings are processed using AES-256 local encryption. Without cloud sync enabled, cloud files are deleted immediately after transcription completes — no audio or text is retained server-side. The app and service are certified to ISO 27001/27701, SOC 2 Type 1, HIPAA, and several EU-standard frameworks. That's a genuinely serious compliance list for what is essentially a consumer earbud accessory. HIPAA compliance in particular is unusual — it suggests Soundcore is targeting healthcare workers and corporate environments, not just productivity enthusiasts.</p>
+      <h2>Who Should Buy This?</h2>
+      <p>
+        The Liberty 5 Pro Max makes most sense for people who attend in-person meetings, lectures, or interviews and want a single device that handles both ears and notes. Against AirPods Pro (2nd gen) and Sony WF-1000XM5, it offers measurably better call quality, a more customisable app experience, significantly more battery life, and the note-taker case that neither competitor can match. At $229.99 these are premium earbuds — and they earn it. Trust me on this one.
+      </p>
 
-    <h2>What It's Not Perfect At</h2>
-    <p>The default EQ tuning is bass-heavy enough to be divisive. The ANC, while excellent, slightly colours the sound when enabled — some people will notice this, some won't. The subscription cost for heavy note-taker users is real money on top of an already premium hardware price. And the Soundcore app, despite being well-designed overall, has enough features that the initial setup has a genuine learning curve — it's not overwhelming but it does ask something of you in the first hour.</p>
-    <p>The note-taker's current limitation to in-person audio is also worth repeating plainly: if your meetings are primarily remote, you're buying the Pro Max premium for a feature you can't fully use yet. The September firmware update for Zoom/Teams support would change that, but firmware timelines are always "expected" rather than guaranteed.</p>
+    </div><!-- /article-more -->
 
-    <h2>Who Should Buy This?</h2>
-    <p>The Liberty 5 Pro Max makes most sense for people who attend in-person meetings, lectures, or interviews and want a single device that handles both ears and notes. Professionals who care about call quality in noisy environments — commuters, remote workers, anyone who spends time on calls in public — will also get direct value from the Guinness-certified call hardware.</p>
-    <p>At $229.99 these are premium earbuds, and they should be measured against other premium earbuds. Against AirPods Pro (2nd gen) and Sony WF-1000XM5, the Liberty 5 Pro Max offers measurably better call quality, a more customisable app experience, significantly more battery life, and the note-taker case that neither competitor can match. The Sony edges it slightly on pure audio quality out of the box for audiophile-leaning listeners. For everyone else, the Soundcore is the more complete package — and the better buy.</p>
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
   </section>
 
-  <!-- PHOTO GALLERY 2 - bottom -->
-  <section>
-    <p class="section-label">More Photos</p>
-    <div class="gallery-grid-2">
-      <img src="https://m.media-amazon.com/images/I/61Gnu96XtdL._AC_SL1500_.jpg" alt="Soundcore Liberty 5 Pro Max case open" onclick="openLightbox(this.src)">
-      <img src="https://www.blessthisstuff.com/imagens/stuff/soundcore-anker-liberty-5-pro-max-3.jpg" alt="Liberty 5 Pro Max lifestyle worn" onclick="openLightbox(this.src)">
-    </div>
-  </section>
-
-  <!-- SPECS TABLE -->
+  <!-- SPECS -->
   <section>
     <p class="section-label">Full Specs</p>
     <table class="specs-table">
@@ -751,7 +467,7 @@
     </table>
   </section>
 
-  <!-- SUBSCRIPTION BREAKDOWN -->
+  <!-- SUBSCRIPTION TABLE -->
   <section>
     <p class="section-label">AI Note-Taker Subscription Plans</p>
     <table class="sub-table">
@@ -788,7 +504,6 @@
           <li>Note-taker doesn't capture remote calls yet (coming Sept 2026)</li>
           <li>Pro/Unlimited subscription adds real ongoing cost</li>
           <li>App has a learning curve with so many features</li>
-          <li>9V adapter for case charging not specified in box contents</li>
         </ul>
       </div>
     </div>
@@ -799,18 +514,18 @@
     <div class="cta-box">
       <h3>Soundcore Liberty 5 Pro Max</h3>
       <p>$229.99 · Guinness World Record Call Clarity · AI Note-Taker · AMOLED Case</p>
-      <a class="btn-amazon" href="https://amzn.to/4g2FSej" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+      <a class="btn-amazon" href="https://amzn.to/4g2FSej" target="_blank" rel="noopener sponsored">
         Buy on Amazon
       </a>
       <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
     </div>
   </section>
-</div>
+
+</div><!-- /container -->
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightbox-img" src="" alt="Product photo enlarged">
 </div>
 
@@ -821,13 +536,20 @@
   <p style="margin-top:12px;">
     <a href="about.html">About</a> &nbsp;·&nbsp;
     <a href="contact.html">Contact</a> &nbsp;·&nbsp;
-    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
     <a href="https://www.youtube.com/@JaveomoTech" target="_blank" rel="noopener">YouTube</a>
   </p>
   <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.</p>
 </footer>
 
 <script>
+  function toggleArticle() {
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
+
   function openLightbox(src) {
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').classList.add('open');

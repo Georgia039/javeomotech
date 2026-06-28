@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=orbitron:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,6 @@
       --card-bg: #f8f9fb;
       --radius: 12px;
       --sky: #e8f4ff;
-      --sky-text: #0057ff;
     }
 
     body {
@@ -54,7 +53,7 @@
       backdrop-filter: blur(6px);
       z-index: 100;
     }
-    .nav-logo { font-family: 'orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
     .nav-logo span { color: var(--accent); }
     nav a.back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
     nav a.back:hover { color: var(--accent); }
@@ -96,21 +95,10 @@
       opacity: 0.7;
     }
     .hero-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6ea4ff; margin-bottom: 14px; }
-    .hero h1 { font-family: 'orbitron', sans-serif; font-size: clamp(1.7rem, 5vw, 2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
+    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.7rem, 5vw, 2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
     .hero h1 em { font-style: normal; color: #6ea4ff; }
     .hero-sub { color: rgba(255,255,255,0.52); font-size: 0.97rem; max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
-
-    /* Travel badge */
-    .travel-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0,87,255,0.18);
-      border: 1px solid rgba(110,164,255,0.4);
-      border-radius: 100px;
-      padding: 10px 22px;
-      margin-bottom: 20px;
-    }
+    .travel-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(0,87,255,0.18); border: 1px solid rgba(110,164,255,0.4); border-radius: 100px; padding: 10px 22px; margin-bottom: 20px; }
     .travel-badge span { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #6ea4ff; }
     .hero-price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 9px 22px; font-size: 1rem; font-weight: 600; color: #fff; }
     .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
@@ -121,22 +109,26 @@
     section + section { border-top: 1px solid var(--border); }
     .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 
-    /* ── GALLERY ── */
-    .gallery-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .gallery-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .gallery-grid-2 img, .gallery-grid-3 img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; cursor: pointer; transition: transform 0.18s ease, box-shadow 0.18s ease; border: 1px solid var(--border); }
-    .gallery-grid-2 img:hover, .gallery-grid-3 img:hover { transform: scale(1.03); box-shadow: 0 6px 24px rgba(0,0,0,0.14); }
-
-    /* ── INLINE REVIEW IMAGE ── */
-    .review-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); cursor: pointer; margin: 20px 0; display: block; transition: transform 0.18s ease; }
-    .review-img:hover { transform: scale(1.01); }
-    .review-img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: -12px; margin-bottom: 20px; }
+    /* ── INLINE REVIEW IMAGES ── */
+    .review-img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      margin: 20px 0 8px;
+      display: block;
+      object-fit: contain;
+      background: #f5f7ff;
+      transition: opacity 0.18s ease;
+    }
+    .review-img:hover { opacity: 0.88; }
+    .review-img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
 
     /* Lightbox */
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999999; align-items: center; justify-content: center; padding: 20px; }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
-    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; }
     .lightbox-close:hover { opacity: 1; }
 
     /* ── YOUTUBE ── */
@@ -144,40 +136,50 @@
     .short-wrap iframe { width: 220px; height: 391px; border-radius: 14px; border: none; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
 
     /* ── USE CASE CALLOUT ── */
-    .usecase-callout {
-      background: var(--sky);
-      border: 1.5px solid #b8d9ff;
-      border-radius: var(--radius);
-      padding: 22px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin: 28px 0;
-    }
+    .usecase-callout { background: var(--sky); border: 1.5px solid #b8d9ff; border-radius: var(--radius); padding: 22px 24px; display: flex; align-items: flex-start; gap: 16px; margin: 28px 0; }
     .usecase-callout .icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
-    .usecase-callout-body h4 { font-family: 'orbitron', sans-serif; font-size: 0.95rem; font-weight: 800; color: #003db3; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .usecase-callout-body h4 { font-family: 'Orbitron', sans-serif; font-size: 0.95rem; font-weight: 800; color: #003db3; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
     .usecase-callout-body p { font-size: 0.9rem; color: #0040cc; line-height: 1.6; }
 
     /* ── KEY FEATURES GRID ── */
     .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
     .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
     .feature-card .feat-icon { font-size: 1.4rem; margin-bottom: 8px; }
-    .feature-card h4 { font-family: 'orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .feature-card h4 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
     .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
     /* ── VERDICT BAR ── */
     .verdict-bar { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'orbitron', sans-serif; font-weight: 800; }
+    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Orbitron', sans-serif; font-weight: 800; }
     .score-circle .num { font-size: 1.5rem; line-height: 1; }
     .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
-    .verdict-text h3 { font-family: 'orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .verdict-text h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
     .verdict-text p { font-size: 0.9rem; color: var(--muted); }
 
     /* ── ARTICLE ── */
-    .article h2 { font-family: 'orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
+    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
     .article h2:first-child { margin-top: 0; }
     .article p { margin-bottom: 16px; color: #222; }
     .article p:last-child { margin-bottom: 0; }
+
+    /* ── READ MORE TOGGLE ── */
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn {
+      display: block;
+      margin: 24px auto 0;
+      background: none;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 28px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .read-more-btn:hover { background: var(--accent); color: #fff; }
 
     /* ── SPECS TABLE ── */
     .specs-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
@@ -189,7 +191,7 @@
     /* ── PROS / CONS ── */
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .pros, .cons { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
-    .pros h4, .cons h4 { font-family: 'orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+    .pros h4, .cons h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
     .pros h4 { color: #1a7a1a; }
     .cons h4 { color: #b91c1c; }
     .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -201,7 +203,7 @@
     .cta-box { background: linear-gradient(145deg, #060c1a 0%, #0a1535 100%); border-radius: var(--radius); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; }
     .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.2) 0%, transparent 60%); pointer-events: none; }
     .cta-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #0057ff, transparent); opacity: 0.7; }
-    .cta-box h3 { font-family: 'orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .cta-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
     .cta-box p { color: rgba(255,255,255,0.42); font-size: 0.9rem; margin-bottom: 24px; }
     .btn-amazon { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 15px 34px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s ease, transform 0.15s ease; }
     .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
@@ -211,7 +213,6 @@
     @media (max-width: 560px) {
       .pros-cons { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid-2 { grid-template-columns: 1fr 1fr; }
       .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
     }
 
@@ -248,25 +249,21 @@
   </div>
 </div>
 
-<!-- GALLERY -->
 <div class="container">
+
+  <!-- HERO IMAGE -->
   <section>
-    <p class="section-label">Photo Gallery</p>
-    <div class="gallery-grid-2">
-      <img src="https://m.media-amazon.com/images/I/512ipCgVeQL._AC_SL1500_.jpg" alt="AirFly Pro 2 Bluetooth adapter" onclick="openLightbox(this.src)">
-      <img src="https://www.cultofmac.com/wp-content/uploads/2025/03/AirFly-Pro-2_AirPods-4.jpg" alt="AirFly Pro 2 with AirPods" onclick="openLightbox(this.src)">
-    </div>
-    <div class="gallery-grid-2" style="margin-top:10px;">
-      <img src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro21.jpg?v=1747700376&width=1400" alt="AirFly Pro 2 plugged into seat" onclick="openLightbox(this.src)">
-      <img src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro25.jpg?v=1753151837&width=1400" alt="AirFly Pro 2 detail shot" onclick="openLightbox(this.src)">
-    </div>
+    <img class="review-img"
+      src="https://m.media-amazon.com/images/I/512ipCgVeQL._AC_SL1500_.jpg"
+      alt="AirFly Pro 2 Bluetooth adapter"
+      onclick="openLightbox(this.src)" loading="eager" style="margin-top:0;" />
   </section>
 
   <!-- YOUTUBE -->
   <section>
     <p class="section-label">Watch the Short</p>
     <div class="short-wrap">
-      <iframe src="https://www.youtube.com/embed/wHwkGB01K68" title="AirFly Pro 2 Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/wHwkGB01K68" title="AirFly Pro 2 Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
 
@@ -327,56 +324,75 @@
     <p class="section-label">Full Review</p>
 
     <h2>What Is the AirFly Pro 2?</h2>
-    <p>I don't usually get this excited about accessories. But the AirFly Pro 2 genuinely surprised me — and I say that as someone who's been through enough travel gadgets to know when something is actually solving a problem versus just adding complexity. This is a Bluetooth transmitter the size of a lipstick cap that plugs into any 3.5mm headphone jack and turns it wireless. Airplane seat jack, car aux port, treadmill, hotel TV, PS5 controller — anything with a 3.5mm output suddenly works with your AirPods or Bose or whatever wireless headphones you already own.</p>
-    <p>The original AirFly was fine. The Pro 2 is noticeably better — the buttons are better positioned, setup is more intuitive, and the whole experience feels more polished. If you used the original and thought "this is almost there," the Pro 2 is the version that actually gets it right.</p>
+    <p>
+      I don't usually get this excited about accessories. But the AirFly Pro 2 genuinely surprised me — and I say that as someone who's been through enough travel gadgets to know when something is actually solving a problem versus just adding complexity. This is a Bluetooth transmitter the size of a lipstick cap that plugs into any 3.5mm headphone jack and turns it wireless.
+    </p>
 
+    <!-- Image: AirPods pairing shot -->
     <img class="review-img"
       src="https://www.cultofmac.com/wp-content/uploads/2025/03/AirFly-Pro-2_AirPods-4.jpg"
       alt="AirFly Pro 2 paired with AirPods on airplane"
-      onclick="openLightbox(this.src)">
+      onclick="openLightbox(this.src)" loading="lazy" />
     <p class="review-img-caption">Plug it into the seat jack, pair your AirPods, done. Setup takes about 10 seconds.</p>
 
-    <h2>On a 12-Hour Flight</h2>
-    <p>I tested this on a 12-hour Delta flight and it made the entire experience genuinely better. Plugged into the headphone jack on the in-flight entertainment screen, pressed the button, my Bose QuietComfort headphones connected within seconds. Audio came through crystal clear — no dropouts, no weird delay, no sync issues during movies. I watched a few films back to back and never once had to fiddle with it. It just worked.</p>
-    <p>The audio quality is excellent. I was skeptical going in — Bluetooth over a 3.5mm transmitter sounds like it should be a compromise, but it doesn't feel like one in practice. The QuietComfort headphones sound like they always do, which is all you can really ask for.</p>
+    <div class="article-more" id="articleMore">
 
-    <div class="usecase-callout">
-      <div class="icon">👨‍👩‍👧‍👦</div>
-      <div class="usecase-callout-body">
-        <h4>The Family Travel Game-Changer</h4>
-        <p>Connect the AirFly Pro 2 to a USB-C headphone adapter on your iPad, and multiple kids can pair their own wireless headphones to the same iPad simultaneously. No more sharing one pair of earbuds or fighting over the volume. Tested this on road trips — it works exactly as described and it's genuinely great.</p>
+      <h2>On a 12-Hour Flight</h2>
+      <p>
+        I tested this on a 12-hour Delta flight and it made the entire experience genuinely better. Plugged into the headphone jack on the in-flight entertainment screen, pressed the button, my Bose QuietComfort headphones connected within seconds. Audio came through crystal clear — no dropouts, no weird delay, no sync issues during movies. I watched a few films back to back and never once had to fiddle with it. It just worked.
+      </p>
+      <p>
+        The audio quality is excellent. I was skeptical going in — Bluetooth over a 3.5mm transmitter sounds like it should be a compromise, but it doesn't feel like one in practice. The QuietComfort headphones sound like they always do, which is all you can really ask for.
+      </p>
+
+      <!-- Image: plugged into seat -->
+      <img class="review-img"
+        src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro21.jpg?v=1747700376&width=1400"
+        alt="AirFly Pro 2 plugged into airplane seat jack"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="review-img-caption">Plugged directly into the seat entertainment jack — no adapters, no fuss.</p>
+
+      <div class="usecase-callout">
+        <div class="icon">👨‍👩‍👧‍👦</div>
+        <div class="usecase-callout-body">
+          <h4>The Family Travel Game-Changer</h4>
+          <p>Connect the AirFly Pro 2 to a USB-C headphone adapter on your iPad, and multiple kids can pair their own wireless headphones to the same iPad simultaneously. No more sharing one pair of earbuds or fighting over the volume. Tested this on road trips — it works exactly as described.</p>
+        </div>
       </div>
-    </div>
 
-    <h2>Dual Headphone Pairing</h2>
-    <p>This is the feature that pushed me from "good gadget" to "genuinely recommend to everyone." The AirFly Pro 2 supports two Bluetooth headphone connections at the same time. On the flight, my travel companion and I both connected our own headphones to the same seat entertainment jack and watched the same movie together, completely wire-free. That's a feature I didn't know I wanted until I had it, and now I can't imagine flying without it.</p>
-    <p>The same trick works at home with an iPad. I use a JSAUX USB-C headphone adapter to plug the AirFly into the iPad (the adapter also lets you charge the iPad simultaneously, which matters on long trips), and multiple kids can each connect their own wireless headphones to the same iPad. Movie time on road trips went from chaotic to genuinely pleasant.</p>
+      <h2>Dual Headphone Pairing</h2>
+      <p>
+        This is the feature that pushed me from "good gadget" to "genuinely recommend to everyone." The AirFly Pro 2 supports two Bluetooth headphone connections at the same time. On the flight, my travel companion and I both connected our own headphones to the same seat entertainment jack and watched the same movie together, completely wire-free. That's a feature I didn't know I wanted until I had it, and now I can't imagine flying without it.
+      </p>
 
-    <img class="review-img"
-      src="https://m.media-amazon.com/images/I/71AKrbg6RVL._SY88.jpg"
-      alt="AirFly Pro 2 connected to PS5 controller"
-      onclick="openLightbox(this.src)">
-    <p class="review-img-caption">Works with a PS5 controller too — any 3.5mm jack is fair game.</p>
+      <h2>Beyond the Airplane</h2>
+      <p>
+        I've been reaching for this thing in situations I didn't originally buy it for. Hotel TVs with no Bluetooth. The treadmill at the gym. My car's aux port when I want to use headphones instead of speakers. The PS5 controller. Anything with a 3.5mm jack becomes wireless-headphone compatible — it quietly removes a lot of friction from daily life once you start thinking of it that way.
+      </p>
 
-    <h2>Beyond the Airplane</h2>
-    <p>I've been reaching for this thing in situations I didn't originally buy it for. Hotel TVs with no Bluetooth. The treadmill at the gym that has a screen but no wireless audio. My car's aux port when I want to use headphones instead of speakers. The PS5 controller. Anything with a 3.5mm jack becomes wireless-headphone compatible. It's a small shift but it quietly removes a lot of friction from daily life once you start thinking of it that way.</p>
-    <p>It's also taken some knocks — kids being kids — and held up without issue. The build quality is solid for something this small. It's been in my bag on multiple trips and still looks and works like new.</p>
+      <!-- Image: detail shot -->
+      <img class="review-img"
+        src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro25.jpg?v=1753151837&width=1400"
+        alt="AirFly Pro 2 detail shot"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="review-img-caption">Build quality is solid — it's been in my bag on multiple trips and still looks new.</p>
 
-    <h2>What It's Missing</h2>
-    <p>A few genuine gaps worth knowing about. There's no LCD screen, so you can't see which headphones are currently connected or what the battery percentage is. The Avantree Voyager has this and it's a legitimate advantage if you're managing multiple pairs. The AirFly only comes in white, which won't match most airplane seat jacks (usually black or grey) — cosmetic issue, but worth knowing. It doesn't come with a hard case, just a soft pouch, so I bought a separate case to clip to my backpack. And the connection process, while generally smooth, isn't completely obvious the first time — you'll want to read the instructions once before your first flight rather than figuring it out at 35,000 feet.</p>
-    <p>None of these are dealbreakers for me. The core experience — wireless audio from any 3.5mm source, zero lag, dual pairing — is executed so well that the missing features feel like future wishlist items rather than reasons not to buy.</p>
+      <h2>What It's Missing</h2>
+      <p>
+        A few genuine gaps worth knowing about. There's no LCD screen, so you can't see which headphones are connected or what the battery percentage is. The Avantree Voyager has this and it's a legitimate advantage if you're managing multiple pairs. The AirFly only comes in white, which won't match most airplane seat jacks. It doesn't come with a hard case — just a soft pouch. And the connection process, while generally smooth, isn't completely obvious the first time. Read the instructions before your first flight, not at 35,000 feet.
+      </p>
+      <p>
+        None of these are dealbreakers. The core experience — wireless audio from any 3.5mm source, zero lag, dual pairing — is executed so well that the missing features feel like future wishlist items rather than reasons not to buy.
+      </p>
 
-    <h2>Who Should Buy This?</h2>
-    <p>Anyone who travels regularly and uses wireless headphones. Full stop. If you're on planes more than twice a year, this pays for itself in comfort before the end of your second flight. It's also genuinely useful for families — the dual pairing plus iPad setup is one of those rare travel hacks that actually works as well as it sounds. At $59.99 it's not cheap for an adapter, but it's not a gadget you'll use twice and forget — this is the kind of thing that quietly becomes a permanent resident in your travel bag.</p>
-  </section>
+      <h2>Who Should Buy This?</h2>
+      <p>
+        Anyone who travels regularly and uses wireless headphones. Full stop. If you're on planes more than twice a year, this pays for itself in comfort before the end of your second flight. At $59.99 it's not cheap for an adapter, but it's the kind of thing that quietly becomes a permanent resident in your travel bag. Trust me on this one.
+      </p>
 
-  <!-- MORE PHOTOS -->
-  <section>
-    <p class="section-label">More Photos</p>
-    <div class="gallery-grid-2">
-      <img src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro21.jpg?v=1747700376&width=1400" alt="AirFly Pro 2 in use" onclick="openLightbox(this.src)">
-      <img src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro25.jpg?v=1753151837&width=1400" alt="AirFly Pro 2 detail" onclick="openLightbox(this.src)">
-    </div>
+    </div><!-- /article-more -->
+
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
   </section>
 
   <!-- SPECS -->
@@ -406,9 +422,9 @@
           <li>Zero audio lag — watched full movies without sync issues</li>
           <li>Dual headphone pairing works perfectly</li>
           <li>Dead simple setup — pairs in seconds</li>
-          <li>Excellent sound quality through Bose QuietComfort</li>
-          <li>Works on planes, iPads, TVs, PS5, cars — truly universal</li>
-          <li>Better buttons and more intuitive than original AirFly</li>
+          <li>Excellent sound quality</li>
+          <li>Works on planes, iPads, TVs, PS5, cars</li>
+          <li>More polished than the original AirFly</li>
           <li>Durable — survived travel with kids</li>
           <li>Long battery life</li>
         </ul>
@@ -437,21 +453,29 @@
       <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
     </div>
   </section>
-</div>
+
+</div><!-- /container -->
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightbox-img" src="" alt="Product photo enlarged">
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 JaveomoTech · <a href="#">Privacy Policy</a> · <a href="#">Contact</a></p>
+  <p>© 2025 JaveomoTech · <a href="privacy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p>
   <p style="margin-top:6px;">JaveomoTech is a participant in the Amazon Services LLC Associates Program.</p>
 </footer>
 
 <script>
+  function toggleArticle() {
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
+
   function openLightbox(src) {
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').classList.add('open');
