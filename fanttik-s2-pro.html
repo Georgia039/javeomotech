@@ -167,23 +167,26 @@
       margin: 0 auto;
     }
 
-    /* ── GALLERY ── */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 20px 0 32px;
-    }
-    .gallery-img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 10px;
+    /* ── REVIEW IMAGES ── */
+    .review-img {
+      max-width: 100%;
+      max-height: 420px;
+      border-radius: var(--radius);
+      object-fit: contain;
       background: #f5f7ff;
+      display: block;
       cursor: pointer;
+      margin: 20px auto 8px;
+      border: 1px solid var(--border);
       transition: opacity 0.2s;
     }
-    .gallery-img:hover { opacity: 0.85; }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
 
     /* Lightbox */
     .lightbox {
@@ -449,19 +452,16 @@
     @media (max-width: 480px) {
       .features-grid { grid-template-columns: 1fr; }
       .pros-cons { grid-template-columns: 1fr; }
-      .gallery { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="index.html">JaveomoTech</a>
   <a class="nav-back" href="index.html">← All Reviews</a>
 </nav>
 
-<!-- STICKY BAR -->
 <div class="sticky-bar">
   <span class="sticky-name">Fanttik S2 Pro Electric Screwdriver</span>
   <a class="sticky-btn" href="https://amzn.to/4xQjnj9" target="_blank" rel="nofollow sponsored">
@@ -471,7 +471,6 @@
 
 <div class="page-wrap">
 
-  <!-- HERO -->
   <section class="hero">
     <p class="hero-eyebrow">Tools &amp; Workshop</p>
     <h1>Fanttik S2 Pro Electric Screwdriver</h1>
@@ -486,40 +485,21 @@
       loading="eager" />
   </section>
 
-  <!-- GALLERY -->
-  <div class="gallery">
-    <img class="gallery-img"
-      src="https://m.media-amazon.com/images/I/61ZjmUjVtcL._AC_SL1500_.jpg"
-      alt="20 steel bits included"
-      onclick="openLightbox(this.src)" loading="lazy" />
-    <img class="gallery-img"
-      src="https://m.media-amazon.com/images/I/71z9makYCqL.jpg"
-      alt="Fanttik S2 Pro in box with all bits"
-      onclick="openLightbox(this.src)" loading="lazy" />
-    <img class="gallery-img"
-      src="https://m.media-amazon.com/images/I/71-j4knG3yL.jpg"
-      alt="Using the 90° L-angle adapter"
-      onclick="openLightbox(this.src)" loading="lazy" />
-  </div>
-
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <!-- YOUTUBE SHORT -->
   <div class="short-wrap">
     <p class="short-label">Watch the Short</p>
     <iframe class="short-frame"
-      src="https://youtube.com/shorts/nZOW3MyWYgY"
+      src="https://www.youtube.com/shorts/nZOW3MyWYgY"
       title="Fanttik S2 Pro Review Short"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen loading="lazy">
     </iframe>
   </div>
 
-  <!-- VERDICT -->
   <div class="verdict">
     <div class="score-circle">
       <span class="score-num">8.3</span>
@@ -530,7 +510,6 @@
     </p>
   </div>
 
-  <!-- KEY FEATURES -->
   <p class="section-label">Key Features</p>
   <div class="features-grid">
     <div class="feature-card">
@@ -567,7 +546,6 @@
 
   <hr class="divider" />
 
-  <!-- ARTICLE -->
   <section class="article-body">
     <p>
       Let me be honest — I almost glossed over this one. An electric screwdriver at $70 sounds like a lot for something that's basically a powered version of what you can do by hand. But after using the Fanttik S2 Pro on an actual IKEA build, I get it now.
@@ -577,12 +555,24 @@
       <p>
         The first thing that stands out is how solid it feels the moment you pick it up. It's got some actual heft — not heavy, but dense in a way that reads as quality. The bits click into place with a satisfying snap, the grip is comfortable, and the button layout makes sense. Nothing about it feels cheap, which you don't always get at this price point.
       </p>
+      
+      <img class="review-img" src="https://m.media-amazon.com/images/I/61ZjmUjVtcL._AC_SL1500_.jpg" alt="20 steel bits included" onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">All 20 bits sit neatly in the case — nothing rolling around.</p>
+
       <p>
         For furniture assembly, this thing really does shine. I used it on a bedframe with a mix of hex bolts and Phillips screws and it handled everything cleanly without stripping a single head. The torque dial is genuinely useful too — not just a marketing spec. Dropping it to the lower settings for electronics or outlet covers, then cranking it up for MDF, makes a real difference.
       </p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/71z9makYCqL.jpg" alt="Fanttik S2 Pro in box with all bits" onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Everything in the box, organized and ready to go.</p>
+
       <p>
         The 90° angle adapter is where it gets interesting. Anyone who's tried to drive screws into a tight corner with a full-size drill knows the frustration. The L-adapter on the S2 Pro solves that without drama. It had enough torque to drive into drywall anchors at an angle — something I honestly didn't expect.
       </p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/71-j4knG3yL.jpg" alt="Using the 90° L-angle adapter" onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">The L-adapter getting into a corner a full-size drill can't reach.</p>
+
       <p>
         Am I being too optimistic? Maybe. It's not a replacement for a real cordless drill. If you're driving long screws into hardwood or building a deck, go get something with actual voltage. But for everything else — furniture, household repairs, small electronics, anything where precision matters more than brute force — this is the right tool and the full-size driver is the wrong one.
       </p>
@@ -599,7 +589,6 @@
 
   <hr class="divider" />
 
-  <!-- SPECS TABLE -->
   <p class="section-label">Specifications</p>
   <table class="specs-table">
     <tr><td>Model</td><td>Fanttik S2 Pro</td></tr>
@@ -616,7 +605,6 @@
 
   <hr class="divider" />
 
-  <!-- PROS / CONS -->
   <div class="pros-cons">
     <div class="pros-box">
       <p class="pc-title">Pros</p>
@@ -641,7 +629,6 @@
     </div>
   </div>
 
-  <!-- CTA -->
   <div class="cta-block">
     <h3>Ready to upgrade your toolbox?</h3>
     <p>The Fanttik S2 Pro is available on Amazon with free Prime shipping.</p>
@@ -650,7 +637,10 @@
     </a>
   </div>
 
-</div><!-- /page-wrap -->
+</div><footer style="border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 60px;">
+  <p>© 2026 JaveomoTech · <a href="privacy.html" style="color:var(--muted);">Privacy Policy</a> · <a href="contact.html" style="color:var(--muted);">Contact</a></p>
+  <p style="margin-top:6px;">JaveomoTech is a participant in the Amazon Services LLC Associates Program.</p>
+</footer>
 
 <script>
   function toggleArticle() {
