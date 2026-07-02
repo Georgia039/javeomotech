@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PU Leather Desk Mat Review | JaveomoTech</title>
+  <meta name="description" content="Honest review of the PU leather desk mat. Large workspace coverage, smooth mouse surface, easy to clean. The cheapest upgrade your desk will ever get." />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #0057ff;
+      --accent-light: #e8eeff;
+      --text: #111;
+      --muted: #555;
+      --border: #e4e4e4;
+      --bg: #fff;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100000;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 54px;
+    }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 900; color: var(--accent); text-decoration: none; letter-spacing: 0.03em; }
+    .nav-back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    .nav-back:hover { color: var(--accent); }
+
+    /* ── STICKY BAR ── */
+    .sticky-bar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      max-width: 700px;
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 12px;
+      z-index: 99999;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(0,87,255,0.3);
+    }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--accent); font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .sticky-bar { top: auto; bottom: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrap { max-width: 700px; margin: 0 auto; padding: 0 20px 120px; }
+
+    /* ── HERO ── */
+    .hero { padding: 100px 0 28px; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 900; line-height: 1.2; color: var(--text); margin-bottom: 16px; }
+    .hero-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+    .hero-price { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    .hero-tag { font-size: 0.78rem; font-weight: 600; background: var(--accent-light); color: var(--accent); padding: 4px 12px; border-radius: 100px; }
+    .hero-img { max-width: 100%; max-height: 420px; border-radius: var(--radius); object-fit: contain; background: #f5f7ff; display: block; margin: 0 auto; }
+
+    /* ── REVIEW IMAGES ── */
+    .review-img { max-width: 100%; max-height: 420px; border-radius: var(--radius); object-fit: contain; background: #f5f7ff; display: block; cursor: pointer; margin: 20px auto 8px; border: 1px solid var(--border); transition: opacity 0.2s; }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption { text-align: center; font-size: 0.78rem; color: var(--muted); margin-bottom: 28px; }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 999999; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 10px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; background: none; border: none; }
+
+    /* ── YOUTUBE SHORT ── */
+    .short-wrap { margin: 0 auto 36px; width: 220px; }
+    .short-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; text-align: center; }
+    .short-frame { width: 220px; height: 391px; border-radius: 12px; overflow: hidden; border: none; display: block; }
+
+    /* ── VERDICT BAR ── */
+    .verdict { display: flex; align-items: center; gap: 20px; background: var(--accent-light); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 36px; }
+    .score-circle { flex-shrink: 0; width: 68px; height: 68px; border-radius: 50%; background: var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; }
+    .score-num { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 900; line-height: 1; }
+    .score-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; opacity: 0.8; text-transform: uppercase; }
+    .verdict-text { font-size: 0.95rem; color: var(--text); font-weight: 500; line-height: 1.5; }
+
+    /* ── KEY FEATURES ── */
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 36px; }
+    .feature-card { background: #f8f9ff; border-radius: 10px; padding: 14px 16px; border: 1px solid var(--border); }
+    .feature-card .f-icon { font-size: 1.3rem; margin-bottom: 6px; }
+    .feature-card .f-title { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .feature-card .f-desc { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── ARTICLE ── */
+    .article-body { margin-bottom: 36px; }
+    .article-body p { margin-bottom: 18px; color: #222; font-size: 0.97rem; }
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn { display: block; margin: 24px auto 0; background: none; border: 1.5px solid var(--accent); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; padding: 10px 28px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
+    .read-more-btn:hover { background: var(--accent); color: #fff; }
+
+    /* ── SPECS TABLE ── */
+    .specs-table { width: 100%; border-collapse: collapse; margin-bottom: 36px; font-size: 0.9rem; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 11px 6px; vertical-align: top; }
+    .specs-table td:first-child { font-weight: 600; color: var(--muted); width: 42%; }
+
+    /* ── PROS / CONS ── */
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+    .pros-box, .cons-box { border-radius: var(--radius); padding: 18px 16px; }
+    .pros-box { background: #f0fff6; border: 1px solid #b6f0cc; }
+    .cons-box { background: #fff5f5; border: 1px solid #ffc9c9; }
+    .pc-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .pros-box .pc-title { color: #1a8c4e; }
+    .cons-box .pc-title { color: #cc2222; }
+    .pc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .pc-list li { font-size: 0.84rem; display: flex; align-items: flex-start; gap: 7px; color: var(--text); line-height: 1.4; }
+    .pc-list li::before { flex-shrink: 0; margin-top: 1px; font-size: 0.9rem; }
+    .pros-box .pc-list li::before { content: "✓"; color: #1a8c4e; font-weight: 700; }
+    .cons-box .pc-list li::before { content: "✗"; color: #cc2222; font-weight: 700; }
+
+    /* ── CTA ── */
+    .cta-block { background: linear-gradient(135deg, #0057ff 0%, #2979ff 100%); border-radius: var(--radius); padding: 28px 24px; text-align: center; color: #fff; }
+    .cta-block h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .cta-block p { font-size: 0.85rem; opacity: 0.85; margin-bottom: 18px; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--accent); font-weight: 700; font-size: 0.95rem; padding: 12px 28px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.9; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 60px; }
+    footer a { color: var(--muted); text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .pros-cons { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">JaveomoTech</a>
+  <a class="nav-back" href="index.html">← All Reviews</a>
+</nav>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span class="sticky-name">PU Leather Desk Mat</span>
+  <a class="sticky-btn" href="https://amzn.to/4avGMMO" target="_blank" rel="nofollow sponsored">
+    $12.59 on Amazon →
+  </a>
+</div>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Desk Setup &amp; Accessories</p>
+    <h1>PU Leather Desk Mat</h1>
+    <div class="hero-meta">
+      <span class="hero-price">$12.59</span>
+      <span class="hero-tag">Large Surface</span>
+      <span class="hero-tag">Easy to Clean</span>
+    </div>
+    <img class="hero-img"
+      src="https://m.media-amazon.com/images/I/61nUL9EInwL._AC_SL1500_.jpg"
+      alt="PU Leather Desk Mat black"
+      loading="eager" />
+  </section>
+
+  <!-- YOUTUBE SHORT — swap ID when recorded -->
+  <div class="short-wrap">
+    <p class="short-label">Watch the Short</p>
+    <iframe class="short-frame"
+      src="https://www.youtube.com/embed/wHwkGB01K68"
+      title="PU Leather Desk Mat Review Short"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="score-circle">
+      <span class="score-num">9.1</span>
+      <span class="score-label">/ 10</span>
+    </div>
+    <p class="verdict-text">
+      At $12.59 this is the easiest desk upgrade you'll ever make. It looks cleaner, protects your desk, and makes the whole setup feel more intentional — all for the price of a coffee. Genuinely hard to argue against.
+    </p>
+  </div>
+
+  <!-- KEY FEATURES -->
+  <p class="section-label">Key Features</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="f-icon">🖥️</div>
+      <div class="f-title">Full Desk Coverage</div>
+      <div class="f-desc">Large enough for keyboard, mouse, and laptop together — no more juggling multiple small accessories.</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🖱️</div>
+      <div class="f-title">Smooth Mouse Surface</div>
+      <div class="f-desc">Works perfectly as a large mousepad. Consistent tracking across the entire surface.</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🧹</div>
+      <div class="f-title">Easy to Clean</div>
+      <div class="f-desc">Wipe it down and it's good as new. Doesn't absorb spills the way fabric pads do.</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">🛡️</div>
+      <div class="f-title">Protects Your Desk</div>
+      <div class="f-desc">Keeps scratches, coffee rings, and cable wear off the actual desk surface underneath.</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">📐</div>
+      <div class="f-title">Multiple Sizes</div>
+      <div class="f-desc">Available in different sizes to fit your specific desk — small, medium, and large options.</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">✈️</div>
+      <div class="f-title">Rolls Up Flat</div>
+      <div class="f-desc">Rolls up cleanly for storage or travel. Lays flat quickly after unrolling — no annoying curled edges.</div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ARTICLE -->
+  <section class="article-body">
+    <p>
+      I'll be honest — I put off getting a desk mat for a long time because it seemed like one of those "nice to have" things that doesn't actually change much. I was wrong. The difference between a bare desk and a desk with a mat is immediately visible, and it takes about 30 seconds to set up.
+    </p>
+
+    <div class="article-more" id="articleMore">
+
+      <!-- Sizes image -->
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71ijP6+Ap-L._AC_SL1500_.jpg"
+        alt="Desk mat size options"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Multiple sizes available — pick the one that fits your desk.</p>
+
+      <p>
+        The PU leather surface looks clean and professional without being flashy about it. Black works in basically any setup — home office, gaming desk, work from home, doesn't matter. It's the kind of thing that makes the whole desk look more intentional without you having to rearrange anything else. People who see my setup at work actually comment on it, which I was not expecting from a $12 mat.
+      </p>
+      <p>
+        The mouse tracking is smooth across the entire surface. I use a standard optical mouse and it works exactly like a large mousepad — consistent and accurate right to the edges. If you've been using a small mousepad and constantly running out of space mid-swipe, this fixes that immediately.
+      </p>
+
+      <!-- Underside image -->
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71Ilrdl4s2L.jpg"
+        alt="Underside of desk mat showing non-slip base"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">The underside grip keeps it in place — it doesn't slide around during use.</p>
+
+      <p>
+        It doesn't move. This was my main concern with a mat at this price point — I expected it to creep around every time I reached across the desk. It doesn't. The underside grip keeps it planted, and after a week of daily use it hasn't shifted position once.
+      </p>
+      <p>
+        Cleaning is genuinely easy. Spilled coffee on it during the first week (classic) and it wiped clean with a damp cloth in about ten seconds. That's the real practical advantage over fabric pads — fabric absorbs everything and slowly becomes disgusting. This doesn't.
+      </p>
+
+      <!-- Front desk setup -->
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/611ecOJt97L.jpg"
+        alt="Front view of desk setup with mat"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Front view of the setup — the mat ties the whole desk together visually.</p>
+
+      <!-- Side desk setup -->
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/61Y0ydal5cL.jpg"
+        alt="Side view of desk setup with mat"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Side angle — covers the full working area without hanging off the edges.</p>
+
+      <p>
+        The PU leather feel is not the same as real leather — but at $12.59 that's not a reasonable expectation and it's not trying to be. It looks the part, it functions better than most fabric alternatives at this price, and it holds up fine with daily use. Am I being too easy on it? Maybe. But when something costs $12 and does exactly what it says, that deserves credit.
+      </p>
+
+      <!-- Size comparison -->
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71tbDdbUzTL.jpg"
+        alt="Desk mat size comparison with keyboard and mouse"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Size comparison — fits an Apple keyboard and mouse with room to spare.</p>
+
+      <p>
+        Bottom line: this is the cheapest meaningful upgrade you can make to your desk. It protects the surface, cleans up the look, solves the mousepad problem, and costs less than lunch. If you've been sitting at a bare desk, just get it. Trust me on this one.
+      </p>
+
+    </div>
+
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SPECS TABLE -->
+  <p class="section-label">Specifications</p>
+  <table class="specs-table">
+    <tr><td>Material</td><td>PU Leather top, non-slip base</td></tr>
+    <tr><td>Surface</td><td>Smooth — suitable for mouse use</td></tr>
+    <tr><td>Sizes</td><td>Multiple sizes available</td></tr>
+    <tr><td>Colors</td><td>Black (and other options)</td></tr>
+    <tr><td>Cleaning</td><td>Wipe clean with damp cloth</td></tr>
+    <tr><td>Storage</td><td>Rolls up flat</td></tr>
+    <tr><td>Best For</td><td>Home office, gaming desk, work from home setup</td></tr>
+    <tr><td>Price</td><td>$12.59</td></tr>
+  </table>
+
+  <hr class="divider" />
+
+  <!-- PROS / CONS -->
+  <div class="pros-cons">
+    <div class="pros-box">
+      <p class="pc-title">Pros</p>
+      <ul class="pc-list">
+        <li>Makes the desk look instantly cleaner</li>
+        <li>Works as a large mousepad across the full surface</li>
+        <li>Doesn't slide — stays planted during use</li>
+        <li>Wipes clean in seconds</li>
+        <li>Protects the actual desk underneath</li>
+        <li>Lays flat quickly after unrolling</li>
+        <li>Unbeatable value at $12.59</li>
+      </ul>
+    </div>
+    <div class="cons-box">
+      <p class="pc-title">Cons</p>
+      <ul class="pc-list">
+        <li>PU leather, not real leather — feels different up close</li>
+        <li>Not suitable for heavy cutting or craft work</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>The easiest desk upgrade you'll make.</h3>
+    <p>Available on Amazon for $12.59 — multiple sizes and colors.</p>
+    <a class="cta-btn" href="https://amzn.to/4avGMMO" target="_blank" rel="nofollow sponsored">
+      Check Price on Amazon →
+    </a>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 JaveomoTech · <a href="privacy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p>
+  <p style="margin-top:6px;">JaveomoTech is a participant in the Amazon Services LLC Associates Program.</p>
+</footer>
+
+<script>
+  function toggleArticle() {
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>
