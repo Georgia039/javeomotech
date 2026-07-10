@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Beat Power Strip Surge Protector Review — 6 Outlets, 4 USB Ports | JaveomoTech</title>
+  <meta name="description" content="Honest review of the One Beat power strip surge protector with 6 outlets and 4 USB ports (2 USB-C). Flat plug, wall mount, 5ft cord — is $12.99 worth it? Read before you buy.">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #0057ff;
+      --accent-light: #e8efff;
+      --text: #111;
+      --muted: #555;
+      --border: #e2e2e2;
+      --bg: #fff;
+      --card-bg: #f8f9fb;
+      --radius: 12px;
+      --gold: #d4a012;
+      --gold-light: #fff8e6;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+    }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--accent); }
+    nav a.back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    nav a.back:hover { color: var(--accent); }
+
+    /* ── STICKY BAR ── */
+    .sticky-bar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      max-width: 700px;
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 12px;
+      z-index: 99999;
+      background: #0057ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(0,87,255,0.3);
+      box-sizing: border-box;
+    }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
+    .sticky-bar .sticky-btn:hover { opacity: 0.88; }
+    @media (max-width: 600px) {
+      .sticky-bar { top: auto; bottom: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, #08090f 0%, #0f1424 50%, #14100a 100%);
+      color: #fff;
+      padding: 60px 24px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0,87,255,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(212,160,18,0.10) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 35%, #ffe082 50%, var(--gold) 65%, transparent 100%);
+      opacity: 0.8;
+    }
+    .hero-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #d4a012; margin-bottom: 14px; }
+    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 4.5vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
+    .hero h1 em { font-style: normal; color: #6ea4ff; }
+    .hero-sub { color: rgba(255,255,255,0.52); font-size: 0.97rem; max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
+    .hero-price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 9px 22px; font-size: 1rem; font-weight: 600; color: #fff; }
+    .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 44px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+
+    /* ── REVIEW IMAGES ── */
+    .review-img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      margin: 20px 0 8px;
+      display: block;
+      object-fit: contain;
+      background: #f5f7ff;
+      transition: opacity 0.18s ease;
+    }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999999; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── VIDEO PLACEHOLDER ── */
+    .video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 220px;
+      height: 391px;
+      margin: 0 auto;
+      border-radius: 14px;
+      background: var(--card-bg);
+      border: 1.5px dashed var(--border);
+      color: var(--muted);
+    }
+    .video-placeholder .icon { font-size: 2rem; opacity: 0.5; }
+    .video-placeholder p { font-size: 0.85rem; font-weight: 600; text-align: center; padding: 0 20px; }
+    .short-wrap { display: flex; justify-content: center; }
+
+    /* ── KEY FEATURES ── */
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+    .feature-card .feat-icon { font-size: 1.4rem; margin-bottom: 8px; }
+    .feature-card h4 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── VERDICT BAR ── */
+    .verdict-bar { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Orbitron', sans-serif; font-weight: 800; }
+    .score-circle .num { font-size: 1.5rem; line-height: 1; }
+    .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
+    .verdict-text h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .verdict-text p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── ARTICLE ── */
+    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
+    .article h2:first-child { margin-top: 0; }
+    .article p { margin-bottom: 16px; color: #222; }
+    .article p:last-child { margin-bottom: 0; }
+
+    /* ── READ MORE TOGGLE ── */
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn {
+      display: block;
+      margin: 24px auto 0;
+      background: none;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px 28px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .read-more-btn:hover { background: var(--accent); color: #fff; }
+
+    /* ── SPECS TABLE ── */
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 11px 4px; vertical-align: top; }
+    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 42%; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* ── PROS / CONS ── */
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pros, .cons { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
+    .pros h4, .cons h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+    .pros h4 { color: #1a7a1a; }
+    .cons h4 { color: #b91c1c; }
+    .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .pros ul li::before { content: '✓ '; color: #1a7a1a; font-weight: 700; }
+    .cons ul li::before { content: '✗ '; color: #b91c1c; font-weight: 700; }
+    .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
+
+    /* ── CTA ── */
+    .cta-box { background: linear-gradient(145deg, #08090f 0%, #0f1424 100%); border-radius: var(--radius); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; }
+    .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.18) 0%, transparent 60%); pointer-events: none; }
+    .cta-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.7; }
+    .cta-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .cta-box p { color: rgba(255,255,255,0.42); font-size: 0.9rem; margin-bottom: 24px; }
+    .btn-amazon { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 15px 34px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s ease, transform 0.15s ease; }
+    .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-disclaimer { margin-top: 14px; font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 560px) {
+      .pros-cons { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+    }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: underline; }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
+   </head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Javeomo<span>Tech</span></a>
+  <a class="back" href="index.html">← All Reviews</a>
+</nav>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span class="sticky-name">One Beat Power Strip Surge Protector</span>
+  <a class="sticky-btn" href="https://amzn.to/4aKWUds" target="_blank" rel="noopener sponsored">Check Price on Amazon →</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Desk Setup · Power & Charging</div>
+  <h1>6 Outlets, 4 USB Ports, One Cord — Does It Actually <em>Deliver Fast Charging</em>?</h1>
+  <p class="hero-sub">One Beat Power Strip Surge Protector — 6 widely spaced outlets, 4 USB ports (2 USB-C), flat plug, 5ft cord. Great outlet layout, one USB-C limitation worth knowing.</p>
+  <div class="hero-price-badge">
+    <span>Amazon</span>
+    <span class="price">$12.99</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO IMAGE -->
+  <section>
+    <img class="review-img"
+      src="https://m.media-amazon.com/images/I/61OncmZevkL._AC_SL1500_.jpg"
+      alt="One Beat power strip surge protector main image"
+      onclick="openLightbox(this.src)" loading="eager" style="margin-top:0;" />
+  </section>
+
+  <!-- VIDEO PLACEHOLDER -->
+  <section>
+    <p class="section-label">Watch the Short</p>
+    <div class="short-wrap">
+      <div class="video-placeholder">
+        <div class="icon">🎬</div>
+        <p>Video Review — Coming Soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERDICT -->
+  <section>
+    <p class="section-label">Verdict</p>
+    <div class="verdict-bar">
+      <div class="score-circle">
+        <span class="num">8.1</span>
+        <span class="den">/10</span>
+      </div>
+      <div class="verdict-text">
+        <h3>Great outlet spacing and solid build — just don't expect real PD charging</h3>
+        <p>The 6-outlet layout and 4 USB ports make this genuinely useful on a crowded desk. The USB-C port isn't full Power Delivery, so temper expectations if you're hoping to fast-charge a laptop from it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section>
+    <p class="section-label">Key Features</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon">🔌</div>
+        <h4>6 Widely Spaced Outlets</h4>
+        <p>Generous spacing means bulky plugs and adapters don't block neighboring outlets.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📱</div>
+        <h4>4 USB Ports (2 USB-C)</h4>
+        <p>Charge phones, tablets, and small devices directly — no bulky wall bricks needed.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🛡️</div>
+        <h4>Surge Protection</h4>
+        <p>Protects connected electronics from power spikes and fluctuations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📏</div>
+        <h4>Flat Plug + 5ft Cord</h4>
+        <p>Flat plug sits close to the wall behind furniture; 5ft cord gives reasonable placement flexibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="article">
+    <p class="section-label">Full Review</p>
+
+    <h2>What Is This Thing?</h2>
+    <p>
+      This is a compact surge protector power strip with 6 outlets and 4 USB charging ports (including 2 USB-C), built with a flat plug and a 5ft extension cord. It's aimed squarely at desks, dorm rooms, and small home office setups where you've got a pile of chargers, a lamp, a monitor, and maybe a fan all fighting for the same wall outlet. At $12.99, it's priced to be an easy addition to any desk setup, and for the most part, it earns that spot.
+    </p>
+
+    <!-- Product box -->
+    <img class="review-img"
+      src="https://m.media-amazon.com/images/I/71z8mlmIPVL.jpg"
+      alt="One Beat power strip product box"
+      onclick="openLightbox(this.src)" loading="lazy" />
+    <p class="img-caption">Comes in simple retail packaging — straightforward, no assembly required.</p>
+
+    <div class="article-more" id="articleMore">
+
+      <h2>Outlet Spacing — The Best Part of This Strip</h2>
+      <p>
+        This is where the strip genuinely shines. The 6 outlets are spaced generously enough that even chunky wall-wart adapters don't block the outlet next to them — something a lot of budget power strips get wrong. I was able to use all 6 outlets at once without a single one being blocked by an oversized plug, which is a bigger deal than it sounds if you've ever had to choose between charging your laptop and plugging in a lamp because of poor spacing.
+      </p>
+
+      <!-- On desk image -->
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71irEjk87bL.jpg"
+        alt="Power strip set up on desk"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Set up on my desk — plenty of room to plug in everything at once.</p>
+
+      <h2>Build Quality — Feels Solid, Not Flimsy</h2>
+      <p>
+        The body of the strip has a reassuring weight to it without being bulky, and the outlets themselves don't wiggle or feel loose when you plug something in — a small thing, but a telling one for long-term reliability. The flat plug design is genuinely useful too; it sits close to the wall instead of sticking straight out, so it doesn't get in the way of furniture pushed up against the outlet.
+      </p>
+
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71i4HZuEKQL.jpg"
+        alt="Close up of the power strip main body"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">Close-up on the main body — solid construction, outlets don't feel loose.</p>
+
+      <h2>The USB Ports — Good, With One Caveat</h2>
+      <p>
+        Having 4 USB ports built directly into the strip is genuinely convenient — I've used them for a phone, a tablet, and earbuds simultaneously without needing separate wall bricks cluttering up the rest of the outlets. Charging has been steady and reliable in my testing. Here's the honest caveat though: the USB-C ports on this strip are not full Power Delivery (PD) charging — they're rated around 15W, which is fine for phones and tablets but will charge a laptop slowly, if at all, compared to a proper PD charger. If you're specifically hoping to fast-charge a MacBook or similar laptop straight from this strip, this isn't the product for that job. For phones, earbuds, and tablets, it's completely fine.
+      </p>
+
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/811rzbVQ5fL.jpg"
+        alt="Close up of the power strip cable and cord"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">The cord is thick and feels durable — no concerns about long-term wear here.</p>
+
+      <h2>Wall Mounting — Plan Ahead Before You Commit</h2>
+      <p>
+        This strip is designed to be wall-mountable, but it doesn't come with a mounting plate or screws included, and getting it properly stabilized on the wall takes a bit of improvising. If you're planning to mount it rather than just set it on a desk or floor, budget a few extra minutes and possibly your own screws to make it solid. Also — and this sounds obvious until it happens to you — actually measure the distance from your wall outlet to wherever you want this strip to sit before you commit to a spot. A short cord paired with an awkward mounting position turns a great power strip into something dangling uselessly off the wall. Ask me how I know.
+      </p>
+
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71APFSsvuCL.jpg"
+        alt="Behind view of the power strip"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">The back of the strip — wall-mountable, but bring your own screws if you want it secure.</p>
+
+      <h2>In Daily Use</h2>
+      <p>
+        Once it's in place, this strip just works. It hasn't gotten warm even with several devices charging simultaneously, which is exactly what you want to see from a surge protector handling sensitive electronics. It's been sitting on my desk handling a monitor, a lamp, a phone charger, and a small speaker without a single hiccup.
+      </p>
+
+      <img class="review-img"
+        src="https://m.media-amazon.com/images/I/71Qm+N2qFOL.jpg"
+        alt="Power strip with USB devices plugged in"
+        onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">All 4 USB ports and several outlets in use at once — no overheating, no issues.</p>
+
+      <h2>Who Should Buy This?</h2>
+      <p>
+        If you need a reliable, well-spaced power strip for a desk, dorm room, or bedside table, and you're mainly charging phones and small devices via USB, this is a great pick at $12.99. If you specifically need real PD fast-charging for a laptop through USB-C, or you're planning to wall-mount it without wanting to improvise your own hardware, factor that in before buying. For everyday desk power needs, it delivers exactly what it promises.
+      </p>
+
+    </div><!-- /article-more -->
+
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
+  </section>
+
+  <!-- SPECS -->
+  <section>
+    <p class="section-label">Full Specs</p>
+    <table class="specs-table">
+      <tr><td>Product</td><td>One Beat Power Strip Surge Protector</td></tr>
+      <tr><td>Outlets</td><td>6 widely spaced AC outlets</td></tr>
+      <tr><td>USB Ports</td><td>4 total — 2 USB-A, 2 USB-C</td></tr>
+      <tr><td>USB-C Output</td><td>~15W (not full Power Delivery)</td></tr>
+      <tr><td>Cord Length</td><td>5 ft, flat plug</td></tr>
+      <tr><td>Mounting</td><td>Wall-mountable (mounting plate/screws not included)</td></tr>
+      <tr><td>Best For</td><td>Desks, dorm rooms, bedside tables, small home offices</td></tr>
+      <tr><td>Price</td><td>$12.99</td></tr>
+    </table>
+  </section>
+
+  <!-- PROS / CONS -->
+  <section>
+    <p class="section-label">Pros & Cons</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Pros</h4>
+        <ul>
+          <li>Generously spaced outlets — no fighting bulky plugs</li>
+          <li>4 USB ports cover phones, tablets, earbuds easily</li>
+          <li>Solid build, doesn't feel flimsy</li>
+          <li>Flat plug sits close to the wall</li>
+          <li>Stays cool even under multiple devices charging</li>
+          <li>Great value at $12.99</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Cons</h4>
+        <ul>
+          <li>USB-C ports are ~15W only, not real PD fast-charging</li>
+          <li>No mounting plate or screws included for wall mounting</li>
+          <li>Measure your space before mounting — cord length matters</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-bottom: 56px;">
+    <div class="cta-box">
+      <h3>One Beat Power Strip Surge Protector</h3>
+      <p>$12.99 · 6 Outlets · 4 USB Ports (2 USB-C) · Flat Plug</p>
+      <a class="btn-amazon" href="https://amzn.to/4aKWUds" target="_blank" rel="noopener sponsored">
+        Buy on Amazon
+      </a>
+      <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Product photo enlarged">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>JaveomoTech</strong></p>
+  <p>Tech reviewer sharing the best gadgets & gear.</p>
+  <p style="margin-top:12px;">
+    <a href="about.html">About</a> &nbsp;·&nbsp;
+    <a href="contact.html">Contact</a> &nbsp;·&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="https://www.youtube.com/@JaveomoTech" target="_blank" rel="noopener">YouTube</a>
+  </p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.</p>
+  <p style="margin-top:12px;">© 2026 JaveomoTech</p>
+</footer>
+
+<script>
+  function toggleArticle() {
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
