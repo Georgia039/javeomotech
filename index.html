@@ -87,6 +87,7 @@
     .tag-under100 { background: var(--tag-amber); color: var(--tag-amber-text); }
     .tag-under500 { background: var(--tag-blue); color: var(--tag-blue-text); }
     .tag-cat { background: var(--tag-purple); color: var(--tag-purple-text); }
+    .tag-bestseller { background: #fff3d6; color: #8a5a00; }
     .product-name { font-size: 13px; font-weight: 600; line-height: 1.45; color: var(--text); margin-bottom: 6px; flex: 1; }
     .product-note { font-size: 11px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
     .product-price { font-family: 'orbitron', sans-serif; font-size: 17px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
@@ -176,12 +177,13 @@
     <button class="filter-btn" onclick="filterPrice('500', this)">Under $500</button>
   </div>
   <p class="controls-label" style="margin-top:16px;">Filter by category</p>
-  <div class="filters" id="catFilters">
-    <button class="filter-btn active" onclick="filterCat('all', this)">All categories</button>
-    <button class="filter-btn" onclick="filterCat('gadgets', this)">Gadgets</button>
-    <button class="filter-btn" onclick="filterCat('collectibles', this)">Collectibles</button>
-    <button class="filter-btn" onclick="filterCat('smarthome', this)">Smart Home</button>
-  </div>
+<div class="filters" id="catFilters">
+  <button class="filter-btn active" onclick="filterCat('all', this)">All categories</button>
+  <button class="filter-btn" onclick="filterCat('bestsellers', this)">🔥 Best Sellers</button>
+  <button class="filter-btn" onclick="filterCat('gadgets', this)">Gadgets</button>
+  <button class="filter-btn" onclick="filterCat('collectibles', this)">Collectibles</button>
+  <button class="filter-btn" onclick="filterCat('smarthome', this)">Smart Home</button>
+</div>
 </section>
 
 <!-- PRODUCTS -->
@@ -189,12 +191,12 @@
   <div class="products-grid" id="productGrid">
 
     <!-- Soundcore Liberty 5 Pro Max -->
-    <div class="product-card" data-price="500" data-cat="gadgets" data-name="soundcore liberty 5 pro max wireless earbuds ai note-taker anc guinness world record">
+    <div class="product-card" data-price="500" data-cat="gadgets" data-bestseller="true" data-name="soundcore liberty 5 pro max wireless earbuds ai note-taker anc guinness world record">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61Gnu96XtdL._AC_SL1500_.jpg" loading="lazy" alt="Soundcore Liberty 5 Pro Max" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under500">Under $500</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">Soundcore Liberty 5 Pro Max — AI Note-Taker, World Record Call Clarity</p>
         <p class="product-note">AMOLED case, AI meeting transcription, 5-min charge = 4 hrs playtime.</p>
@@ -221,12 +223,13 @@
     </div>  
 
   <!-- MOuse pad -->
-        <div class="product-card" data-price="13" data-cat="smarthome" data-name="pu leather desk pad mouse pad minimal workspace mat">
+        <div class="product-card" data-price="13" data-cat="smarthome" data-bestseller="true" data-name="pu leather desk pad mouse pad minimal workspace mat">
         <div class="product-icon">
           <img src="https://m.media-amazon.com/images/I/61nUL9EInwL._AC_SL1500_.jpg" loading="lazy" alt="Minimalist PU Leather Desk Pad" />
         </div>
         <div class="product-body">
           <div class="product-tags">
+            <span class="product-tag tag-bestseller">🔥 Best Seller</span>
             <span class="product-tag tag-under50">Under $50</span>
             <span class="product-tag tag-cat">Smart Home</span>
           </div>
@@ -271,12 +274,12 @@
     </div>
 
   <!-- cable clips -->
-      <div class="product-card" data-price="50" data-cat="gadgets" data-name="joyroom magnetic cable clips desk organizer cord holder">
+      <div class="product-card" data-price="50" data-cat="gadgets" data-bestseller="true" data-name="joyroom magnetic cable clips desk organizer cord holder">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71GtO6srGeL._AC_SL1500_.jpg" loading="lazy" alt="JOYROOM Magnetic Cable Clips" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under50">Under $50</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">JOYROOM 9-Pack Magnetic Cable Clips</p>
         <p class="product-note">Sticky, magnetic cable clips that keep cords off your desk and out of sight.</p>
@@ -335,12 +338,12 @@
     </div>
 
     <!-- AirFly Pro 2 -->
-    <div class="product-card" data-price="100" data-cat="gadgets" data-name="airfly pro 2 bluetooth adapter airplane wireless headphones 3.5mm aux travel twelve south">
+    <div class="product-card" data-price="100" data-cat="gadgets" data-bestseller="true" data-name="airfly pro 2 bluetooth adapter airplane wireless headphones 3.5mm aux travel twelve south">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/512ipCgVeQL._AC_SL1500_.jpg" loading="lazy" alt="AirFly Pro 2" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under100">Under $100</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">AirFly Pro 2 — Bluetooth Adapter for Airplanes & Travel</p>
         <p class="product-note">Plug into any 3.5mm jack, pair two wireless headphones at once. Zero lag.</p>
@@ -351,12 +354,12 @@
     </div>
 
     <!-- Fanttik S2 Pro -->
-    <div class="product-card" data-price="100" data-cat="tools" data-name="fanttik s2 pro electric screwdriver cordless torque bits 90 degree adapter household">
+    <div class="product-card" data-price="100" data-cat="tools" data-bestseller="true" data-name="fanttik s2 pro electric screwdriver cordless torque bits 90 degree adapter household">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61-Zj0xBBYL._AC_SL1500_.jpg" loading="lazy" alt="Fanttik S2 Pro Electric Screwdriver" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under100">Under $100</span>
-          <span class="product-tag tag-cat">Tools</span>
         </div>
         <p class="product-name">Fanttik S2 Pro — Cordless Electric Screwdriver</p>
         <p class="product-note">20 bits, 7 torque settings, 90° adapter. The right tool for furniture builds and home repairs.</p>
@@ -367,12 +370,12 @@
     </div>
 
     <!-- La Crosse Battery Tester -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="la crosse battery tester digital portable aa aaa 9v button cell voltage">
+    <div class="product-card" data-price="50" data-cat="gadgets" data-bestseller="true" data-name="la crosse battery tester digital portable aa aaa 9v button cell voltage">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61Ww0kYHj3L._AC_SL1500_.jpg" loading="lazy" alt="La Crosse Battery Tester" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under50">Under $50</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">La Crosse Digital Battery Tester — AA, AAA, 9V & Button Cells</p>
         <p class="product-note">Real voltage readout, no cables, fits every common battery size.</p>
@@ -399,12 +402,12 @@
     </div>
 
     <!-- Embrite Glow Fob -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="tec accessories embrite glow fob anodized aluminum key fob glow dark edc">
+    <div class="product-card" data-price="50" data-cat="gadgets" data-bestseller="true" data-name="tec accessories embrite glow fob anodized aluminum key fob glow dark edc">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/51LWg0tiolL._AC_SX679_.jpg" loading="lazy" alt="Embrite Glow Fob" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under50">Under $50</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">TEC Accessories Embrite Glow Fob — Anodized Aluminum Key Fob</p>
         <p class="product-note">Glows in the dark so you never lose your keys again. Solid EDC piece.</p>
@@ -415,12 +418,12 @@
     </div>
 
     <!-- EDC Pry Bar -->
-    <div class="product-card" data-price="50" data-cat="gadgets" data-name="edc pry bar multitool ratchet screwdriver wrench crowbar bottle opener">
+    <div class="product-card" data-price="50" data-cat="gadgets" data-bestseller="true" data-name="edc pry bar multitool ratchet screwdriver wrench crowbar bottle opener">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71btZ-RKQmL._AC_SL1500_.jpg" loading="lazy" alt="EDC Pry Bar Multitool" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under50">Under $50</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">EDC Pry Bar Multitool — Ratchet Screwdriver, Wrench & Bottle Opener</p>
         <p class="product-note">One pocket tool that does it all. Clips to belt or pocket.</p>
@@ -431,12 +434,12 @@
     </div>
 
     <!-- LOOI Robot -->
-    <div class="product-card" data-price="500" data-cat="gadgets" data-name="looi robot ai desktop companion chatgpt gemini voice wireless charging">
+    <div class="product-card" data-price="500" data-cat="gadgets" data-bestseller="true" data-name="looi robot ai desktop companion chatgpt gemini voice wireless charging">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61v85YtoQqL._AC_SY300_SX300_QL70_FMwebp_.jpg" loading="lazy" alt="LOOI Robot" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under500">Under $500</span>
-          <span class="product-tag tag-cat">Gadgets</span>
         </div>
         <p class="product-name">LOOI Robot — AI Desktop Companion, ChatGPT & Gemini Voice</p>
         <p class="product-note">The coolest desk gadget of the year. An AI companion that charges your phone.</p>
@@ -511,12 +514,12 @@
     </div>
 
     <!-- Ducati Motorcycle Model -->
-    <div class="product-card" data-price="50" data-cat="collectibles" data-name="ducati v4s motorcycle model diecast alloy metal sound light sport bike collectible">
+    <div class="product-card" data-price="50" data-cat="collectibles" data-bestseller="true" data-name="ducati v4s motorcycle model diecast alloy metal sound light sport bike collectible">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71t+oLOoniL._AC_SL1500_.jpg" loading="lazy" alt="Ducati V4S Diecast Model" /></div>
       <div class="product-body">
         <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Best Seller</span>
           <span class="product-tag tag-under50">Under $50</span>
-          <span class="product-tag tag-cat">Collectibles</span>
         </div>
         <p class="product-name">1:12 Ducati V4S Diecast Model — Sound & Light, Collectors Display</p>
         <p class="product-note">Perfect for desk decoration, office display, home shelves, or collector showcases.</p>
@@ -563,19 +566,24 @@
   let activePrice = 'all';
   let activeCat = 'all';
 
-  function applyFilters() {
-    const search = document.getElementById('searchInput').value.toLowerCase().trim();
-    let visible = 0;
-    document.querySelectorAll('.product-card').forEach(card => {
-      const matchPrice = activePrice === 'all' || card.dataset.price === activePrice;
-      const matchCat = activeCat === 'all' || card.dataset.cat === activeCat;
-      const matchSearch = !search || card.dataset.name.includes(search);
-      const show = matchPrice && matchCat && matchSearch;
-      card.classList.toggle('hidden', !show);
-      if (show) visible++;
-    });
-    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
-  }
+function applyFilters() {
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
+  let visible = 0;
+  document.querySelectorAll('.product-card').forEach(card => {
+    const matchPrice = activePrice === 'all' || card.dataset.price === activePrice;
+    let matchCat;
+    if (activeCat === 'bestsellers') {
+      matchCat = card.dataset.bestseller === 'true';
+    } else {
+      matchCat = activeCat === 'all' || card.dataset.cat === activeCat;
+    }
+    const matchSearch = !search || card.dataset.name.includes(search);
+    const show = matchPrice && matchCat && matchSearch;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+}
 
   function filterPrice(range, btn) {
     activePrice = range;
