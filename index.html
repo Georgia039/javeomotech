@@ -127,7 +127,7 @@
     .review-btn:hover { text-decoration: underline; }
     .product-comments { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
     .comments-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-    .comment-item { margin-bottom: 10px; }
+    .comment-item { margin-bottom: 10px; transition: opacity 0.25s ease; }
     .comment-item:last-child { margin-bottom: 0; }
     .comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; gap: 8px; }
     .comment-name { font-size: 11px; font-weight: 600; color: var(--text); }
@@ -161,9 +161,11 @@
       .deal-info { text-align: center; }
     }
   </style>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
    </head>
 <body>
+
 
 <!-- NAV -->
 <nav>
@@ -568,8 +570,8 @@
           <span class="product-tag tag-under100">Under $100</span>
           <span class="product-tag tag-cat">Gadgets</span>
         </div>
-        <p class="product-name">CyberDock 3-in-1 Wireless Charger — Cybertruck Model, Qi2 15W</p>
-        <p class="product-note">Charges everything at once. Doubles as a sick desk display with ambient light.</p>
+        <p class="product-name">CyberDock 12-in-1 USB-C Hub</p>
+        <p class="product-note">One hub replaces every dongle on your desk. HDMI, USB-A, SD, Ethernet, and more.</p>
         <div class="product-price">$59.99</div>
         <a href="https://amzn.to/4dO3UZb" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="reviews/cyberdock.html" class="review-btn">Read Review →</a>
@@ -732,7 +734,6 @@ function applyFilters() {
         return;
       }
 
-      // Sort newest first (client-side, avoids needing a Firestore index)
       const comments = [];
       snap.forEach(doc => comments.push(doc.data()));
       comments.sort((a, b) => {
@@ -753,10 +754,46 @@ function applyFilters() {
           </div>`;
       });
       container.innerHTML = html;
+
+      if (comments.length >= 3) {
+        startCommentAutoScroll(container);
+      }
     } catch (err) {
       console.error('Error loading comments for', productId, err);
       container.remove();
     }
+  }
+
+  function startCommentAutoScroll(container) {
+    const items = Array.from(container.querySelectorAll('.comment-item'));
+    if (items.length < 2) return;
+
+    // Show exactly one comment at a time by hiding the rest — the box
+    // then just wraps whichever single comment is showing, the same way
+    // Soundcore's one-comment card naturally sizes itself. No scrolling,
+    // no height math, so nothing can ever overlap or get cut off no
+    // matter how long or short each comment's text is.
+    let index = 0;
+    items.forEach((item, i) => {
+      item.style.display = i === 0 ? '' : 'none';
+      item.style.marginBottom = '0';
+    });
+
+    let paused = false;
+    container.addEventListener('mouseenter', () => paused = true);
+    container.addEventListener('mouseleave', () => paused = false);
+
+    setInterval(() => {
+      if (paused) return;
+      items[index].style.opacity = '0';
+      setTimeout(() => {
+        items[index].style.display = 'none';
+        index = (index + 1) % items.length;
+        items[index].style.display = '';
+        items[index].style.opacity = '0';
+        requestAnimationFrame(() => { items[index].style.opacity = '1'; });
+      }, 250);
+    }, 5000);
   }
 
   function loadAllComments() {
