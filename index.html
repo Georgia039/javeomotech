@@ -121,6 +121,11 @@
     .product-name { font-size: 13px; font-weight: 600; line-height: 1.45; color: var(--text); margin-bottom: 6px; flex: 1; }
     .product-note { font-size: 11px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
     .product-price { font-family: 'orbitron', sans-serif; font-size: 17px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+    /* Reusable discount display — add this row to any card that's currently on sale */
+    .product-price-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .product-price-row .product-price { margin-bottom: 0; }
+    .price-original { font-size: 12px; color: var(--muted); text-decoration: line-through; font-weight: 500; }
+    .discount-badge { display: inline-block; background: #ffe4e4; color: #b91c1c; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
     .buy-btn { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 10px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; text-decoration: none; transition: opacity 0.18s; }
     .buy-btn:hover { opacity: 0.88; }
     .review-btn { display: block; text-align: center; margin-top: 8px; font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 600; }
@@ -245,6 +250,7 @@
         </form>
         <p class="comment-form-thanks" id="commentThanks">Thanks! Your comment will appear after review.</p>
       </div>
+    </div>
   </div>
 </section>
 
@@ -607,6 +613,26 @@
         <div class="product-price">$19.99</div>
         <a href="https://amzn.to/4uDNl7r" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="reviews/ducati-v4s.html" class="review-btn">Read Review →</a>
+      </div>
+    </div>
+
+    <!-- Levoit Top Fill Humidifier -->
+    <div class="product-card" data-price="50" data-cat="smarthome" data-name="levoit classic 160 top fill humidifier bedroom quiet cool mist 2.5l plants nursery">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71xIgTqSN6L._AC_SL1500_.jpg" loading="lazy" alt="Levoit Top Fill Humidifier" /></div>
+      <div class="product-body">
+        <div class="product-tags">
+          <span class="product-tag tag-under50">Under $50</span>
+          <span class="product-tag tag-cat">Smart Home</span>
+        </div>
+        <p class="product-name">Levoit Classic 160 Top Fill Humidifier — Quiet Cool Mist, 2.5L</p>
+        <p class="product-note">Whisper-quiet at 28dB, easy top-fill and cleaning, up to 25 hours per tank.</p>
+        <div class="product-price-row">
+          <span class="product-price">$29.78</span>
+          <span class="price-original">$39.99</span>
+          <span class="discount-badge">26% OFF</span>
+        </div>
+        <a href="https://amzn.to/4aX1564" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+        <a href="reviews/humidifier.html" class="review-btn">Read Review →</a>
       </div>
     </div>
 
