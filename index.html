@@ -58,6 +58,10 @@
     .deal-name { font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
     .deal-note { font-size: 12px; opacity: 0.8; margin-bottom: 14px; line-height: 1.5; }
     .deal-price { font-family: 'orbitron', sans-serif; font-size: 26px; font-weight: 800; margin-bottom: 14px; }
+    .deal-price-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+    .deal-price-row .deal-price { margin-bottom: 0; }
+    .deal-price-original { font-size: 15px; color: rgba(255,255,255,0.55); text-decoration: line-through; font-weight: 500; }
+    .deal-discount-badge { display: inline-block; background: #FFD700; color: #1a1a1a; font-size: 11px; font-weight: 800; padding: 3px 9px; border-radius: 20px; }
     .deal-btn { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--accent); font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 10px; text-decoration: none; }
     .deal-split { display: flex; gap: 16px; align-items: stretch; }
     .deal-split > .deal-card { flex: 1 1 50%; margin: 0; }
@@ -208,7 +212,11 @@
         <span class="deal-badge">🔥 Deal of the Week</span>
         <p class="deal-name">Soundcore Liberty 5 Pro Max — Guinness World Record Call Clarity + AI Note-Taker</p>
         <p class="deal-note">The only earbuds that record your meetings, transcribe them, and hold a world record doing it.</p>
-        <div class="deal-price">$229.99</div>
+        <div class="deal-price-row">
+          <span class="deal-price">$239.99</span>
+          <span class="deal-price-original">$249.99</span>
+          <span class="deal-discount-badge">4% OFF</span>
+        </div>
         <a href="https://amzn.to/4g2FSej" class="deal-btn" target="_blank" rel="noopener sponsored">View on Amazon →</a>
       </div>
     </div>
@@ -287,29 +295,13 @@
         </div>
         <p class="product-name">Soundcore Liberty 5 Pro Max — AI Note-Taker, World Record Call Clarity</p>
         <p class="product-note">AMOLED case, AI meeting transcription, 5-min charge = 4 hrs playtime.</p>
-        <div class="product-price">$229.99</div>
+        <div class="product-price-row">
+          <span class="product-price">$229.99</span>
+          <span class="price-original">$239.99</span>
+          <span class="discount-badge">4% OFF</span>
+        </div>
         <a href="https://amzn.to/4g2FSej" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
         <a href="reviews/liberty-5-pro-max.html" class="review-btn">Read Review →</a>
-      </div>
-    </div>
-
-    <!-- Levoit Top Fill Humidifier -->
-    <div class="product-card" data-price="50" data-cat="smarthome" data-name="levoit classic 160 top fill humidifier bedroom quiet cool mist 2.5l plants nursery">
-      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71xIgTqSN6L._AC_SL1500_.jpg" loading="lazy" alt="Levoit Top Fill Humidifier" /></div>
-      <div class="product-body">
-        <div class="product-tags">
-          <span class="product-tag tag-under50">Under $50</span>
-          <span class="product-tag tag-cat">Smart Home</span>
-        </div>
-        <p class="product-name">Levoit Classic 160 Top Fill Humidifier — Quiet Cool Mist, 2.5L</p>
-        <p class="product-note">Whisper-quiet at 28dB, easy top-fill and cleaning, up to 25 hours per tank.</p>
-        <div class="product-price-row">
-          <span class="product-price">$29.78</span>
-          <span class="price-original">$39.99</span>
-          <span class="discount-badge">26% OFF</span>
-        </div>
-        <a href="https://amzn.to/4aX1564" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
-        <a href="reviews/levoit-humidifier.html" class="review-btn">Read Review →</a>
       </div>
     </div>
 
@@ -328,6 +320,26 @@
         <a href="reviews/monitor-light-bar.html" class="review-btn">Read Review →</a>
       </div>
     </div>  
+
+   <!-- Levoit Top Fill Humidifier -->
+    <div class="product-card" data-price="50" data-cat="smarthome" data-name="levoit classic 160 top fill humidifier bedroom quiet cool mist 2.5l plants nursery">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71xIgTqSN6L._AC_SL1500_.jpg" loading="lazy" alt="Levoit Top Fill Humidifier" /></div>
+      <div class="product-body">
+        <div class="product-tags">
+          <span class="product-tag tag-under50">Under $50</span>
+          <span class="product-tag tag-cat">Smart Home</span>
+        </div>
+        <p class="product-name">Levoit Classic 160 Top Fill Humidifier — Quiet Cool Mist, 2.5L</p>
+        <p class="product-note">Whisper-quiet at 28dB, easy top-fill and cleaning, up to 25 hours per tank.</p>
+        <div class="product-price-row">
+          <span class="product-price">$29.78</span>
+          <span class="price-original">$39.99</span>
+          <span class="discount-badge">26% OFF</span>
+        </div>
+        <a href="https://amzn.to/4aX1564" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+        <a href="reviews/levoit-humidifier.html" class="review-btn">Read Review →</a>
+      </div>
+    </div>
 
   <!-- MOuse pad -->
         <div class="product-card" data-price="13" data-cat="smarthome" data-bestseller="true" data-name="pu leather desk pad mouse pad minimal workspace mat">
@@ -636,7 +648,7 @@
       </div>
     </div>
 
-    
+   
 
   </div>
   <div class="no-results" id="noResults">
