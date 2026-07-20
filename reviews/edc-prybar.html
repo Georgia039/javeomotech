@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <meta name="description" content="Full review of the EDC Pry Bar Multitool with ratchet screwdriver, wrenches, and bottle opener. Photos, video, and honest verdict."/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=orbitron:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,500;0,600;0,700;1,400&family=orbitron:wght@600;700;800&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --accent: #0057ff;
@@ -109,39 +109,41 @@
       padding: 0 16px 60px;
     }
 
-    /* ── PHOTO GALLERY ── */
-    .gallery {
-      margin-top: 28px;
+    /* ── INLINE REVIEW IMAGES ── */
+    .review-img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      margin: 20px 0 8px;
+      display: block;
+      object-fit: cover;
+      max-height: 380px;
+      transition: opacity 0.18s ease, transform 0.2s ease;
+    }
+    .review-img:hover { opacity: 0.9; transform: scale(1.01); }
+    .img-caption {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .img-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 10px;
+      gap: 12px;
+      margin: 20px 0 8px;
     }
-    .gallery img {
+    .img-row img {
       width: 100%;
       height: 220px;
       object-fit: cover;
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      display: block;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: opacity 0.18s ease;
     }
-    .gallery img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 24px rgba(0,87,255,0.15);
-    }
-    .gallery img.featured {
-      grid-column: 1 / -1;
-      height: 300px;
-    }
-    .gallery-caption {
-      grid-column: span 1;
-      font-size: 11.5px;
-      color: var(--muted);
-      text-align: center;
-      margin-top: -4px;
-    }
+    .img-row img:hover { opacity: 0.9; }
 
     /* ── LIGHTBOX ── */
     .lightbox {
@@ -260,6 +262,25 @@
       margin-bottom: 14px;
     }
 
+    /* ── READ MORE TOGGLE ── */
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn {
+      display: block;
+      margin: 8px auto 0;
+      background: none;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 26px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .read-more-btn:hover { background: var(--accent); color: #fff; }
+
     /* ── SPECS TABLE ── */
     .specs-table {
       width: 100%;
@@ -372,10 +393,10 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
-      .gallery img { height: 170px; }
-      .gallery img.featured { height: 220px; }
       .pros-cons { grid-template-columns: 1fr; }
       .verdict-bar { flex-direction: column; text-align: center; }
+      .img-row { grid-template-columns: 1fr 1fr; }
+      .img-row img { height: 150px; }
     }
     .sticky-bar { position: fixed; top: 60px; left: 0; right: 0; max-width: 700px; width: 90%; margin: 0 auto; border-radius: 12px; z-index: 99999; background: #0057ff; display: flex; align-items: center; justify-content: center; padding: 11px 20px; gap: 16px; box-shadow: 0 4px 16px rgba(0,87,255,0.3); box-sizing: border-box; }
       .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
@@ -433,15 +454,8 @@
 
 <div class="page-wrap">
 
-  <!-- PHOTO GALLERY -->
-  <div class="gallery">
-    <img class="featured" src="https://m.media-amazon.com/images/I/71btZ-RKQmL._AC_SL1500_.jpg" alt="EDC Pry Bar Multitool main view" onclick="openLightbox(this.src)"/>
-    <img src="https://m.media-amazon.com/images/I/71oZOFn-ISL.jpg" alt="Holding the EDC Pry Bar Multitool in hand" onclick="openLightbox(this.src)"/>
-    <img src="https://m.media-amazon.com/images/I/91F88ceTWhL.jpg" alt="EDC Pry Bar Multitool next to a pencil for size comparison" onclick="openLightbox(this.src)"/>
-    <img src="https://m.media-amazon.com/images/I/91obJFv8ELL.jpg" alt="EDC Pry Bar Multitool next to a ruler showing its length" onclick="openLightbox(this.src)"/>
-    <img src="https://m.media-amazon.com/images/I/71sV-I4r8RL.jpg" alt="Close-up of the EDC Pry Bar Multitool's ratchet screwdriver" onclick="openLightbox(this.src)"/>
-    <img src="https://m.media-amazon.com/images/I/71VUIUHPuvL.jpg" alt="First page of the included instruction booklet" onclick="openLightbox(this.src)"/>
-  </div>
+  <!-- MAIN IMAGE -->
+  <img class="review-img" style="margin-top:24px;" src="https://m.media-amazon.com/images/I/71btZ-RKQmL._AC_SL1500_.jpg" alt="EDC Pry Bar Multitool main view" onclick="openLightbox(this.src)"/>
 
   <!-- VIDEO -->
   <div class="video-section">
@@ -473,18 +487,22 @@
   <div class="article">
 
     <h2>What is the EDC Pry Bar Multitool?</h2>
-    <p>I'll be honest — when I first heard "pry bar multitool," I thought it was going to be one of those gadgets that does ten things and none of them well. I've been burned before. But I kept seeing this thing come up and figured, why not. I already carry a pocket knife daily and half the time I'm using the blade to pry open a box or pop a bottle cap, which, yeah, I know — not great for the blade. So the idea of having a dedicated flat bar for all that stuff actually made sense to me.
+    <p>I'll be honest — when I first heard "pry bar multitool," I thought it was going to be one of those gadgets that does ten things and none of them well. I've been burned before. But I kept seeing this thing come up and figured, why not. I already carry a pocket knife daily and half the time I'm using the blade to pry open a box or pop a bottle cap, which, yeah, I know — not great for the blade. So the idea of having a dedicated flat bar for all that stuff actually made sense to me.</p>
+    <p>This is one of those tools that sounds gimmicky until you actually carry it for a week. It's a flat, pocket-sized pry bar that packs in a bi-directional ratchet screwdriver, multiple wrench sizes, a bottle opener, a box cutter edge, and even a built-in pen — all in something thin enough to clip to your belt or slide into a pocket without noticing it's there.</p>
 
-      This is one of those tools that sounds gimmicky until you actually carry it for a week. It's a flat, pocket-sized pry bar that packs in a bi-directional ratchet screwdriver, multiple wrench sizes, a bottle opener, a box cutter edge, and even a built-in pen — all in something thin enough to clip to your belt or slide into a pocket without noticing it's there.
-    </p>
-    <p>
-      Out of the box it's thinner than I expected, which is a good thing. It clips onto your pocket or belt and genuinely disappears. I forgot it was on me within about an hour, which for a pocket tool is pretty much the highest compliment you can give.
-    </p>
+    <img class="review-img" src="https://m.media-amazon.com/images/I/71oZOFn-ISL.jpg" alt="Holding the EDC Pry Bar Multitool in hand" onclick="openLightbox(this.src)"/>
+    <p class="img-caption">In hand — sits flat against the palm, nothing digs in.</p>
+
+    <p>Out of the box it's thinner than I expected, which is a good thing. It clips onto your pocket or belt and genuinely disappears. I forgot it was on me within about an hour, which for a pocket tool is pretty much the highest compliment you can give.</p>
 
     <h2>Just How Small Is It?</h2>
-    <p>
-      Numbers on a spec sheet don't always tell you much, so I laid it next to a regular pencil and then a ruler to get an actual sense of scale. It's genuinely pocket-sized — closer to the length of a standard pen than anything you'd think of as a "tool." Holding it in hand, it sits flat against your palm without any part digging in, which is exactly what you want from something meant to live in a pocket all day.
-    </p>
+    <p>Numbers on a spec sheet don't always tell you much, so I laid it next to a regular pencil and then a ruler to get an actual sense of scale. It's genuinely pocket-sized — closer to the length of a standard pen than anything you'd think of as a "tool."</p>
+
+    <div class="img-row">
+      <img src="https://m.media-amazon.com/images/I/91F88ceTWhL.jpg" alt="EDC Pry Bar Multitool next to a pencil for size comparison" onclick="openLightbox(this.src)"/>
+      <img src="https://m.media-amazon.com/images/I/91obJFv8ELL.jpg" alt="EDC Pry Bar Multitool next to a ruler showing its length" onclick="openLightbox(this.src)"/>
+    </div>
+    <p class="img-caption">Next to a pencil, and against a ruler — genuinely pocket-sized.</p>
 
     <h2>Tech Specs</h2>
     <table class="specs-table">
@@ -498,53 +516,54 @@
       <tr><td>Price</td><td>$34.98</td></tr>
     </table>
 
-    <h2>What It's Actually Like to Use</h2>
-    <p>
-      The ratchet screwdriver is where things get interesting. Bi-directional ratcheting means you don't have to lift and reset after every turn, which sounds like a small thing until you've spent five minutes tightening a screw with a regular flathead. In practice though, you do need to keep a firm grip — the bit isn't locked in magnetically or mechanically, so if you angle it wrong it'll slide out mid-turn. Annoying? A little. Deal-breaking? Not really, you just adapt.
-    </p>
-    <p>
-      The ratchet screwdriver is the standout feature. Instead of pulling the bit out and resetting direction every turn like a basic flathead, it ratchets both ways, which makes actual repetitive screwing way less annoying. The wrench cutouts are sized for common bolts, so it covers a decent range without needing a full wrench set.
-    </p>
-    <p>
-      Bottle opener works exactly as expected. Opened a few bottles, zero issues. The built-in pen is more of a "nice to have in a pinch" situation — don't expect it to replace your actual pen, but it's there when you need to scribble something and have nothing else on you.
-    </p>
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
 
-    <h2>In the Box</h2>
-    <p>
-      Nothing fancy here — the bar itself, the clip, and a small instruction booklet walking through each of the eleven functions. Worth actually skimming once, since a couple of the wrench cutouts and the ratchet direction switch aren't obvious just from looking at the tool.
-    </p>
+    <div class="article-more" id="articleMore">
 
-    <h2>Pros & Cons</h2>
-    <div class="pros-cons">
-      <div class="pros">
-        <h3>Pros</h3>
-        <ul>
-          <li>Genuinely flat, comfortable to carry daily</li>
-          <li>Bi-directional ratchet actually speeds up screwing</li>
-          <li>Multiple wrench sizes built in</li>
-          <li>Solid stainless steel build</li>
-          <li>Removable clip works on belt or pocket</li>
-          <li>Very affordable for how many functions it covers</li>
-        </ul>
+      <h2>What It's Actually Like to Use</h2>
+      <p>The ratchet screwdriver is where things get interesting. Bi-directional ratcheting means you don't have to lift and reset after every turn, which sounds like a small thing until you've spent five minutes tightening a screw with a regular flathead. In practice though, you do need to keep a firm grip — the bit isn't locked in magnetically or mechanically, so if you angle it wrong it'll slide out mid-turn. Annoying? A little. Deal-breaking? Not really, you just adapt.</p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/71sV-I4r8RL.jpg" alt="Close-up of the EDC Pry Bar Multitool's ratchet screwdriver" onclick="openLightbox(this.src)"/>
+      <p class="img-caption">Close-up on the ratchet screwdriver bit.</p>
+
+      <p>The ratchet screwdriver is the standout feature. Instead of pulling the bit out and resetting direction every turn like a basic flathead, it ratchets both ways, which makes actual repetitive screwing way less annoying. The wrench cutouts are sized for common bolts, so it covers a decent range without needing a full wrench set.</p>
+      <p>Bottle opener works exactly as expected. Opened a few bottles, zero issues. The built-in pen is more of a "nice to have in a pinch" situation — don't expect it to replace your actual pen, but it's there when you need to scribble something and have nothing else on you.</p>
+
+      <h2>In the Box</h2>
+      <p>Nothing fancy here — the bar itself, the clip, and a small instruction booklet walking through each of the eleven functions. Worth actually skimming once, since a couple of the wrench cutouts and the ratchet direction switch aren't obvious just from looking at the tool.</p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/71VUIUHPuvL.jpg" alt="First page of the included instruction booklet" onclick="openLightbox(this.src)"/>
+      <p class="img-caption">First page of the included instruction booklet.</p>
+
+      <h2>Pros & Cons</h2>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Pros</h3>
+          <ul>
+            <li>Genuinely flat, comfortable to carry daily</li>
+            <li>Bi-directional ratchet actually speeds up screwing</li>
+            <li>Multiple wrench sizes built in</li>
+            <li>Solid stainless steel build</li>
+            <li>Removable clip works on belt or pocket</li>
+            <li>Very affordable for how many functions it covers</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h3>Cons</h3>
+          <ul>
+            <li>Pen is more of a backup than a daily writer</li>
+            <li>Not a replacement for a full toolkit on bigger jobs</li>
+            <li>Wrench sizes are fixed, not adjustable</li>
+            <li>Clip can feel a bit stiff out of the box</li>
+          </ul>
+        </div>
       </div>
-      <div class="cons">
-        <h3>Cons</h3>
-        <ul>
-          <li>Pen is more of a backup than a daily writer</li>
-          <li>Not a replacement for a full toolkit on bigger jobs</li>
-          <li>Wrench sizes are fixed, not adjustable</li>
-          <li>Clip can feel a bit stiff out of the box</li>
-        </ul>
-      </div>
-    </div>
 
-    <h2>Who Should Buy This?</h2>
-    <p>
-      If you're the person who's always asked "does anyone have a screwdriver?" at work, or you just want one solid tool to throw in your car, bag, or pocket for daily annoyances, this is an easy yes. At under $35, it earns its spot fast.
-    </p>
-    <p>
-      If you need precision torque or are doing actual mechanical work, this is a backup tool, not your main one. But for opening boxes, tightening loose screws, and popping bottles on the go, it's hard to beat.
-    </p>
+      <h2>Who Should Buy This?</h2>
+      <p>If you're the person who's always asked "does anyone have a screwdriver?" at work, or you just want one solid tool to throw in your car, bag, or pocket for daily annoyances, this is an easy yes. At under $35, it earns its spot fast.</p>
+      <p>If you need precision torque or are doing actual mechanical work, this is a backup tool, not your main one. But for opening boxes, tightening loose screws, and popping bottles on the go, it's hard to beat.</p>
+
+    </div><!-- /article-more -->
 
   </div>
 
@@ -593,6 +612,13 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  function toggleArticle() {
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
 </script>
 
 </body>

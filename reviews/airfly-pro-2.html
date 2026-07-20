@@ -9,7 +9,7 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="shortcut icon" href="../favicon.ico">
 
   <!-- Fonts -->
@@ -125,6 +125,10 @@
     .review-img:hover { opacity: 0.88; }
     .review-img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
 
+    .img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 8px; }
+    .img-row img { width: 100%; height: 240px; object-fit: contain; background: #f5f7ff; border-radius: var(--radius); border: 1px solid var(--border); cursor: pointer; transition: opacity 0.18s ease; }
+    .img-row img:hover { opacity: 0.88; }
+
     /* Lightbox */
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999999; align-items: center; justify-content: center; padding: 20px; }
     .lightbox.open { display: flex; }
@@ -215,6 +219,8 @@
       .pros-cons { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .img-row { grid-template-columns: 1fr 1fr; }
+      .img-row img { height: 160px; }
     }
 
     /* ── FOOTER ── */
@@ -236,7 +242,7 @@
   "review": {
     "@type": "Review",
     "author": { "@type": "Organization", "name": "JaveomoTech Team" },
-    "datePublished": "2026-08-09",
+    "datePublished": "2026-07-09",
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "9.5",
@@ -288,7 +294,7 @@
   <section>
     <p class="section-label">Watch the Short</p>
     <div class="short-wrap">
-      <iframe src="https://www.youtube.com/embed/nZOW3MyWYgY" title="Soundcore Liberty 5 Pro Max Review" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/nZOW3MyWYgY" title="AirFly Pro 2 Review — JaveomoTech" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
 
@@ -302,15 +308,15 @@
         <span class="den">/10</span>
       </div>
       <div class="verdict-text">
-        <h3>The best travel tech purchase i made in 2025</h3>
-        <p>Zero audio lag, dual headphone pairing(although I only pair one but still nice to have), works on planes, iPads, TVs, cars. A genuine travel essential.</p>
+        <h3>The best travel tech purchase I made in 2025</h3>
+        <p>Zero audio lag, dual headphone pairing (although I only pair one but still nice to have), works on planes, iPads, TVs, cars. A genuine travel essential.</p>
       </div>
     </div>
   </section>
 
   <!-- KEY FEATURES -->
   <section>
-    <p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-bottom:24px;">By <strong>JaveomoTech Team</strong> · Published August 9, 2026</p>
+    <p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-bottom:24px;">By <strong>JaveomoTech Team</strong> · Published July 9, 2026</p>
     <p class="section-label">Key Features</p>
     <div class="features-grid">
       <div class="feature-card">
@@ -331,7 +337,7 @@
       <div class="feature-card">
         <div class="feat-icon">🔋</div>
         <h4>Long Battery Life</h4>
-        <p>Holds charge through long-haul flights. Reliable enough for a 12-hour Delta flight without a recharge.</p>
+        <p>Holds charge through long-haul flights. Reliable enough for a 12-hour flight without a recharge.</p>
       </div>
       <div class="feature-card">
         <div class="feat-icon">📱</div>
@@ -355,29 +361,51 @@
       I don't usually get this excited about accessories. But the AirFly Pro 2 genuinely surprised me — and I say that as someone who's been through enough travel gadgets to know when something is actually solving a problem versus just adding complexity. This is a Bluetooth transmitter the size of a lipstick cap that plugs into any 3.5mm headphone jack and turns it wireless.
     </p>
 
-    <!-- Image: AirPods pairing shot -->
     <img class="review-img"
-      src="https://www.cultofmac.com/wp-content/uploads/2025/03/AirFly-Pro-2_AirPods-4.jpg"
-      alt="AirFly Pro 2 paired with AirPods on airplane"
+      src="https://m.media-amazon.com/images/I/614YwemArIL.jpg"
+      alt="AirFly Pro 2 box freshly opened"
       onclick="openLightbox(this.src)" loading="lazy" />
-    <p class="review-img-caption">Plug it into the seat jack, pair your AirPods, done. Setup takes about 10 seconds.</p>
+    <p class="review-img-caption">Fresh out of the box — no complicated setup, just the transmitter and a quick guide.</p>
+
+    <p>
+      It also comes in two colors, and I ended up picking up one of each — a white one and a black one — so I could match whichever seat jack or device I'm plugging it into.
+    </p>
+
+    <img class="review-img"
+      src="https://m.media-amazon.com/images/I/81eEW+d3j3L.jpg"
+      alt="AirFly Pro 2 in both white and black color options"
+      onclick="openLightbox(this.src)" loading="lazy" />
+    <p class="review-img-caption">Picked up both colors — white and black.</p>
+
+    <h2>How Big Is It, Really?</h2>
+    <p>
+      Spec sheets don't always give you a real sense of scale, so I laid it next to my bag and the included guide paper to show the width, then stood it next to the box to show the height. It's genuinely tiny — small enough that it disappears in a jacket pocket or the little seatback pouch on a plane.
+    </p>
+
+    <div class="img-row">
+      <img src="https://m.media-amazon.com/images/I/81M+lnAoJkL.jpg" alt="AirFly Pro 2 next to a bag and guide paper showing its width" onclick="openLightbox(this.src)" loading="lazy" />
+      <img src="https://m.media-amazon.com/images/I/71iHe9RmphL.jpg" alt="AirFly Pro 2 next to its box showing its height" onclick="openLightbox(this.src)" loading="lazy" />
+    </div>
+    <p class="review-img-caption">Next to my bag and the guide paper for width, and next to the box for height.</p>
+
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
 
     <div class="article-more" id="articleMore">
 
       <h2>On a 12-Hour Flight</h2>
       <p>
-        I tested this on a 12-hour Delta flight and it made the entire experience genuinely better. Plugged into the headphone jack on the in-flight entertainment screen, pressed the button, my Bose QuietComfort headphones connected within seconds. Audio came through crystal clear — no dropouts, no weird delay, no sync issues during movies. I watched a few films back to back and never once had to fiddle with it. It just worked.
-      </p>
-      <p>
-        The audio quality is excellent. I was skeptical going in — Bluetooth over a 3.5mm transmitter sounds like it should be a compromise, but it doesn't feel like one in practice. The QuietComfort headphones sound like they always do, which is all you can really ask for.
+        I tested this on a 12-hour flight to China and it made the entire experience genuinely better. Plugged into the headphone jack on the in-flight entertainment screen, pressed the button, my headphones connected within seconds. Audio came through crystal clear — no dropouts, no weird delay, no sync issues during movies. The whole 12 hours, and it never ran out of battery.
       </p>
 
-      <!-- Image: plugged into seat -->
       <img class="review-img"
-        src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro21.jpg?v=1747700376&width=1400"
-        alt="AirFly Pro 2 plugged into airplane seat jack"
+        src="https://m.media-amazon.com/images/I/71xcGaj4dwL.jpg"
+        alt="AirFly Pro 2 in use during a 12-hour flight to China"
         onclick="openLightbox(this.src)" loading="lazy" />
-      <p class="review-img-caption">Plugged directly into the seat entertainment jack — no adapters, no fuss.</p>
+      <p class="review-img-caption">On the 12-hour flight to China — still going strong at landing, no recharge needed.</p>
+
+      <p>
+        The audio quality is excellent too. I was skeptical going in — Bluetooth over a 3.5mm transmitter sounds like it should be a compromise, but it doesn't feel like one in practice.
+      </p>
 
       <div class="usecase-callout">
         <div class="icon">👨‍👩‍👧‍👦</div>
@@ -394,19 +422,18 @@
 
       <h2>Beyond the Airplane</h2>
       <p>
-        I've been reaching for this thing in situations I didn't originally buy it for. Hotel TVs with no Bluetooth. The treadmill at the gym. My car's aux port when I want to use headphones instead of speakers. The PS5 controller. Anything with a 3.5mm jack becomes wireless-headphone compatible — it quietly removes a lot of friction from daily life once you start thinking of it that way.
+        I've been reaching for this thing in situations I didn't originally buy it for. Hotel TVs with no Bluetooth. The treadmill at the gym. My car's aux port when I want to use headphones instead of speakers. It even plugs straight into a PS5 controller's headphone jack, so anything with a 3.5mm jack becomes wireless-headphone compatible.
       </p>
 
-      <!-- Image: detail shot -->
       <img class="review-img"
-        src="https://tryandbyte.com.au/cdn/shop/files/TS-2411TwelveSouthAirFlyPro25.jpg?v=1753151837&width=1400"
-        alt="AirFly Pro 2 detail shot"
+        src="https://m.media-amazon.com/images/I/71AKrbg6RVL.jpg"
+        alt="AirFly Pro 2 plugged into a PS5 controller"
         onclick="openLightbox(this.src)" loading="lazy" />
-      <p class="review-img-caption">Build quality is solid — it's been in my bag on multiple trips and still looks new.</p>
+      <p class="review-img-caption">Also plugs straight into a PS5 controller for wireless headphone audio while gaming.</p>
 
       <h2>What It's Missing</h2>
       <p>
-        A few genuine gaps worth knowing about. There's no LCD screen, so you can't see which headphones are connected or what the battery percentage is. The Avantree Voyager has this and it's a legitimate advantage if you're managing multiple pairs. The AirFly only comes in white, which won't match most airplane seat jacks. It doesn't come with a hard case — just a soft pouch. And the connection process, while generally smooth, isn't completely obvious the first time. Read the instructions before your first flight, not at 35,000 feet.
+        A few genuine gaps worth knowing about. There's no LCD screen, so you can't see which headphones are connected or what the battery percentage is. The Avantree Voyager has this and it's a legitimate advantage if you're managing multiple pairs. It doesn't come with a hard case — just a soft pouch. And the connection process, while generally smooth, isn't completely obvious the first time. Read the instructions before your first flight, not at 35,000 feet.
       </p>
       <p>
         None of these are dealbreakers. The core experience — wireless audio from any 3.5mm source, zero lag, dual pairing — is executed so well that the missing features feel like future wishlist items rather than reasons not to buy.
@@ -419,7 +446,6 @@
 
     </div><!-- /article-more -->
 
-    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
   </section>
 
   <!-- SPECS -->
@@ -433,7 +459,7 @@
       <tr><td>Audio Lag</td><td>None perceptible</td></tr>
       <tr><td>Battery Life</td><td>Long — full 12-hour flight without recharge</td></tr>
       <tr><td>Compatible Devices</td><td>Airplane seats, iPad, TV, PS5, car aux, treadmill — any 3.5mm jack</td></tr>
-      <tr><td>Color</td><td>Black / White</td></tr>
+      <tr><td>Color</td><td>Black or White</td></tr>
       <tr><td>Included</td><td>Soft pouch (no hard case)</td></tr>
       <tr><td>Price</td><td>$59.99</td></tr>
     </table>
@@ -451,16 +477,15 @@
           <li>Dead simple setup — pairs in seconds</li>
           <li>Excellent sound quality</li>
           <li>Works on planes, iPads, TVs, PS5, cars</li>
-          <li>More polished than the original AirFly</li>
+          <li>Comes in both black and white</li>
           <li>Durable — survived travel with kids</li>
-          <li>Long battery life</li>
+          <li>Long battery life — lasted a full 12-hour flight</li>
         </ul>
       </div>
       <div class="cons">
         <h4>Cons</h4>
         <ul>
           <li>No LCD screen — can't see connected devices or battery %</li>
-          <li>Only comes in white (doesn't match black seat jacks)</li>
           <li>No hard case included — just a soft pouch</li>
           <li>First-time pairing not completely intuitive</li>
           <li>$59.99 is pricey for an adapter</li>
