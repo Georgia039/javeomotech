@@ -401,33 +401,29 @@
       background: var(--white);
       border: 1.5px solid var(--border);
       border-radius: 16px;
-      padding: 32px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      padding: 36px 28px;
+      text-align: center;
       margin-top: 48px;
-      flex-wrap: wrap;
     }
-    .bottom-cta-left h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
-    .bottom-cta-left p { font-size: 0.85rem; color: var(--muted); }
-    .bottom-cta-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
-    .bottom-price { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+    .bottom-cta h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+    .bottom-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+    .bottom-price { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-bottom: 16px; display: block; }
     .bottom-cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
+      padding: 13px 28px;
       background: var(--accent);
       color: white;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 700;
       border-radius: 10px;
       text-decoration: none;
       transition: opacity 0.15s, transform 0.15s;
+      margin-bottom: 12px;
     }
     .bottom-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-    .cta-disclaimer { font-size: 0.73rem; color: var(--muted); text-align: right; }
+    .cta-disclaimer { font-size: 0.73rem; color: var(--muted); display: block; }
 
     /* ── LIGHTBOX ── */
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
@@ -458,6 +454,30 @@
       .bottom-cta { flex-direction: column; align-items: flex-start; }
       .bottom-cta-right { align-items: flex-start; }
       .cta-disclaimer { text-align: left; }
+    }
+
+    /* ── STICKY BAR ── */
+    .sticky-bar {
+      position: fixed;
+      top: 58px;
+      left: 0; right: 0;
+      z-index: 190;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 24px;
+      box-shadow: 0 2px 12px rgba(0,87,255,0.25);
+      transform: translateY(-100%);
+      transition: transform 0.25s ease;
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--accent); font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) {
+      .sticky-bar { gap: 10px; padding: 10px 14px; }
+      .sticky-bar .sticky-name { max-width: 160px; font-size: 0.82rem; }
     }
 
     /* copy toast */
@@ -516,6 +536,12 @@
   <a class="nav-logo" href="../index.html">Javeomo<span>Tech</span></a>
   <a class="nav-back" href="../index.html">← All Reviews</a>
 </nav>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-name">Under Desk Cable Tray</span>
+  <a class="sticky-btn" href="https://amzn.to/4p5i0cy" target="_blank" rel="noopener sponsored">Check Price on Amazon →</a>
+</div>
 
 <!-- PRODUCT HEADER -->
 <div class="product-header">
@@ -750,17 +776,13 @@
 
   <!-- Bottom CTA -->
   <div class="bottom-cta">
-    <div class="bottom-cta-left">
-      <h3>Under Desk Cable Management Tray</h3>
-      <p>No-Drill Clamp Mount · Metal Mesh · Desk-Safe &amp; Reversible</p>
-    </div>
-    <div class="bottom-cta-right">
-      <span class="bottom-price">$13.99</span>
-      <a class="bottom-cta-btn" href="https://amzn.to/4p5i0cy" target="_blank" rel="noopener sponsored">
-        Buy on Amazon →
-      </a>
-      <span class="cta-disclaimer">Affiliate link — commission at no extra cost to you.</span>
-    </div>
+    <h3>Under Desk Cable Management Tray</h3>
+    <p>No-Drill Clamp Mount · Metal Mesh · Desk-Safe &amp; Reversible</p>
+    <span class="bottom-price">$13.99</span>
+    <a class="bottom-cta-btn" href="https://amzn.to/4p5i0cy" target="_blank" rel="noopener sponsored">
+      Buy on Amazon →
+    </a>
+    <span class="cta-disclaimer">Affiliate link — commission at no extra cost to you.</span>
   </div>
 
 </div><!-- /page-body -->
@@ -789,6 +811,15 @@
 </footer>
 
 <script>
+  // Sticky bar — show once the buy box leaves the viewport
+  const stickyBar = document.getElementById('stickyBar');
+  const buyBox = document.querySelector('.header-buy');
+  const observer = new IntersectionObserver(
+    ([entry]) => stickyBar.classList.toggle('visible', !entry.isIntersecting),
+    { threshold: 0 }
+  );
+  if (buyBox) observer.observe(buyBox);
+
   function toggleArticle() {
     const more = document.getElementById('articleMore');
     const btn = document.getElementById('readMoreBtn');
