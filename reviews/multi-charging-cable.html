@@ -6,13 +6,11 @@
   <title>Multi Charging Cable 3-in-1 Review — Retractable Lightning/USB-C/Micro USB | JaveomoTech</title>
   <meta name="description" content="Honest review of the 3A Retractable Multi Charging Cable (2-pack). Lightning, USB-C, and Micro USB in one cord — but does it hold up long term? Read before you buy.">
 
-  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="shortcut icon" href="../favicon.ico">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
@@ -22,361 +20,396 @@
 
     :root {
       --accent: #0057ff;
-      --accent-light: #e8efff;
+      --accent-light: #eef2ff;
       --text: #111;
-      --muted: #555;
-      --border: #e2e2e2;
-      --bg: #fff;
-      --card-bg: #f8f9fb;
+      --muted: #666;
+      --border: #e4e4e4;
+      --bg: #fafafa;
+      --white: #fff;
       --radius: 12px;
+      --success: #16a34a;
+      --danger: #dc2626;
       --gold: #d4a012;
       --gold-light: #fff8e6;
     }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-      font-size: 17px;
-    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.7; }
 
     /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
-      z-index: 100;
-    }
-    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0 28px; height: 58px; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 200; }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; }
     .nav-logo span { color: var(--accent); }
-    nav a.back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
-    nav a.back:hover { color: var(--accent); }
+    .nav-back { font-size: 0.83rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    .nav-back:hover { color: var(--accent); }
 
     /* ── STICKY BAR ── */
     .sticky-bar {
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
-      max-width: 700px;
-      width: 90%;
-      margin: 0 auto;
-      border-radius: 12px;
-      z-index: 99999;
-      background: #0057ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 20px;
-      gap: 16px;
-      box-shadow: 0 4px 16px rgba(0,87,255,0.3);
-      box-sizing: border-box;
+      position: fixed; top: 58px; left: 0; right: 0; z-index: 190;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      padding: 10px 24px;
+      box-shadow: 0 2px 12px rgba(0,87,255,0.25);
+      transform: translateY(-100%);
+      transition: transform 0.25s ease;
     }
+    .sticky-bar.visible { transform: translateY(0); }
     .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
-    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
-    .sticky-bar .sticky-btn:hover { opacity: 0.88; }
-    @media (max-width: 600px) {
-      .sticky-bar { top: auto; bottom: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
-      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
-    }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--accent); font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) { .sticky-bar { gap: 10px; padding: 10px 14px; } .sticky-bar .sticky-name { max-width: 160px; font-size: 0.82rem; } }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(145deg, #08090f 0%, #0f1424 50%, #14100a 100%);
-      color: #fff;
-      padding: 60px 24px 52px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 20% 50%, rgba(0,87,255,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 30%, rgba(212,160,18,0.10) 0%, transparent 45%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, var(--gold) 35%, #ffe082 50%, var(--gold) 65%, transparent 100%);
-      opacity: 0.8;
-    }
-    .hero-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #d4a012; margin-bottom: 14px; }
-    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 4.5vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
-    .hero h1 em { font-style: normal; color: #6ea4ff; }
-    .hero-sub { color: rgba(255,255,255,0.52); font-size: 0.97rem; max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
-    .hero-price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 9px 22px; font-size: 1rem; font-weight: 600; color: #fff; }
-    .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
+    /* ── PRODUCT HEADER ── */
+    .product-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 40px 28px 36px; }
+    .product-header-inner { max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr 260px; gap: 40px; align-items: start; }
 
-    /* ── LAYOUT ── */
-    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 44px 0; }
-    section + section { border-top: 1px solid var(--border); }
-    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .header-image { position: sticky; top: 76px; }
+    .header-image img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--white); object-fit: contain; padding: 12px; cursor: pointer; transition: box-shadow 0.2s; }
+    .header-image img:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
 
-    /* ── REVIEW IMAGES ── */
-    .review-img {
-      width: 100%;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      margin: 20px 0 8px;
-      display: block;
-      object-fit: contain;
-      background: #f5f7ff;
-      transition: opacity 0.18s ease;
-    }
-    .review-img:hover { opacity: 0.88; }
-    .img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
+    .header-meta { padding-top: 4px; }
+    .header-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .header-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--accent); border-radius: 2px; }
+    .wr-badge-inline { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 100px; padding: 5px 14px; margin-bottom: 12px; }
+    .wr-badge-inline span { font-size: 0.75rem; font-weight: 700; color: #7a5a00; letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-meta h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .header-byline { font-size: 0.82rem; color: var(--muted); margin-bottom: 18px; }
+    .header-byline strong { color: var(--text); }
+    .header-score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .score-pill { background: var(--accent); color: white; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 800; padding: 6px 16px; border-radius: 100px; }
+    .score-stars { color: #f59e0b; font-size: 1rem; letter-spacing: 1px; }
+    .score-label { font-size: 0.82rem; color: var(--muted); }
+    .header-desc { font-size: 0.95rem; color: #333; line-height: 1.7; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 14px; }
+    .header-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag { font-size: 0.75rem; font-weight: 600; padding: 4px 11px; border-radius: 20px; border: 1.5px solid var(--border); color: var(--muted); }
 
-    /* Lightbox */
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999999; align-items: center; justify-content: center; padding: 20px; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
-    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; }
-    .lightbox-close:hover { opacity: 1; }
+    /* Right: buy box */
+    .header-buy { position: sticky; top: 76px; }
+    .buy-box { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; }
+    .buy-box-price-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 4px; }
+    .buy-price { font-family: 'Orbitron', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--accent); }
+    .buy-price-original { font-size: 0.95rem; color: var(--muted); text-decoration: line-through; }
+    .buy-savings { font-size: 0.78rem; color: #b91c1c; font-weight: 700; background: #fee2e2; padding: 2px 8px; border-radius: 20px; margin-bottom: 14px; display: inline-block; }
+    .buy-availability { font-size: 0.8rem; color: var(--success); font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 5px; }
+    .buy-availability::before { content: '✓'; }
+    .btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 20px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: opacity 0.15s, transform 0.15s; margin-bottom: 10px; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 10px 20px; background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; border-radius: 10px; border: 1.5px solid var(--border); text-decoration: none; cursor: pointer; transition: border-color 0.15s, color 0.15s; margin-bottom: 18px; }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .buy-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 14px; }
+    .share-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+    .share-buttons { display: flex; gap: 8px; }
+    .share-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.15s; text-decoration: none; font-size: 0.85rem; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
-    /* ── VIDEO PLACEHOLDER ── */
-    .video-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 220px;
-      height: 391px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: var(--card-bg);
-      border: 1.5px dashed var(--border);
-      color: var(--muted);
-    }
-    .video-placeholder .icon { font-size: 2rem; opacity: 0.5; }
-    .video-placeholder p { font-size: 0.85rem; font-weight: 600; text-align: center; padding: 0 20px; }
-    .short-wrap { display: flex; justify-content: center; }
+    /* ── PAGE BODY ── */
+    .page-body { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+    .section-head { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
+
+    /* ── SCORE BREAKDOWN ── */
+    .score-breakdown { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    .score-row { display: flex; align-items: center; gap: 14px; }
+    .score-row-label { font-size: 0.83rem; font-weight: 600; color: var(--text); width: 150px; flex-shrink: 0; }
+    .score-bar-track { flex: 1; height: 7px; background: #eee; border-radius: 10px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 10px; background: var(--accent); }
+    .score-row-num { font-size: 0.83rem; font-weight: 700; color: var(--accent); width: 28px; text-align: right; flex-shrink: 0; }
 
     /* ── KEY FEATURES ── */
-
-    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
-    .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
-    .feature-card .feat-icon { font-size: 1.4rem; margin-bottom: 8px; }
-    .feature-card h4 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+    .feat-icon { font-size: 1.3rem; margin-bottom: 7px; }
+    .feature-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
     .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
-    /* ── VERDICT BAR ── */
-    .verdict-bar { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Orbitron', sans-serif; font-weight: 800; }
-    .score-circle .num { font-size: 1.5rem; line-height: 1; }
-    .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
-    .verdict-text h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-    .verdict-text p { font-size: 0.9rem; color: var(--muted); }
+    /* ── WORLD RECORD / CALLOUT BLOCK ── */
+    .wr-callout { background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: var(--radius); padding: 20px 22px; display: flex; align-items: flex-start; gap: 14px; margin: 24px 0; }
+    .wr-callout .icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+    .wr-callout h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 800; color: #7a5a00; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .wr-callout p { font-size: 0.88rem; color: #5a4000; line-height: 1.6; }
 
     /* ── ARTICLE ── */
-    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
+    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 800; margin: 32px 0 10px; letter-spacing: -0.02em; }
     .article h2:first-child { margin-top: 0; }
-    .article p { margin-bottom: 16px; color: #222; }
+    .article p { font-size: 0.97rem; color: #222; margin-bottom: 14px; line-height: 1.78; }
     .article p:last-child { margin-bottom: 0; }
+    .review-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--white); object-fit: contain; display: block; margin: 22px 0 6px; cursor: pointer; transition: opacity 0.18s; }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption { font-size: 0.79rem; color: var(--muted); text-align: center; margin-bottom: 22px; }
+    .app-strip { background: #f0f2f6; border-radius: var(--radius); padding: 16px; margin: 20px 0; }
+    .app-strip img { width: 100%; border-radius: 8px; display: block; object-fit: contain; cursor: pointer; }
+    .app-strip .img-caption { margin-top: 10px; margin-bottom: 0; }
 
-    /* ── READ MORE TOGGLE ── */
+    /* Read more */
     .article-more { display: none; }
     .article-more.open { display: block; }
-    .read-more-btn {
-      display: block;
-      margin: 24px auto 0;
-      background: none;
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 10px 28px;
-      border-radius: 100px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    .read-more-btn { display: block; margin: 24px auto 0; background: none; border: 1.5px solid var(--accent); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; padding: 10px 28px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
     .read-more-btn:hover { background: var(--accent); color: #fff; }
 
-    /* ── SPECS TABLE ── */
-    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    /* ── SPECS ── */
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
     .specs-table tr { border-bottom: 1px solid var(--border); }
     .specs-table tr:last-child { border-bottom: none; }
-    .specs-table td { padding: 11px 4px; vertical-align: top; }
-    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 42%; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .specs-table td { padding: 11px 8px; vertical-align: top; }
+    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 40%; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── SUBSCRIPTION / PRICING TABLE ── */
+    .sub-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .sub-table th { text-align: left; padding: 9px 8px; background: var(--bg); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); border-bottom: 1px solid var(--border); }
+    .sub-table td { padding: 10px 8px; border-bottom: 1px solid var(--border); }
+    .sub-table tr:last-child td { border-bottom: none; }
+    .sub-table .plan-name { font-weight: 700; }
+    .sub-table .free { color: var(--success); font-weight: 700; }
 
     /* ── PROS / CONS ── */
-    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .pros, .cons { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
-    .pros h4, .cons h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
-    .pros h4 { color: #1a7a1a; }
-    .cons h4 { color: #b91c1c; }
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .pros, .cons { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .pros { border-top: 3px solid var(--success); }
+    .cons { border-top: 3px solid var(--danger); }
+    .pros h4, .cons h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+    .pros h4 { color: var(--success); }
+    .cons h4 { color: var(--danger); }
     .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .pros ul li::before { content: '✓ '; color: #1a7a1a; font-weight: 700; }
-    .cons ul li::before { content: '✗ '; color: #b91c1c; font-weight: 700; }
-    .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
+    .pros li, .cons li { font-size: 0.88rem; line-height: 1.5; display: flex; gap: 7px; }
+    .pros li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+    .cons li::before { content: '✗'; color: var(--danger); font-weight: 700; flex-shrink: 0; }
 
-    /* ── CTA ── */
-    .cta-box { background: linear-gradient(145deg, #08090f 0%, #0f1424 100%); border-radius: var(--radius); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; }
-    .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.18) 0%, transparent 60%); pointer-events: none; }
-    .cta-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.7; }
-    .cta-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
-    .cta-box p { color: rgba(255,255,255,0.42); font-size: 0.9rem; margin-bottom: 24px; }
-    .btn-amazon { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 15px 34px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s ease, transform 0.15s ease; }
-    .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
-    .cta-disclaimer { margin-top: 14px; font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+    /* ── BOTTOM CTA ── */
+    .bottom-cta { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 36px 28px; text-align: center; margin-top: 48px; }
+    .bottom-cta h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+    .bottom-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+    .bottom-price { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-bottom: 16px; display: block; }
+    .bottom-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--accent); color: white; font-size: 0.95rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: opacity 0.15s, transform 0.15s; margin-bottom: 12px; }
+    .bottom-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-disclaimer { font-size: 0.73rem; color: var(--muted); display: block; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 560px) {
-      .pros-cons { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
-    }
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: white; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; line-height: 1; }
+    .lightbox-close:hover { opacity: 1; }
 
     /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); background: var(--white); }
     footer a { color: var(--muted); text-decoration: underline; }
+    footer strong { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .product-header-inner { grid-template-columns: 200px 1fr; }
+      .header-buy { grid-column: 1 / -1; position: static; }
+    }
+    @media (max-width: 640px) {
+      .product-header-inner { grid-template-columns: 1fr; }
+      .header-image { position: static; }
+      .header-image img { max-width: 280px; margin: 0 auto; display: block; }
+      .pros-cons { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+
+    .copy-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(10px); background: #111; color: white; font-size: 0.83rem; font-weight: 600; padding: 8px 18px; border-radius: 100px; opacity: 0; transition: all 0.25s; pointer-events: none; z-index: 9999; }
+    .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Review",
-  "itemReviewed": {
+  {
+    "@context": "https://schema.org",
     "@type": "Product",
     "name": "Multi Charging Cable 3-in-1 Retractable (2-Pack)",
     "image": "https://m.media-amazon.com/images/I/71b+nf3B67L._SL1499_.jpg",
     "description": "Retractable 3-in-1 charging cable with Lightning, USB-C, and Micro USB connectors.",
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "11.04"
+      "price": "11.04",
+      "priceCurrency": "USD"
+    },
+    "review": {
+      "@type": "Review",
+      "author": { "@type": "Organization", "name": "JaveomoTech Team" },
+      "datePublished": "2026-07-11",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "7.2",
+        "bestRating": "10"
+      }
     }
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "JaveomoTech Team"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "7.2",
-    "bestRating": "10"
-  },
-  "datePublished": "2026-07-11"
-}
-</script> 
-  </head>
+  }
+  </script>
+</head>
 <body>
 
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="../index.html">Javeomo<span>Tech</span></a>
-  <a class="back" href="../index.html">← All Reviews</a>
+  <a class="nav-back" href="../index.html">← All Reviews</a>
 </nav>
 
 <!-- STICKY BAR -->
-<div class="sticky-bar">
+<div class="sticky-bar" id="stickyBar">
   <span class="sticky-name">Multi Charging Cable 3-in-1</span>
   <a class="sticky-btn" href="https://amzn.to/4vRPopG" target="_blank" rel="noopener sponsored">Check Price on Amazon →</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">Charging · Accessories · 2-Pack</div>
-  <h1>One Retractable Cable, <em>Three Connector Types</em> — Does It Actually Hold Up?</h1>
-  <p class="hero-sub">3A Retractable Multi Charging Cable — Lightning, USB-C, and Micro USB in one cord. 2-pack, 4ft each. Convenient on day one — the real question is day 200.</p>
-  <div class="hero-price-badge">
-    <span>Amazon</span>
-    <span class="price">$11.04</span>
+<!-- PRODUCT HEADER -->
+<div class="product-header">
+  <div class="product-header-inner">
+
+    <!-- Left: image -->
+    <div class="header-image">
+      <img
+        src="https://m.media-amazon.com/images/I/71b+nf3B67L._SL1499_.jpg"
+        alt="Retractable multi charging cable 3-in-1, 2-pack"
+        onclick="openLightbox(this.src)"
+      />
+    </div>
+
+    <!-- Center: meta -->
+    <div class="header-meta">
+      <div class="header-eyebrow">Charging · Accessories · 2-Pack</div>
+      <div class="wr-badge-inline">
+        <span>⭐ Editor Choice — Best Budget Multi-Cable</span>
+      </div>
+      <h1>One Retractable Cable, Three Connector Types — Does It Actually Hold Up?</h1>
+      <p class="header-byline">By <strong>JaveomoTech Team</strong> · <time datetime="2026-07-11">July 11, 2026</time></p>
+
+      <div class="header-score-row">
+        <span class="score-pill">7.2</span>
+        <span class="score-stars">★★★½☆</span>
+        <span class="score-label">/ 10 · JaveomoTech Score</span>
+      </div>
+
+      <p class="header-desc">
+        3A Retractable Multi Charging Cable — Lightning, USB-C, and Micro USB in one cord. 2-pack, 4ft each. Convenient on day one — the real question is day 200.
+      </p>
+
+      <div class="header-tags">
+        <span class="tag">Under $15</span>
+        <span class="tag">Charging Cable</span>
+        <span class="tag">3-in-1</span>
+        <span class="tag">Retractable</span>
+        <span class="tag">2-Pack</span>
+        <span class="tag">Travel Essentials</span>
+      </div>
+    </div>
+
+    <!-- Right: buy box -->
+    <div class="header-buy">
+      <div class="buy-box">
+        <div>
+          <div class="buy-box-price-row">
+            <span class="buy-price">$11.04</span>
+            <span class="buy-price-original">$15.99</span>
+          </div>
+          <span class="buy-savings">Save 31%</span>
+          <div class="buy-availability">Usually ships same day</div>
+          <a class="btn-primary" href="https://amzn.to/4vRPopG" target="_blank" rel="noopener sponsored">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+            Check Price on Amazon
+          </a>
+          <button class="btn-secondary" onclick="handleSave(this)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            Save to Wishlist
+          </button>
+        </div>
+
+        <hr class="buy-divider" />
+
+        <div>
+          <div class="share-label">Share with your network</div>
+          <div class="share-buttons">
+            <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://javeomotech.com/reviews/multi-charging-cable.html&text=Multi+Charging+Cable+3-in-1+Review+via+%40JaveomoTech" target="_blank" rel="noopener" title="Share on X / Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://javeomotech.com/reviews/multi-charging-cable.html" target="_blank" rel="noopener" title="Share on Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <button class="share-btn" onclick="copyLink()" title="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+          <p style="font-size:0.73rem; color:var(--muted); margin-top:10px;">Affiliate link — commission earned at no extra cost to you.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<div class="container">
+<!-- PAGE BODY -->
+<div class="page-body">
 
-  <!-- HERO IMAGE -->
-  <section>
-    <img class="review-img"
-      src="https://m.media-amazon.com/images/I/71b+nf3B67L._SL1499_.jpg"
-      alt="Retractable multi charging cable 3-in-1, 2-pack"
-      onclick="openLightbox(this.src)" loading="eager" style="margin-top:0;" />
-  </section>
-
-  <!-- VIDEO PLACEHOLDER -->
-  <section>
-    <p class="section-label">Watch the Short</p>
-    <div class="short-wrap">
-      <div class="video-placeholder">
-        <div class="icon">🎬</div>
-        <p>Video Review — Coming Soon</p>
-      </div>
+  <!-- Score breakdown -->
+  <h2 class="section-head"><span>📊</span> Score Breakdown</h2>
+  <div class="score-breakdown">
+    <div class="score-row">
+      <span class="score-row-label">Convenience & Versatility</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div>
+      <span class="score-row-num">9.0</span>
     </div>
-  </section>
-
-  <!-- VERDICT -->
-  <section>
-    <p class="section-label">Verdict</p>
-    <div class="verdict-bar">
-      <div class="score-circle">
-        <span class="num">7.2</span>
-        <span class="den">/10</span>
-      </div>
-      <div class="verdict-text">
-        <h3>Genuinely handy for mixed-device households — just don't expect it to last forever</h3>
-        <p>The 3-in-1 retractable design solves a real problem, and it charges reliably. The tradeoff is longevity — this is a cable built for convenience, not for years of daily abuse.</p>
-      </div>
+    <div class="score-row">
+      <span class="score-row-label">Build Quality & Retraction</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:75%"></div></div>
+      <span class="score-row-num">7.5</span>
     </div>
-  </section>
-
-  <!-- KEY FEATURES ── -->
-  <p style="text-align:center; font-size:0.82rem; color:var(--muted); margin-top:-8px; margin-bottom:8px;">
-  By <strong>JaveomoTech Team</strong> · Published <time datetime="2026-07-9">July 9, 2026</time>
-</p>
-  <section>
-    <p class="section-label">Key Features</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feat-icon">🔌</div>
-        <h4>3-in-1 Connector</h4>
-        <p>Lightning, USB-C, and Micro USB tips built into one retractable cord — covers almost any device.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feat-icon">🌀</div>
-        <h4>Retractable Design</h4>
-        <p>Pull out the length you need, retract the rest. No tangled cable balls in your bag or drawer.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feat-icon">⚡</div>
-        <h4>3A Fast Charging</h4>
-        <p>Rated for 3A output — solid for phones, tablets, and most everyday devices.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feat-icon">📦</div>
-        <h4>2-Pack, 4ft Each</h4>
-        <p>Two cables in the box — one for the car, one for the desk, or a spare when one wears out.</p>
-      </div>
+    <div class="score-row">
+      <span class="score-row-label">Charging Speed</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:68%"></div></div>
+      <span class="score-row-num">6.8</span>
     </div>
-  </section>
+    <div class="score-row">
+      <span class="score-row-label">Value for Money</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:88%"></div></div>
+      <span class="score-row-num">8.8</span>
+    </div>
+    <div class="score-row">
+      <span class="score-row-label">Long-Term Durability</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:58%"></div></div>
+      <span class="score-row-num">5.8</span>
+    </div>
+  </div>
 
-  <!-- ARTICLE -->
-  <section class="article">
-    <p class="section-label">Full Review</p>
+  <!-- Key Features -->
+  <h2 class="section-head"><span>✦</span> Key Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon">🔌</div>
+      <h4>3-in-1 Connector</h4>
+      <p>Lightning, USB-C, and Micro USB tips built into one retractable cord — covers almost any device.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🌀</div>
+      <h4>Retractable Design</h4>
+      <p>Pull out the length you need, retract the rest. No tangled cable balls in your bag or drawer.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">⚡</div>
+      <h4>3A Fast Charging</h4>
+      <p>Rated for 3A output — solid for phones, tablets, and most everyday devices.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📦</div>
+      <h4>2-Pack, 4ft Each</h4>
+      <p>Two cables in the box — one for the car, one for the desk, or a spare when one wears out.</p>
+    </div>
+  </div>
+
+  <!-- Special Callout Block -->
+  <div class="wr-callout">
+    <div class="icon">⚠️</div>
+    <div>
+      <h4>Compatibility & Data Transfer Note</h4>
+      <p>This cable is primarily designed for charging. Certain ports on select smartphones may treat this as a charge-only connection and will not support data transfer, Android Auto, or Apple CarPlay.</p>
+    </div>
+  </div>
+
+  <!-- Full Review -->
+  <h2 class="section-head"><span>📝</span> Full Review</h2>
+  <div class="article">
 
     <h2>What Is This Thing?</h2>
-    <p>
-      This is one of those "solve three problems with one cable" products — a retractable cord that ends in a little connector hub with Lightning, USB-C, and Micro USB tips built in. The idea is simple: instead of keeping three separate cables around for your phone, your partner's phone, your tablet, and whatever random Micro USB device still exists in your house, you carry one cable that covers all of it. At $11.04 for a two-pack, the price makes it an easy thing to just try.
-    </p>
+    <p>This is one of those "solve three problems with one cable" products — a retractable cord that ends in a little connector hub with Lightning, USB-C, and Micro USB tips built in. The idea is simple: instead of keeping three separate cables around for your phone, your partner's phone, your tablet, and whatever random Micro USB device still exists in your house, you carry one cable that covers all of it. At $11.04 for a two-pack, the price makes it an easy thing to just try.</p>
 
-    <!-- In the box image -->
     <img class="review-img"
       src="https://m.media-amazon.com/images/I/71QxW14TawL.jpg"
       alt="Multi charging cable in the box"
@@ -386,11 +419,8 @@
     <div class="article-more" id="articleMore">
 
       <h2>The Retractable Part Actually Works Well</h2>
-      <p>
-        I was a little skeptical of the retraction mechanism going in — a lot of retractable cables I've tried in the past get stiff or stop retracting evenly after a few weeks. This one has held up fine so far. You pull out however much length you need, and it reels back in cleanly without getting stuck halfway. For a bag, a car console, or a desk where you don't want three feet of loose cable flopping around, this genuinely solves the tangle problem. It's a small thing, but it's the kind of small thing you notice every single day you use it.
-      </p>
+      <p>I was a little skeptical of the retraction mechanism going in — a lot of retractable cables I've tried in the past get stiff or stop retracting evenly after a few weeks. This one has held up fine so far. You pull out however much length you need, and it reels back in cleanly without getting stuck halfway. For a bag, a car console, or a desk where you don't want three feet of loose cable flopping around, this genuinely solves the tangle problem. It's a small thing, but it's the kind of small thing you notice every single day you use it.</p>
 
-      <!-- Holding product image -->
       <img class="review-img"
         src="https://m.media-amazon.com/images/I/71nmRJqimHL.jpg"
         alt="Holding the multi charging cable"
@@ -398,16 +428,11 @@
       <p class="img-caption">Compact enough to hold in one hand, tips included, easy to stash anywhere.</p>
 
       <h2>Charging Speed — Fine for Most, Not a Speed Demon</h2>
-      <p>
-        Charging speed here is a mixed bag depending on who you ask, and I get why. On my phone, it charges steadily and doesn't run hot, which I actually care about more than raw speed — a cable that gets warm during a long charge is a cable I don't trust long term. That said, don't expect blazing fast charging. If you're used to a proper high-wattage brick and cable combo, this will feel noticeably slower by comparison. For topping up during the day or overnight charging, it's completely fine. For "I need 50% in ten minutes before I run out the door," it's not the cable for that.
-      </p>
+      <p>Charging speed here is a mixed bag depending on who you ask, and I get why. On my phone, it charges steadily and doesn't run hot, which I actually care about more than raw speed — a cable that gets warm during a long charge is a cable I don't trust long term. That said, don't expect blazing fast charging. If you're used to a proper high-wattage brick and cable combo, this will feel noticeably slower by comparison. For topping up during the day or overnight charging, it's completely fine. For "I need 50% in ten minutes before I run out the door," it's not the cable for that.</p>
 
       <h2>The Three Tips — What They're Actually Good For</h2>
-      <p>
-        Having all three connector types in one place is honestly the best part of owning this. If you've got an iPhone person and an Android person in the same house — or you're juggling a tablet, a PS controller, and old wired earbuds that all use different ports — this cable ends the "whose charger is this" argument. One heads-up worth being upfront about, though: a couple of people have found that these are charge-only through certain ports on certain phones — meaning if you're trying to use it for data transfer or something like Android Auto in your car, it may not pick up the phone for that. If you specifically need a cable that both charges and handles a wired Android Auto or CarPlay connection, don't rely on this being that cable — test it with your exact phone and car setup before committing to it as your only option there.
-      </p>
+      <p>Having all three connector types in one place is honestly the best part of owning this. If you've got an iPhone person and an Android person in the same house — or you're juggling a tablet, a PS controller, and old wired earbuds that all use different ports — this cable ends the "whose charger is this" argument. One heads-up worth being upfront about, though: a couple of people have found that these are charge-only through certain ports on certain phones — meaning if you're trying to use it for data transfer or something like Android Auto in your car, it may not pick up the phone for that. If you specifically need a cable that both charges and handles a wired Android Auto or CarPlay connection, don't rely on this being that cable — test it with your exact phone and car setup before committing to it as your only option there.</p>
 
-      <!-- All three connector types image -->
       <img class="review-img"
         src="https://m.media-amazon.com/images/I/61pRz37GzvL.jpg"
         alt="All three connector types shown - Lightning, USB-C, Micro USB"
@@ -415,77 +440,76 @@
       <p class="img-caption">All three tips in one — Lightning, USB-C, and Micro USB, covering most of what you'll actually own.</p>
 
       <h2>The Honest Part: Longevity</h2>
-      <p>
-        Here's where I have to be straight with you. This isn't a cable I'd expect to survive years of daily wear. It's genuinely great for the first several months — reliable charging, clean retraction, no fraying. But cables at this price point in this category tend to develop the classic symptoms over time: needing to be positioned just right to make contact, or only charging when angled a certain way. Whether that happens to you at six months or a year probably depends on how roughly it gets handled — tossed in a bag daily versus living calmly on a desk are very different lifespans. I wouldn't call this a forever-cable. I'd call it a really convenient, cheap-enough-to-replace cable that does its job well while it lasts.
-      </p>
-      <p>
-        Is that a dealbreaker? For me, not really — at this price, treating it as a low-commitment convenience item rather than a lifetime purchase feels like the right way to think about it. Buy it knowing you might be back for a replacement down the line, and you won't feel let down when that day comes.
-      </p>
+      <p>Here's where I have to be straight with you. This isn't a cable I'd expect to survive years of daily wear. It's genuinely great for the first several months — reliable charging, clean retraction, no fraying. But cables at this price point in this category tend to develop the classic symptoms over time: needing to be positioned just right to make contact, or only charging when angled a certain way. Whether that happens to you at six months or a year probably depends on how roughly it gets handled — tossed in a bag daily versus living calmly on a desk are very different lifespans. I wouldn't call this a forever-cable. I'd call it a really convenient, cheap-enough-to-replace cable that does its job well while it lasts.</p>
+      <p>Is that a dealbreaker? For me, not really — at this price, treating it as a low-commitment convenience item rather than a lifetime purchase feels like the right way to think about it. Buy it knowing you might be back for a replacement down the line, and you won't feel let down when that day comes.</p>
 
       <h2>Who Should Buy This?</h2>
-      <p>
-        If your household has a mix of device types and you're tired of hunting for the right cable, or you just want one clean retractable cord for your bag, car, or desk without buying three separate cables, this is a solid, cheap pickup. If you need something built to survive years of heavy daily use without any degradation, or you're relying on it for data transfer through your car's system, temper your expectations or test it first. For casual, everyday charging convenience at under $12 for two, it earns its spot in the drawer.
-      </p>
+      <p>If your household has a mix of device types and you're tired of hunting for the right cable, or you just want one clean retractable cord for your bag, car, or desk without buying three separate cables, this is a solid, cheap pickup. If you need something built to survive years of heavy daily use without any degradation, or you're relying on it for data transfer through your car's system, temper your expectations or test it first. For casual, everyday charging convenience at under $12 for two, it earns its spot in the drawer.</p>
 
-    </div><!-- /article-more -->
+    </div>
 
     <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
-  </section>
+  </div>
 
-  <!-- SPECS -->
-  <section>
-    <p class="section-label">Full Specs</p>
-    <table class="specs-table">
-      <tr><td>Product</td><td>3A Retractable Multi Charging Cable (2-Pack)</td></tr>
-      <tr><td>Connector Types</td><td>Lightning, USB-C, Micro USB (3-in-1)</td></tr>
-      <tr><td>Cable Length</td><td>4ft, retractable</td></tr>
-      <tr><td>Charging Output</td><td>3A</td></tr>
-      <tr><td>Pack Size</td><td>2 cables</td></tr>
-      <tr><td>Compatible Devices</td><td>iPhone, Samsung, PS controllers, tablets, and most phones/tablets</td></tr>
-      <tr><td>Price</td><td>$11.04 (on discount)</td></tr>
-    </table>
-  </section>
+  <!-- Specs -->
+  <h2 class="section-head"><span>📋</span> Specs</h2>
+  <table class="specs-table">
+    <tr><td>Product</td><td>3A Retractable Multi Charging Cable (2-Pack)</td></tr>
+    <tr><td>Connector Types</td><td>Lightning, USB-C, Micro USB (3-in-1)</td></tr>
+    <tr><td>Cable Length</td><td>4ft (1.2m), retractable</td></tr>
+    <tr><td>Max Output</td><td>3A Fast Charging</td></tr>
+    <tr><td>Pack Size</td><td>2 Cables included</td></tr>
+    <tr><td>Compatible Devices</td><td>iPhone, iPad, Samsung, Android, PS Controllers, Micro USB devices</td></tr>
+    <tr><td>Housing Material</td><td>ABS Plastic Enclosure & TPE Ribbed Cable</td></tr>
+    <tr><td>Price</td><td>$11.04</td></tr>
+  </table>
 
-  <!-- PROS / CONS -->
-  <section>
-    <p class="section-label">Pros & Cons</p>
-    <div class="pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul>
-          <li>3-in-1 tips cover nearly any device in the house</li>
-          <li>Retractable mechanism works smoothly, no tangling</li>
-          <li>Charges steadily without running hot</li>
-          <li>Compact — fits easily in a bag, drawer, or car console</li>
-          <li>Two cables in the pack for very little money</li>
-          <li>Great for mixed-device households</li>
-        </ul>
-      </div>
-      <div class="cons">
-        <h4>Cons</h4>
-        <ul>
-          <li>Charging speed is average, not fast-charge fast</li>
-          <li>Some ports may not support data transfer (e.g. Android Auto)</li>
-          <li>Durability tends to decline after several months of heavy use</li>
-          <li>Not a long-term "forever cable" — treat it as a low-cost convenience buy</li>
-        </ul>
-      </div>
+  <!-- Pricing Breakdown Table -->
+  <h2 class="section-head"><span>📅</span> Pricing &amp; Value Breakdown</h2>
+  <table class="sub-table">
+    <tr><th>Tier / Option</th><th>Details</th><th>Price</th></tr>
+    <tr><td class="plan-name">2-Pack Retail <span class="free">(Current Discount)</span></td><td>2x 4ft Retractable Cables (Black)</td><td class="free">$11.04</td></tr>
+    <tr><td class="plan-name">Standard Retail</td><td>Regular list price without promotional discount</td><td>$15.99</td></tr>
+    <tr><td class="plan-name">Cost Per Unit</td><td>Effective price per individual retractable cable</td><td>$5.52 / unit</td></tr>
+  </table>
+
+  <!-- Pros / Cons -->
+  <h2 class="section-head"><span>⚖️</span> Pros &amp; Cons</h2>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>Pros</h4>
+      <ul>
+        <li>3-in-1 tips cover nearly any device in the house</li>
+        <li>Retractable mechanism works smoothly, no tangling</li>
+        <li>Charges steadily without running hot</li>
+        <li>Compact — fits easily in a bag, drawer, or car console</li>
+        <li>Two cables in the pack for very little money</li>
+        <li>Great for mixed-device households</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="padding-bottom: 56px;">
-    <div class="cta-box">
-      <h3>Multi Charging Cable 3-in-1 (2-Pack)</h3>
-      <p>$11.04 · Retractable · Lightning/USB-C/Micro USB · 3A Fast Charging</p>
-      <a class="btn-amazon" href="https://amzn.to/4vRPopG" target="_blank" rel="noopener sponsored">
-        Buy on Amazon
-      </a>
-      <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+    <div class="cons">
+      <h4>Cons</h4>
+      <ul>
+        <li>Charging speed is average, not fast-charge fast</li>
+        <li>Some ports may not support data transfer (e.g. Android Auto)</li>
+        <li>Durability tends to decline after several months of heavy use</li>
+        <li>Not a long-term "forever cable" — treat it as a low-cost convenience buy</li>
+      </ul>
     </div>
-  </section>
+  </div>
 
-</div><!-- /container -->
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <h3>Multi Charging Cable 3-in-1 (2-Pack)</h3>
+    <p>Retractable · Lightning/USB-C/Micro USB · 3A Fast Charging · 2 Cables Included</p>
+    <span class="bottom-price">$11.04</span>
+    <a class="bottom-cta-btn" href="https://amzn.to/4vRPopG" target="_blank" rel="noopener sponsored">
+      Buy on Amazon →
+    </a>
+    <span class="cta-disclaimer">Affiliate link — commission at no extra cost to you.</span>
+  </div>
+
+</div><!-- /page-body -->
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -493,10 +517,13 @@
   <img id="lightbox-img" src="" alt="Product photo enlarged">
 </div>
 
+<!-- COPY TOAST -->
+<div class="copy-toast" id="copyToast">Link copied!</div>
+
 <!-- FOOTER -->
 <footer>
   <p><strong>JaveomoTech</strong></p>
-  <p>Tech reviewer sharing the best gadgets & gear.</p>
+  <p>Tech reviewer sharing the best gadgets &amp; gear.</p>
   <p style="margin-top:12px;">
     <a href="../about.html">About</a> &nbsp;·&nbsp;
     <a href="../contact.html">Contact</a> &nbsp;·&nbsp;
@@ -508,6 +535,15 @@
 </footer>
 
 <script>
+  // Sticky bar
+  const stickyBar = document.getElementById('stickyBar');
+  const buyBox = document.querySelector('.header-buy');
+  const observer = new IntersectionObserver(
+    ([entry]) => stickyBar.classList.toggle('visible', !entry.isIntersecting),
+    { threshold: 0 }
+  );
+  if (buyBox) observer.observe(buyBox);
+
   function toggleArticle() {
     const more = document.getElementById('articleMore');
     const btn = document.getElementById('readMoreBtn');
@@ -525,6 +561,25 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
   });
+
+  function handleSave(btn) {
+    btn.textContent = '✓ Saved!';
+    btn.style.color = '#16a34a';
+    btn.style.borderColor = '#16a34a';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> Save to Wishlist';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const t = document.getElementById('copyToast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    });
+  }
 </script>
 
 </body>
