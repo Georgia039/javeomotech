@@ -6,13 +6,11 @@
   <title>Quntis Monitor Light Bar Review — Eye Care LED Task Lamp | JaveomoTech</title>
   <meta name="description" content="Honest review of the Quntis Computer Monitor Lamp light bar. No-glare eye care lighting, auto-dimming, touch control — but is $39.95 worth it over cheaper alternatives? Read before you buy.">
 
-  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="shortcut icon" href="../favicon.ico">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
@@ -22,360 +20,364 @@
 
     :root {
       --accent: #0057ff;
-      --accent-light: #e8efff;
+      --accent-light: #eef2ff;
       --text: #111;
-      --muted: #555;
-      --border: #e2e2e2;
-      --bg: #fff;
-      --card-bg: #f8f9fb;
+      --muted: #666;
+      --border: #e4e4e4;
+      --bg: #fafafa;
+      --white: #fff;
       --radius: 12px;
+      --success: #16a34a;
+      --danger: #dc2626;
       --gold: #d4a012;
       --gold-light: #fff8e6;
     }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-      font-size: 17px;
-    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.7; }
 
     /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
-      z-index: 100;
-    }
-    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0 28px; height: 58px; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 200; }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; }
     .nav-logo span { color: var(--accent); }
-    nav a.back { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; }
-    nav a.back:hover { color: var(--accent); }
+    .nav-back { font-size: 0.83rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    .nav-back:hover { color: var(--accent); }
 
     /* ── STICKY BAR ── */
     .sticky-bar {
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
-      max-width: 700px;
-      width: 90%;
-      margin: 0 auto;
-      border-radius: 12px;
-      z-index: 99999;
-      background: #0057ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 20px;
-      gap: 16px;
-      box-shadow: 0 4px 16px rgba(0,87,255,0.3);
-      box-sizing: border-box;
+      position: fixed; top: 58px; left: 0; right: 0; z-index: 190;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      padding: 10px 24px;
+      box-shadow: 0 2px 12px rgba(0,87,255,0.25);
+      transform: translateY(-100%);
+      transition: transform 0.25s ease;
     }
+    .sticky-bar.visible { transform: translateY(0); }
     .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
-    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: #0057ff; font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; }
-    .sticky-bar .sticky-btn:hover { opacity: 0.88; }
-    @media (max-width: 600px) {
-      .sticky-bar { top: auto; bottom: 0; border-radius: 0; justify-content: space-between; padding: 10px 16px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
-      .sticky-bar .sticky-name { max-width: 180px; font-size: 0.82rem; }
-    }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--accent); font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) { .sticky-bar { gap: 10px; padding: 10px 14px; } .sticky-bar .sticky-name { max-width: 160px; font-size: 0.82rem; } }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(145deg, #08090f 0%, #0f1424 50%, #14100a 100%);
-      color: #fff;
-      padding: 60px 24px 52px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 20% 50%, rgba(0,87,255,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 30%, rgba(212,160,18,0.10) 0%, transparent 45%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, var(--gold) 35%, #ffe082 50%, var(--gold) 65%, transparent 100%);
-      opacity: 0.8;
-    }
-    .hero-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #d4a012; margin-bottom: 14px; }
-    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 4.5vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; max-width: 680px; margin: 0 auto 16px; }
-    .hero h1 em { font-style: normal; color: #6ea4ff; }
-    .hero-sub { color: rgba(255,255,255,0.52); font-size: 0.97rem; max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
-    .hero-price-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 100px; padding: 9px 22px; font-size: 1rem; font-weight: 600; color: #fff; }
-    .hero-price-badge .price { font-size: 1.25rem; color: #6ea4ff; }
+    /* ── PRODUCT HEADER ── */
+    .product-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 40px 28px 36px; }
+    .product-header-inner { max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr 260px; gap: 40px; align-items: start; }
 
-    /* ── LAYOUT ── */
-    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 44px 0; }
-    section + section { border-top: 1px solid var(--border); }
-    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .header-image { position: sticky; top: 76px; }
+    .header-image img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--white); object-fit: contain; padding: 12px; cursor: pointer; transition: box-shadow 0.2s; }
+    .header-image img:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
 
-    /* ── REVIEW IMAGES ── */
-    .review-img {
-      width: 100%;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      margin: 20px 0 8px;
-      display: block;
-      object-fit: contain;
-      background: #f5f7ff;
-      transition: opacity 0.18s ease;
-    }
-    .review-img:hover { opacity: 0.88; }
-    .img-caption { text-align: center; font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
+    .header-meta { padding-top: 4px; }
+    .header-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .header-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--accent); border-radius: 2px; }
+    .header-meta h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .header-byline { font-size: 0.82rem; color: var(--muted); margin-bottom: 18px; }
+    .header-byline strong { color: var(--text); }
+    .header-score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .score-pill { background: var(--accent); color: white; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 800; padding: 6px 16px; border-radius: 100px; }
+    .score-stars { color: #f59e0b; font-size: 1rem; letter-spacing: 1px; }
+    .score-label { font-size: 0.82rem; color: var(--muted); }
+    .header-desc { font-size: 0.95rem; color: #333; line-height: 1.7; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 14px; }
+    .header-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag { font-size: 0.75rem; font-weight: 600; padding: 4px 11px; border-radius: 20px; border: 1.5px solid var(--border); color: var(--muted); }
 
-    /* Lightbox */
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 999999; align-items: center; justify-content: center; padding: 20px; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
-    .lightbox-close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; }
-    .lightbox-close:hover { opacity: 1; }
+    /* Right: buy box */
+    .header-buy { position: sticky; top: 76px; }
+    .buy-box { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; }
+    .buy-box-price-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 4px; }
+    .buy-price { font-family: 'Orbitron', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--accent); }
+    .buy-price-original { font-size: 0.95rem; color: var(--muted); text-decoration: line-through; }
+    .buy-savings { font-size: 0.78rem; color: #b91c1c; font-weight: 700; background: #fee2e2; padding: 2px 8px; border-radius: 20px; margin-bottom: 14px; display: inline-block; }
+    .buy-availability { font-size: 0.8rem; color: var(--success); font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 5px; }
+    .buy-availability::before { content: '✓'; }
+    .btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 20px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: opacity 0.15s, transform 0.15s; margin-bottom: 10px; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 10px 20px; background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; border-radius: 10px; border: 1.5px solid var(--border); text-decoration: none; cursor: pointer; transition: border-color 0.15s, color 0.15s; margin-bottom: 18px; }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .buy-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 14px; }
+    .share-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+    .share-buttons { display: flex; gap: 8px; }
+    .share-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.15s; text-decoration: none; font-size: 0.85rem; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
-    /* ── VIDEO PLACEHOLDER ── */
-    .video-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 220px;
-      height: 391px;
-      margin: 0 auto;
-      border-radius: 14px;
-      background: var(--card-bg);
-      border: 1.5px dashed var(--border);
-      color: var(--muted);
-    }
-    .video-placeholder .icon { font-size: 2rem; opacity: 0.5; }
-    .video-placeholder p { font-size: 0.85rem; font-weight: 600; text-align: center; padding: 0 20px; }
-    .short-wrap { display: flex; justify-content: center; }
+    /* ── PAGE BODY ── */
+    .page-body { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+    .section-head { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
+
+    /* ── SCORE BREAKDOWN ── */
+    .score-breakdown { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    .score-row { display: flex; align-items: center; gap: 14px; }
+    .score-row-label { font-size: 0.83rem; font-weight: 600; color: var(--text); width: 150px; flex-shrink: 0; }
+    .score-bar-track { flex: 1; height: 7px; background: #eee; border-radius: 10px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 10px; background: var(--accent); }
+    .score-row-num { font-size: 0.83rem; font-weight: 700; color: var(--accent); width: 28px; text-align: right; flex-shrink: 0; }
 
     /* ── KEY FEATURES ── */
-    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
-    .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
-    .feature-card .feat-icon { font-size: 1.4rem; margin-bottom: 8px; }
-    .feature-card h4 { font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+    .feat-icon { font-size: 1.3rem; margin-bottom: 7px; }
+    .feature-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
     .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
 
-    /* ── VERDICT BAR ── */
-    .verdict-bar { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .score-circle { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Orbitron', sans-serif; font-weight: 800; }
-    .score-circle .num { font-size: 1.5rem; line-height: 1; }
-    .score-circle .den { font-size: 0.65rem; opacity: 0.75; }
-    .verdict-text h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-    .verdict-text p { font-size: 0.9rem; color: var(--muted); }
-
     /* ── ARTICLE ── */
-    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 36px 0 10px; letter-spacing: -0.02em; }
+    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 800; margin: 32px 0 10px; letter-spacing: -0.02em; }
     .article h2:first-child { margin-top: 0; }
-    .article p { margin-bottom: 16px; color: #222; }
+    .article p { font-size: 0.97rem; color: #222; margin-bottom: 14px; line-height: 1.78; }
     .article p:last-child { margin-bottom: 0; }
+    .review-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--white); object-fit: contain; display: block; margin: 22px 0 6px; cursor: pointer; transition: opacity 0.18s; }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption { font-size: 0.79rem; color: var(--muted); text-align: center; margin-bottom: 22px; }
 
-    /* ── READ MORE TOGGLE ── */
+    /* Read more */
     .article-more { display: none; }
     .article-more.open { display: block; }
-    .read-more-btn {
-      display: block;
-      margin: 24px auto 0;
-      background: none;
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 10px 28px;
-      border-radius: 100px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    .read-more-btn { display: block; margin: 24px auto 0; background: none; border: 1.5px solid var(--accent); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; padding: 10px 28px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
     .read-more-btn:hover { background: var(--accent); color: #fff; }
 
-    /* ── SPECS TABLE ── */
-    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    /* ── SPECS ── */
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
     .specs-table tr { border-bottom: 1px solid var(--border); }
     .specs-table tr:last-child { border-bottom: none; }
-    .specs-table td { padding: 11px 4px; vertical-align: top; }
-    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 42%; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .specs-table td { padding: 11px 8px; vertical-align: top; }
+    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 40%; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
     /* ── PROS / CONS ── */
-    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .pros, .cons { background: var(--card-bg); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
-    .pros h4, .cons h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
-    .pros h4 { color: #1a7a1a; }
-    .cons h4 { color: #b91c1c; }
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .pros, .cons { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .pros { border-top: 3px solid var(--success); }
+    .cons { border-top: 3px solid var(--danger); }
+    .pros h4, .cons h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+    .pros h4 { color: var(--success); }
+    .cons h4 { color: var(--danger); }
     .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .pros ul li::before { content: '✓ '; color: #1a7a1a; font-weight: 700; }
-    .cons ul li::before { content: '✗ '; color: #b91c1c; font-weight: 700; }
-    .pros ul li, .cons ul li { font-size: 0.9rem; line-height: 1.45; }
+    .pros li, .cons li { font-size: 0.88rem; line-height: 1.5; display: flex; gap: 7px; }
+    .pros li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+    .cons li::before { content: '✗'; color: var(--danger); font-weight: 700; flex-shrink: 0; }
 
-    /* ── CTA ── */
-    .cta-box { background: linear-gradient(145deg, #08090f 0%, #0f1424 100%); border-radius: var(--radius); padding: 40px 28px; text-align: center; position: relative; overflow: hidden; }
-    .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 110%, rgba(0,87,255,0.18) 0%, transparent 60%); pointer-events: none; }
-    .cta-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.7; }
-    .cta-box h3 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
-    .cta-box p { color: rgba(255,255,255,0.42); font-size: 0.9rem; margin-bottom: 24px; }
-    .btn-amazon { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 15px 34px; border-radius: 100px; text-decoration: none; transition: opacity 0.15s ease, transform 0.15s ease; }
-    .btn-amazon:hover { opacity: 0.88; transform: translateY(-1px); }
-    .cta-disclaimer { margin-top: 14px; font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+    /* ── BOTTOM CTA ── */
+    .bottom-cta { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 36px 28px; text-align: center; margin-top: 48px; }
+    .bottom-cta h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+    .bottom-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+    .bottom-price { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-bottom: 16px; display: block; }
+    .bottom-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--accent); color: white; font-size: 0.95rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: opacity 0.15s, transform 0.15s; margin-bottom: 12px; }
+    .bottom-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-disclaimer { font-size: 0.73rem; color: var(--muted); display: block; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 560px) {
-      .pros-cons { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .verdict-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
-    }
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: white; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; line-height: 1; }
+    .lightbox-close:hover { opacity: 1; }
 
     /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); background: var(--white); }
     footer a { color: var(--muted); text-decoration: underline; }
+    footer strong { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .product-header-inner { grid-template-columns: 200px 1fr; }
+      .header-buy { grid-column: 1 / -1; position: static; }
+    }
+    @media (max-width: 640px) {
+      .product-header-inner { grid-template-columns: 1fr; }
+      .header-image { position: static; }
+      .header-image img { max-width: 280px; margin: 0 auto; display: block; }
+      .pros-cons { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+
+    .copy-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(10px); background: #111; color: white; font-size: 0.83rem; font-weight: 600; padding: 8px 18px; border-radius: 100px; opacity: 0; transition: all 0.25s; pointer-events: none; z-index: 9999; }
+    .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
-   <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Review",
-  "itemReviewed": {
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Product",
     "name": "Quntis Computer Monitor Lamp",
     "image": "https://m.media-amazon.com/images/I/51p1Ui5sa7L._AC_SL1500_.jpg",
     "description": "No-glare eye care monitor light bar with auto-dimming and touch control.",
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "39.95"
+      "price": "39.95",
+      "priceCurrency": "USD"
+    },
+    "review": {
+      "@type": "Review",
+      "author": { "@type": "Organization", "name": "JaveomoTech Team" },
+      "datePublished": "2026-07-07",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "6.5",
+        "bestRating": "10"
+      }
     }
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "JaveomoTech Team"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "6.5",
-    "bestRating": "10"
-  },
-  "datePublished": "2026-07-7"
-}
-</script>
-    </head>
+  }
+  </script>
+</head>
 <body>
 
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="../index.html">Javeomo<span>Tech</span></a>
-  <a class="back" href="../index.html">← All Reviews</a>
+  <a class="nav-back" href="../index.html">← All Reviews</a>
 </nav>
 
 <!-- STICKY BAR -->
-<div class="sticky-bar">
+<div class="sticky-bar" id="stickyBar">
   <span class="sticky-name">Quntis Monitor Light Bar</span>
   <a class="sticky-btn" href="https://amzn.to/44sUTz4" target="_blank" rel="noopener sponsored">Check Price on Amazon →</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">Desk Setup · Lighting · Eye Care</div>
-  <h1>A Monitor Light That <em>Actually Helps Eye Strain</em> — If the Mount Doesn't Fight You First</h1>
-  <p class="hero-sub">Quntis Computer Monitor Lamp — no-glare eye care lighting, auto-dimming, touch control. Genuinely nice light quality, mixed track record on mounting and long-term durability.</p>
-  <div class="hero-price-badge">
-    <span>Amazon</span>
-    <span class="price">$39.95</span>
+<!-- PRODUCT HEADER -->
+<div class="product-header">
+  <div class="product-header-inner">
+
+    <!-- Left: image -->
+    <div class="header-image">
+      <img
+        src="https://m.media-amazon.com/images/I/51p1Ui5sa7L._AC_SL1500_.jpg"
+        alt="Quntis monitor light bar main image"
+        onclick="openLightbox(this.src)"
+      />
+    </div>
+
+    <!-- Center: meta -->
+    <div class="header-meta">
+      <div class="header-eyebrow">Desk Setup · Lighting · Eye Care</div>
+      <h1>Quntis Computer Monitor Lamp — Eye Care LED Task Light</h1>
+      <p class="header-byline">By <strong>JaveomoTech Team</strong> · <time datetime="2026-07-07">July 7, 2026</time></p>
+
+      <div class="header-score-row">
+        <span class="score-pill">6.5</span>
+        <span class="score-stars">★★★☆☆</span>
+        <span class="score-label">/ 10 · JaveomoTech Score</span>
+      </div>
+
+      <p class="header-desc">
+        No-glare eye care lighting, auto-dimming, and touch control. Genuinely nice light quality, but mounting inconsistency and long-term durability raise questions.
+      </p>
+
+      <div class="header-tags">
+        <span class="tag">Under $50</span>
+        <span class="tag">Desk Lighting</span>
+        <span class="tag">Eye Care</span>
+        <span class="tag">Auto-Dimming</span>
+        <span class="tag">Monitor Accessories</span>
+      </div>
+    </div>
+
+    <!-- Right: buy box -->
+    <div class="header-buy">
+      <div class="buy-box">
+        <div>
+          <div class="buy-box-price-row">
+            <span class="buy-price">$39.95</span>
+            <span class="buy-price-original">$49.95</span>
+          </div>
+          <span class="buy-savings">Save 20%</span>
+          <div class="buy-availability">Usually ships same day</div>
+          <a class="btn-primary" href="https://amzn.to/44sUTz4" target="_blank" rel="noopener sponsored">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+            Check Price on Amazon
+          </a>
+          <button class="btn-secondary" onclick="handleSave(this)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            Save to Wishlist
+          </button>
+        </div>
+
+        <hr class="buy-divider" />
+
+        <div>
+          <div class="share-label">Share with your network</div>
+          <div class="share-buttons">
+            <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://javeomotech.com/reviews/quntis-monitor-light.html&text=Quntis+Monitor+Light+Bar+Review+via+%40JaveomoTech" target="_blank" rel="noopener" title="Share on X / Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://javeomotech.com/reviews/quntis-monitor-light.html" target="_blank" rel="noopener" title="Share on Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <button class="share-btn" onclick="copyLink()" title="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+          <p style="font-size:0.73rem; color:var(--muted); margin-top:10px;">Affiliate link — commission earned at no extra cost to you.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<div class="container">
+<!-- PAGE BODY -->
+<div class="page-body">
 
-  <!-- HERO IMAGE -->
-  <section>
-    <img class="review-img"
-      src="https://m.media-amazon.com/images/I/51p1Ui5sa7L._AC_SL1500_.jpg"
-      alt="Quntis monitor light bar main image"
-      onclick="openLightbox(this.src)" loading="eager" style="margin-top:0;" />
-  </section>
-
-  <!-- VIDEO PLACEHOLDER -->
-  <section>
-    <p class="section-label">Watch the Short</p>
-    <div class="short-wrap">
-      <div class="video-placeholder">
-        <div class="icon">🎬</div>
-        <p>Video Review — Coming Soon</p>
-      </div>
+  <!-- Score breakdown -->
+  <h2 class="section-head"><span>📊</span> Score Breakdown</h2>
+  <div class="score-breakdown">
+    <div class="score-row">
+      <span class="score-row-label">Light Quality</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:85%"></div></div>
+      <span class="score-row-num">8.5</span>
     </div>
-  </section>
-
-  <!-- VERDICT -->
-  <section>
-    <p class="section-label">Verdict</p>
-    <div class="verdict-bar">
-      <div class="score-circle">
-        <span class="num">6.5</span>
-        <span class="den">/10</span>
-      </div>
-      <div class="verdict-text">
-        <h3>Genuinely nice light quality — the price and the mount are the real question marks</h3>
-        <p>When it fits your monitor well, the lighting quality is excellent and the eye-strain relief is real. But mounting inconsistency, some durability complaints over time, and cheaper alternatives on the market keep this from an easy recommendation at this price.</p>
-      </div>
+    <div class="score-row">
+      <span class="score-row-label">Color Rendering</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div>
+      <span class="score-row-num">9.0</span>
     </div>
-  </section>
-
-  <!-- KEY FEATURES -->
-   <p style="text-align:center; font-size:0.82rem; color:var(--muted); margin-top:-8px; margin-bottom:8px;">
-  By <strong>JaveomoTech Team</strong> · Published <time datetime="2026-07-7">July 7, 2026</time>
-</p>
-  <section>
-    <p class="section-label">Key Features</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feat-icon">👁️</div>
-        <h4>No Blue Light, Flicker-Free</h4>
-        <p>Certified to IEC/TR 62778 and IEC/EN 62471 standards for reduced eye irritation.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feat-icon">🚫</div>
-        <h4>No Screen Glare</h4>
-        <p>Asymmetrical optical design lights your desk, not your monitor — no reflected glare.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feat-icon">🌗</div>
-        <h4>Auto & Stepless Dimming</h4>
-        <p>Ambient light sensor adjusts brightness automatically; manual control from 3000K-6500K.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feat-icon">🎨</div>
-        <h4>Ra98 Color Rendering</h4>
-        <p>78 LED beads for even, true-to-life lighting — good for color-sensitive work.</p>
-      </div>
+    <div class="score-row">
+      <span class="score-row-label">Auto-Dimming</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:80%"></div></div>
+      <span class="score-row-num">8.0</span>
     </div>
-  </section>
+    <div class="score-row">
+      <span class="score-row-label">Mounting & Fit</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div>
+      <span class="score-row-num">5.0</span>
+    </div>
+    <div class="score-row">
+      <span class="score-row-label">Long-Term Value</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:55%"></div></div>
+      <span class="score-row-num">5.5</span>
+    </div>
+  </div>
 
-  <!-- ARTICLE -->
-  <section class="article">
-    <p class="section-label">Full Review</p>
+  <!-- Key Features -->
+  <h2 class="section-head"><span>✦</span> Key Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon">👁️</div>
+      <h4>No Blue Light, Flicker-Free</h4>
+      <p>Certified to IEC/TR 62778 and IEC/EN 62471 standards for reduced eye irritation.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🚫</div>
+      <h4>No Screen Glare</h4>
+      <p>Asymmetrical optical design lights your desk, not your monitor — no reflected glare.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🌗</div>
+      <h4>Auto & Stepless Dimming</h4>
+      <p>Ambient light sensor adjusts brightness automatically; manual control from 3000K-6500K.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🎨</div>
+      <h4>Ra98 Color Rendering</h4>
+      <p>78 LED beads for even, true-to-life lighting — good for color-sensitive work.</p>
+    </div>
+  </div>
+
+  <!-- Full Review -->
+  <h2 class="section-head"><span>📝</span> Full Review</h2>
+  <div class="article">
 
     <h2>What Is This Thing?</h2>
-    <p>
-      The Quntis monitor light bar clips onto the top of your monitor and lights your desk directly, instead of bouncing light off your screen the way a regular desk lamp does. The pitch is simple: better lighting for reading, typing, and long screen sessions, without the glare or eye strain that comes from working under bad overhead lighting or none at all. At $39.95, it's priced well above a basic desk lamp, and that price is really the central question of this whole review.
-    </p>
+    <p>The Quntis monitor light bar clips onto the top of your monitor and lights your desk directly, instead of bouncing light off your screen the way a regular desk lamp does. The pitch is simple: better lighting for reading, typing, and long screen sessions, without the glare or eye strain that comes from working under bad overhead lighting or none at all. At $39.95, it's priced well above a basic desk lamp, and that price is really the central question of this whole review.</p>
 
-    <!-- Box and 2 products image -->
     <img class="review-img"
       src="https://m.media-amazon.com/images/I/615JQzBS6wL.jpg"
       alt="Quntis monitor light bar box with two product sizes"
@@ -385,9 +387,7 @@
     <div class="article-more" id="articleMore">
 
       <h2>The Light Quality — This Is the Strong Point</h2>
-      <p>
-        When it comes to the actual lighting, this thing delivers. The asymmetrical design genuinely does what it claims — it lights the desk in front of you without throwing any glare back onto your screen, which is the exact problem a lot of regular desk lamps create. The color temperature range from warm to cool (3000K-6500K) is genuinely useful depending on the time of day or task — warmer for a relaxed evening vibe, cooler and brighter for focused daytime work. Several long-term users report real reductions in eye strain and headaches after switching to this from overhead lighting alone, and that tracks with what a properly designed, non-flickering, glare-free light source should do.
-      </p>
+      <p>When it comes to the actual lighting, this thing delivers. The asymmetrical design genuinely does what it claims — it lights the desk in front of you without throwing any glare back onto your screen, which is the exact problem a lot of regular desk lamps create. The color temperature range from warm to cool (3000K-6500K) is genuinely useful depending on the time of day or task — warmer for a relaxed evening vibe, cooler and brighter for focused daytime work. Several long-term users report real reductions in eye strain and headaches after switching to this from overhead lighting alone, and that tracks with what a properly designed, non-flickering, glare-free light source should do.</p>
 
       <img class="review-img"
         src="https://m.media-amazon.com/images/I/71P62VKC9qL.jpg"
@@ -396,9 +396,7 @@
       <p class="img-caption">Mounted on top of the monitor — clean look, doesn't eat into desk space.</p>
 
       <h2>Auto-Dimming and Touch Controls</h2>
-      <p>
-        The built-in ambient light sensor does a genuinely good job adjusting brightness automatically as the room changes throughout the day — useful if you don't want to fuss with settings constantly. That said, plenty of people (myself included, based on testing) end up just picking one static brightness and color temperature they like and leaving it there, which the touch controls make easy enough. The included remote is a nice touch too and does make the whole thing feel a bit more premium than the price tag might suggest at first glance.
-      </p>
+      <p>The built-in ambient light sensor does a genuinely good job adjusting brightness automatically as the room changes throughout the day — useful if you don't want to fuss with settings constantly. That said, plenty of people (myself included, based on testing) end up just picking one static brightness and color temperature they like and leaving it there, which the touch controls make easy enough. The included remote is a nice touch too and does make the whole thing feel a bit more premium than the price tag might suggest at first glance.</p>
 
       <img class="review-img"
         src="https://m.media-amazon.com/images/I/71SdBYe-6QL.jpg"
@@ -407,9 +405,7 @@
       <p class="img-caption">Light turned on — illuminates the desk without spilling glare onto the screen.</p>
 
       <h2>The Mounting — Where Experiences Genuinely Diverge</h2>
-      <p>
-        Here's the part I have to be honest about, because it's the most common complaint and it's a legitimate one. This clips onto the top edge of your monitor using a weighted clamp, and how well that works depends heavily on your specific monitor's shape. If your monitor has a flat, uniform top edge, installation is quick and it sits securely. If your monitor has a curved back, an uneven top, or non-standard proportions, the clamp can struggle to grip properly — some people have had to improvise with tape or folded paper shims to get it sitting level and secure. A few reviewers also found the buttons on top of the unit are flush and low-contrast (black on black), making them hard to see, and pressing them at the wrong angle can nudge the whole thing out of position.
-      </p>
+      <p>Here's the part I have to be honest about, because it's the most common complaint and it's a legitimate one. This clips onto the top edge of your monitor using a weighted clamp, and how well that works depends heavily on your specific monitor's shape. If your monitor has a flat, uniform top edge, installation is quick and it sits securely. If your monitor has a curved back, an uneven top, or non-standard proportions, the clamp can struggle to grip properly — some people have had to improvise with tape or folded paper shims to get it sitting level and secure. A few reviewers also found the buttons on top of the unit are flush and low-contrast (black on black), making them hard to see, and pressing them at the wrong angle can nudge the whole thing out of position.</p>
 
       <img class="review-img"
         src="https://m.media-amazon.com/images/I/71O20a7E21L.jpg"
@@ -418,9 +414,7 @@
       <p class="img-caption">The mount from behind — check your monitor's top edge shape before buying, this is where experiences vary most.</p>
 
       <h2>The Remote — Handy, With a Recurring Complaint</h2>
-      <p>
-        The remote is a genuinely nice inclusion and most people have no issues with it. There is a recurring complaint worth flagging though: some units have the power button LED stay lit even when the light itself is off, which is annoying if you like sleeping in complete darkness. A smaller number of users have also reported the power button physically sticking after repeated use over time. Neither issue affects the light itself, but it's worth knowing going in, especially if remote reliability matters to you long-term.
-      </p>
+      <p>The remote is a genuinely nice inclusion and most people have no issues with it. There is a recurring complaint worth flagging though: some units have the power button LED stay lit even when the light itself is off, which is annoying if you like sleeping in complete darkness. A smaller number of users have also reported the power button physically sticking after repeated use over time. Neither issue affects the light itself, but it's worth knowing going in, especially if remote reliability matters to you long-term.</p>
 
       <img class="review-img"
         src="https://m.media-amazon.com/images/I/61B0h5U2MPL.jpg"
@@ -435,83 +429,72 @@
       <p class="img-caption">Back of the remote — simple, compact design.</p>
 
       <h2>Long-Term Durability — Mixed Track Record</h2>
-      <p>
-        This is the part that keeps me from scoring this higher. Most people are happy with it in the short-to-medium term, but there's a real pattern of complaints emerging after several months to a couple years of daily use — the hinge that holds the light in position weakening under its own weight, or light color and intensity gradually degrading over time. A smaller number of buyers have had units fail outright within days (flickering, then not turning on at all). This isn't universal — plenty of long-term owners report zero issues — but it's frequent enough across reviews that it's worth setting expectations: treat this as a genuinely nice upgrade that might need replacing sooner than a $40 price tag would suggest it should.
-      </p>
+      <p>This is the part that keeps me from scoring this higher. Most people are happy with it in the short-to-medium term, but there's a real pattern of complaints emerging after several months to a couple years of daily use — the hinge that holds the light in position weakening under its own weight, or light color and intensity gradually degrading over time. A smaller number of buyers have had units fail outright within days (flickering, then not turning on at all). This isn't universal — plenty of long-term owners report zero issues — but it's frequent enough across reviews that it's worth setting expectations: treat this as a genuinely nice upgrade that might need replacing sooner than a $40 price tag would suggest it should.</p>
 
       <h2>Is It Worth the Price?</h2>
-      <p>
-        Honestly, this is the crux of the whole review. The lighting quality itself is excellent, and if it fits your monitor well and holds up, it's a genuinely great addition to a desk setup. But at $39.95, you're paying a premium over several cheaper monitor light bars on the market that do broadly similar things. If eye strain relief and a specific set of features here (the auto-dimming, the Ra98 color rendering, the remote) matter enough to you to justify that premium, go for it. If you're mainly looking for basic no-glare desk lighting and want to spend less, it's worth comparing against lower-priced alternatives before committing to this one specifically.
-      </p>
+      <p>Honestly, this is the crux of the whole review. The lighting quality itself is excellent, and if it fits your monitor well and holds up, it's a genuinely great addition to a desk setup. But at $39.95, you're paying a premium over several cheaper monitor light bars on the market that do broadly similar things. If eye strain relief and a specific set of features here (the auto-dimming, the Ra98 color rendering, the remote) matter enough to you to justify that premium, go for it. If you're mainly looking for basic no-glare desk lighting and want to spend less, it's worth comparing against lower-priced alternatives before committing to this one specifically.</p>
 
       <h2>Who Should Buy This?</h2>
-      <p>
-        If you have a monitor with a flat top edge, spend long hours at a screen, and want genuinely good glare-free lighting with fine-tuned control over brightness and color temperature, this is a solid pick — just go in aware of the mounting variability and the mixed long-term durability reports. If you're on a tighter budget or have a monitor with an unusual back shape, it's worth checking compatibility carefully or considering a cheaper alternative first.
-      </p>
+      <p>If you have a monitor with a flat top edge, spend long hours at a screen, and want genuinely good glare-free lighting with fine-tuned control over brightness and color temperature, this is a solid pick — just go in aware of the mounting variability and the mixed long-term durability reports. If you're on a tighter budget or have a monitor with an unusual back shape, it's worth checking compatibility carefully or considering a cheaper alternative first.</p>
 
-    </div><!-- /article-more -->
+    </div>
 
     <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
-  </section>
+  </div>
 
-  <!-- SPECS -->
-  <section>
-    <p class="section-label">Full Specs</p>
-    <table class="specs-table">
-      <tr><td>Brand</td><td>Quntis</td></tr>
-      <tr><td>LED Beads</td><td>78</td></tr>
-      <tr><td>Color Rendering Index</td><td>Ra98</td></tr>
-      <tr><td>Color Temperature Range</td><td>3000K – 6500K</td></tr>
-      <tr><td>Brightness</td><td>Auto-dimming up to 900 lux, stepless manual control</td></tr>
-      <tr><td>Blue Light / Flicker</td><td>Certified IEC/TR 62778, IEC/EN 62471</td></tr>
-      <tr><td>Mounting</td><td>Weighted clip, top-of-monitor mount</td></tr>
-      <tr><td>Controls</td><td>Touch control + included remote</td></tr>
-      <tr><td>Power</td><td>USB powered</td></tr>
-      <tr><td>Price</td><td>$39.95</td></tr>
-    </table>
-  </section>
+  <!-- Specs -->
+  <h2 class="section-head"><span>📋</span> Specs</h2>
+  <table class="specs-table">
+    <tr><td>Brand</td><td>Quntis</td></tr>
+    <tr><td>LED Beads</td><td>78</td></tr>
+    <tr><td>Color Rendering Index</td><td>Ra98</td></tr>
+    <tr><td>Color Temperature Range</td><td>3000K – 6500K</td></tr>
+    <tr><td>Brightness</td><td>Auto-dimming up to 900 lux, stepless manual control</td></tr>
+    <tr><td>Blue Light / Flicker</td><td>Certified IEC/TR 62778, IEC/EN 62471</td></tr>
+    <tr><td>Mounting</td><td>Weighted clip, top-of-monitor mount</td></tr>
+    <tr><td>Controls</td><td>Touch control + included remote</td></tr>
+    <tr><td>Power</td><td>USB powered</td></tr>
+    <tr><td>Price</td><td>$39.95</td></tr>
+  </table>
 
-  <!-- PROS / CONS -->
-  <section>
-    <p class="section-label">Pros & Cons</p>
-    <div class="pros-cons">
-      <div class="pros">
-        <h4>Pros</h4>
-        <ul>
-          <li>Genuinely no-glare, eye-friendly light quality</li>
-          <li>Wide color temperature range, useful for different tasks/times</li>
-          <li>Auto-dimming works well via ambient light sensor</li>
-          <li>Space-saving — no desk footprint</li>
-          <li>Remote feels like a premium touch</li>
-          <li>Real eye-strain relief reported by long-time users</li>
-        </ul>
-      </div>
-      <div class="cons">
-        <h4>Cons</h4>
-        <ul>
-          <li>Mounting fit varies a lot depending on monitor shape</li>
-          <li>Buttons can be hard to see (low contrast) on the unit itself</li>
-          <li>Remote power button LED sometimes stays lit when off</li>
-          <li>Mixed durability reports — hinge and light degradation over months/years</li>
-          <li>Pricier than several comparable alternatives</li>
-        </ul>
-      </div>
+  <!-- Pros / Cons -->
+  <h2 class="section-head"><span>⚖️</span> Pros &amp; Cons</h2>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>Pros</h4>
+      <ul>
+        <li>Genuinely no-glare, eye-friendly light quality</li>
+        <li>Wide color temperature range, useful for different tasks/times</li>
+        <li>Auto-dimming works well via ambient light sensor</li>
+        <li>Space-saving — no desk footprint</li>
+        <li>Remote feels like a premium touch</li>
+        <li>Real eye-strain relief reported by long-time users</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="padding-bottom: 56px;">
-    <div class="cta-box">
-      <h3>Quntis Computer Monitor Lamp</h3>
-      <p>$39.95 · No-Glare Eye Care Lighting · Auto-Dimming · Touch Control</p>
-      <a class="btn-amazon" href="https://amzn.to/44sUTz4" target="_blank" rel="noopener sponsored">
-        Buy on Amazon
-      </a>
-      <p class="cta-disclaimer">Affiliate link — I earn a small commission at no extra cost to you.</p>
+    <div class="cons">
+      <h4>Cons</h4>
+      <ul>
+        <li>Mounting fit varies a lot depending on monitor shape</li>
+        <li>Buttons can be hard to see (low contrast) on the unit itself</li>
+        <li>Remote power button LED sometimes stays lit when off</li>
+        <li>Mixed durability reports — hinge and light degradation over months/years</li>
+        <li>Pricier than several comparable alternatives</li>
+      </ul>
     </div>
-  </section>
+  </div>
 
-</div><!-- /container -->
+  <!-- Bottom CTA -->
+  <div class="bottom-cta">
+    <h3>Quntis Computer Monitor Lamp</h3>
+    <p>No-Glare Eye Care Lighting · Auto-Dimming · Touch Control</p>
+    <span class="bottom-price">$39.95</span>
+    <a class="bottom-cta-btn" href="https://amzn.to/44sUTz4" target="_blank" rel="noopener sponsored">
+      Buy on Amazon →
+    </a>
+    <span class="cta-disclaimer">Affiliate link — commission at no extra cost to you.</span>
+  </div>
+
+</div><!-- /page-body -->
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -519,10 +502,13 @@
   <img id="lightbox-img" src="" alt="Product photo enlarged">
 </div>
 
+<!-- COPY TOAST -->
+<div class="copy-toast" id="copyToast">Link copied!</div>
+
 <!-- FOOTER -->
 <footer>
   <p><strong>JaveomoTech</strong></p>
-  <p>Tech reviewer sharing the best gadgets & gear.</p>
+  <p>Tech reviewer sharing the best gadgets &amp; gear.</p>
   <p style="margin-top:12px;">
     <a href="../about.html">About</a> &nbsp;·&nbsp;
     <a href="../contact.html">Contact</a> &nbsp;·&nbsp;
@@ -534,6 +520,15 @@
 </footer>
 
 <script>
+  // Sticky bar
+  const stickyBar = document.getElementById('stickyBar');
+  const buyBox = document.querySelector('.header-buy');
+  const observer = new IntersectionObserver(
+    ([entry]) => stickyBar.classList.toggle('visible', !entry.isIntersecting),
+    { threshold: 0 }
+  );
+  if (buyBox) observer.observe(buyBox);
+
   function toggleArticle() {
     const more = document.getElementById('articleMore');
     const btn = document.getElementById('readMoreBtn');
@@ -551,6 +546,25 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
   });
+
+  function handleSave(btn) {
+    btn.textContent = '✓ Saved!';
+    btn.style.color = '#16a34a';
+    btn.style.borderColor = '#16a34a';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> Save to Wishlist';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const t = document.getElementById('copyToast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    });
+  }
 </script>
 
 </body>
