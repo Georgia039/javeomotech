@@ -47,6 +47,8 @@
     .search-input:focus { border-color: var(--accent); }
     .search-input::placeholder { color: var(--muted); }
 
+
+
     /* DEAL OF THE WEEK */
     .deal-section { max-width: 960px; margin: 0 auto 40px; padding: 0 24px; }
     .deal-card { background: linear-gradient(135deg, #0057ff 0%, #0040cc 100%); border-radius: 20px; padding: 24px; display: flex; flex-direction: row; align-items: center; gap: 20px; color: white; position: relative; overflow: hidden; }
@@ -93,6 +95,18 @@
     .comment-form-box.open { display: block; }
     @media (max-width: 760px) { .deal-split { flex-direction: column; } }
 
+
+    /* GUIDES STRIP */
+    .guides-strip { max-width: 960px; margin: 0 auto 32px; padding: 0 24px; }
+    .guides-strip-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .guide-card { display: flex; gap: 16px; align-items: center; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px; text-decoration: none; color: var(--text); transition: box-shadow 0.2s, border-color 0.2s; }
+    .guide-card:hover { border-color: var(--accent); box-shadow: 0 6px 24px rgba(0,87,255,0.08); }
+    .guide-card-img { width: 80px; height: 80px; min-width: 80px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--white); display: flex; align-items: center; justify-content: center; }
+    .guide-card-img img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+    .guide-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-light); color: var(--accent); padding: 2px 8px; border-radius: 20px; margin-bottom: 6px; }
+    .guide-card-title { font-size: 13px; font-weight: 700; line-height: 1.4; margin-bottom: 4px; color: var(--text); }
+    .guide-card-sub { font-size: 11px; color: var(--muted); line-height: 1.5; margin-bottom: 6px; }
+    .guide-read-more { font-size: 12px; font-weight: 600; color: var(--accent); }
 
     /* FILTERS */
     .controls-section { max-width: 960px; margin: 0 auto; padding: 0 24px 24px; }
@@ -259,6 +273,24 @@
         <p class="comment-form-thanks" id="commentThanks">Thanks! Your comment will appear after review.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- GUIDES STRIP -->
+<section class="guides-strip">
+  <div class="guides-strip-inner">
+    <div class="guides-strip-label">📖 From the Blog</div>
+    <a href="guides/desk-upgrades-under-15.html" class="guide-card">
+      <div class="guide-card-img">
+        <img src="https://m.media-amazon.com/images/I/61nUL9EInwL._AC_SL1500_.jpg" alt="5 Under-$15 Desk Upgrades" loading="lazy" />
+      </div>
+      <div class="guide-card-body">
+        <span class="guide-tag">Guide</span>
+        <p class="guide-card-title">5 Under-$15 Desk Upgrades That Are Actually Worth It</p>
+        <p class="guide-card-sub">Cable clips, desk mat, outlet extender and more — all tested, all owned.</p>
+        <span class="guide-read-more">Read the guide →</span>
+      </div>
+    </a>
   </div>
 </section>
 
