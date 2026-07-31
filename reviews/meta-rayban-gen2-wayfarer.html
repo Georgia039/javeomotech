@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meta Ray-Ban Gen 2 Wayfarer Review — Cool Idea, Rough Execution | JaveomoTech</title>
+  <meta name="description" content="We tested the Meta Ray-Ban Gen 2 Wayfarer smart glasses: hands-free camera, open-ear audio, Meta AI, and live translation. Here's the honest verdict on reliability and value.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #0057ff;
+      --accent-light: #eef2ff;
+      --text: #111;
+      --muted: #666;
+      --border: #e4e4e4;
+      --bg: #fafafa;
+      --white: #fff;
+      --radius: 12px;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --gold: #d4a012;
+      --gold-light: #fff8e6;
+    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0 28px; height: 58px; border-bottom: 1px solid var(--border); background: var(--white); position: sticky; top: 0; z-index: 200; }
+    .nav-logo { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back { font-size: 0.83rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    .nav-back:hover { color: var(--accent); }
+    .sticky-bar { position: fixed; top: 58px; left: 0; right: 0; z-index: 190; background: var(--accent); display: flex; align-items: center; justify-content: center; gap: 20px; padding: 10px 24px; box-shadow: 0 2px 12px rgba(0,87,255,0.25); transform: translateY(-100%); transition: transform 0.25s ease; }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar .sticky-name { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 360px; }
+    .sticky-bar .sticky-btn { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--accent); font-weight: 700; font-size: 0.88rem; padding: 8px 18px; border-radius: 100px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    @media (max-width: 600px) { .sticky-bar { gap: 10px; padding: 10px 14px; } .sticky-bar .sticky-name { max-width: 160px; font-size: 0.82rem; } }
+    .product-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 40px 28px 36px; }
+    .product-header-inner { max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr 260px; gap: 40px; align-items: start; }
+    .header-image { position: sticky; top: 76px; }
+    .header-image img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--white); object-fit: contain; padding: 12px; cursor: pointer; transition: box-shadow 0.2s; }
+    .header-image img:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+    .header-meta { padding-top: 4px; }
+    .header-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .header-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--accent); border-radius: 2px; }
+    .wr-badge-inline { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 100px; padding: 5px 14px; margin-bottom: 12px; }
+    .wr-badge-inline span { font-size: 0.75rem; font-weight: 700; color: #7a5a00; letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-meta h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .header-byline { font-size: 0.82rem; color: var(--muted); margin-bottom: 18px; }
+    .header-byline strong { color: var(--text); }
+    .header-score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .score-pill { background: var(--accent); color: white; font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 800; padding: 6px 16px; border-radius: 100px; }
+    .score-stars { color: #f59e0b; font-size: 1rem; letter-spacing: 1px; }
+    .score-label { font-size: 0.82rem; color: var(--muted); }
+    .header-desc { font-size: 0.95rem; color: #333; line-height: 1.7; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 14px; }
+    .header-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag { font-size: 0.75rem; font-weight: 600; padding: 4px 11px; border-radius: 20px; border: 1.5px solid var(--border); color: var(--muted); }
+    .header-buy { position: sticky; top: 76px; }
+    .buy-box { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; }
+    .buy-box-price-row { display: flex; align-items: baseline; gap: 9px; margin-bottom: 4px; }
+    .buy-price { font-family: 'Orbitron', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--accent); }
+    .buy-price-original { font-size: 0.95rem; color: var(--muted); text-decoration: line-through; }
+    .buy-savings { font-size: 0.78rem; color: #b91c1c; font-weight: 700; background: #fee2e2; padding: 2px 8px; border-radius: 20px; margin-bottom: 14px; display: inline-block; }
+    .buy-availability { font-size: 0.8rem; color: var(--success); font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 5px; }
+    .buy-availability::before { content: '✓'; }
+    .btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 20px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: opacity 0.15s, transform 0.15s; margin-bottom: 10px; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 10px 20px; background: var(--white); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; border-radius: 10px; border: 1.5px solid var(--border); text-decoration: none; cursor: pointer; transition: border-color 0.15s, color 0.15s; margin-bottom: 18px; }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .buy-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 14px; }
+    .share-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+    .share-buttons { display: flex; gap: 8px; }
+    .share-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.15s; text-decoration: none; font-size: 0.85rem; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn svg { width: 16px; height: 16px; fill: currentColor; }
+    .page-body { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+    .section-head { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .score-breakdown { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    .score-row { display: flex; align-items: center; gap: 14px; }
+    .score-row-label { font-size: 0.83rem; font-weight: 600; color: var(--text); width: 150px; flex-shrink: 0; }
+    .score-bar-track { flex: 1; height: 7px; background: #eee; border-radius: 10px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 10px; background: var(--accent); }
+    .score-row-num { font-size: 0.83rem; font-weight: 700; color: var(--accent); width: 28px; text-align: right; flex-shrink: 0; }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+    .feat-icon { font-size: 1.3rem; margin-bottom: 7px; }
+    .feature-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+    .feature-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+    .short-wrap { display: flex; justify-content: center; }
+    .short-wrap iframe { width: 220px; height: 391px; border-radius: 14px; border: none; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .wr-callout { background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: var(--radius); padding: 20px 22px; display: flex; align-items: flex-start; gap: 14px; margin: 24px 0; }
+    .wr-callout .icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+    .wr-callout h4 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 800; color: #7a5a00; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .wr-callout p { font-size: 0.88rem; color: #5a4000; line-height: 1.6; }
+    .article h2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 800; margin: 32px 0 10px; letter-spacing: -0.02em; }
+    .article h2:first-child { margin-top: 0; }
+    .article p { font-size: 0.97rem; color: #222; margin-bottom: 14px; line-height: 1.78; }
+    .article p:last-child { margin-bottom: 0; }
+    .review-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--white); object-fit: contain; display: block; margin: 22px 0 6px; cursor: pointer; transition: opacity 0.18s; }
+    .review-img:hover { opacity: 0.88; }
+    .img-caption { font-size: 0.79rem; color: var(--muted); text-align: center; margin-bottom: 22px; }
+    .app-strip { background: #f0f2f6; border-radius: var(--radius); padding: 16px; margin: 20px 0; }
+    .app-strip img { width: 100%; border-radius: 8px; display: block; object-fit: contain; cursor: pointer; }
+    .app-strip .img-caption { margin-top: 10px; margin-bottom: 0; }
+    .article-more { display: none; }
+    .article-more.open { display: block; }
+    .read-more-btn { display: block; margin: 24px auto 0; background: none; border: 1.5px solid var(--accent); color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; padding: 10px 28px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
+    .read-more-btn:hover { background: var(--accent); color: #fff; }
+    .specs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .specs-table tr { border-bottom: 1px solid var(--border); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 11px 8px; vertical-align: top; }
+    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 40%; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .pros, .cons { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .pros { border-top: 3px solid var(--success); }
+    .cons { border-top: 3px solid var(--danger); }
+    .pros h4, .cons h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+    .pros h4 { color: var(--success); }
+    .cons h4 { color: var(--danger); }
+    .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .pros li, .cons li { font-size: 0.88rem; line-height: 1.5; display: flex; gap: 7px; }
+    .pros li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+    .cons li::before { content: '✗'; color: var(--danger); font-weight: 700; flex-shrink: 0; }
+    .bottom-cta { background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 36px 28px; text-align: center; margin-top: 48px; }
+    .bottom-cta h3 { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+    .bottom-cta p { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+    .bottom-price { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-bottom: 16px; display: block; }
+    .bottom-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--accent); color: white; font-size: 0.95rem; font-weight: 700; border-radius: 10px; text-decoration: none; transition: opacity 0.15s, transform 0.15s; margin-bottom: 12px; }
+    .bottom-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-disclaimer { font-size: 0.73rem; color: var(--muted); display: block; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; color: white; font-size: 1.8rem; cursor: pointer; opacity: 0.75; background: none; border: none; line-height: 1; }
+    .lightbox-close:hover { opacity: 1; }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; font-size: 0.8rem; color: var(--muted); background: var(--white); }
+    footer a { color: var(--muted); text-decoration: underline; }
+    footer strong { color: var(--text); }
+    @media (max-width: 900px) { .product-header-inner { grid-template-columns: 200px 1fr; } .header-buy { grid-column: 1 / -1; position: static; } }
+    @media (max-width: 640px) { .product-header-inner { grid-template-columns: 1fr; } .header-image { position: static; } .header-image img { max-width: 280px; margin: 0 auto; display: block; } .pros-cons { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } }
+    .copy-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(10px); background: #111; color: white; font-size: 0.83rem; font-weight: 600; padding: 8px 18px; border-radius: 100px; opacity: 0; transition: all 0.25s; pointer-events: none; z-index: 9999; }
+    .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7447038039067866" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Meta Ray-Ban Gen 2 Wayfarer Smart Glasses",
+    "image": "https://m.media-amazon.com/images/I/410NTRSfDzL._SL1200_.jpg",
+    "offers": {
+      "@type": "Offer",
+      "price": "379.00",
+      "priceCurrency": "USD"
+    },
+    "review": {
+      "@type": "Review",
+      "author": { "@type": "Organization", "name": "JaveomoTech Team" },
+      "datePublished": "2026-07-31",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "6.3",
+        "bestRating": "10"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Javeomo<span>Tech</span></a>
+  <a class="nav-back" href="../index.html">← All Reviews</a>
+</nav>
+
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-name">Meta Ray-Ban Gen 2 Wayfarer</span>
+  <a class="sticky-btn" href="https://amzn.to/4yVeo1i" target="_blank" rel="noopener sponsored">Check Price on Amazon →</a>
+</div>
+
+<div class="product-header">
+  <div class="product-header-inner">
+    <div class="header-image">
+      <img src="https://m.media-amazon.com/images/I/410NTRSfDzL._SL1200_.jpg" alt="Meta Ray-Ban Gen 2 Wayfarer Smart Glasses" onclick="openLightbox(this.src)" />
+    </div>
+
+    <div class="header-meta">
+      <div class="header-eyebrow">Wearable Tech · Smart Glasses · AI</div>
+      <div class="wr-badge-inline">
+        <span>🏆 #1 Selling AI Glasses</span>
+      </div>
+      <h1>Meta Ray-Ban Gen 2 Wayfarer — Cool Idea, Rough Around the Edges</h1>
+      <p class="header-byline">By <strong>JaveomoTech Team</strong> · <time datetime="2026-07-31">July 31, 2026</time></p>
+
+      <div class="header-score-row">
+        <span class="score-pill">6.3</span>
+        <span class="score-stars">★★★★★</span>
+        <span class="score-label">/ 10 · JaveomoTech Score</span>
+      </div>
+
+      <p class="header-desc">The Gen 2 Wayfarer looks and feels like a normal pair of Ray-Bans while quietly packing a 12MP camera, open-ear speakers, and Meta AI. When it works, it's genuinely impressive. The problem is how often "when it works" turns out to be the operative phrase — real owners report everything from crackling speakers to AI that fights you mid-sentence.</p>
+
+      <div class="header-tags">
+        <span class="tag">Bluetooth</span>
+        <span class="tag">Meta AI</span>
+        <span class="tag">3K Camera</span>
+        <span class="tag">Open-Ear Audio</span>
+      </div>
+    </div>
+
+    <div class="header-buy">
+      <div class="buy-box">
+        <div>
+          <div class="buy-box-price-row">
+            <span class="buy-price">$379.00</span>
+          </div>
+          <div class="buy-availability">Usually ships same day</div>
+          <a class="btn-primary" href="https://amzn.to/4yVeo1i" target="_blank" rel="noopener sponsored">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11.3C18.1 5 11.3 2 5 4.4l-.6.3c-.3.1-.4.5-.2.7l.5.5c.2.2.5.2.7.1l.5-.2c5.4-2 11.2.6 13.3 5.9.5 1.3.7 2.6.7 3.9 0 .3.2.5.5.5h.7c.3 0 .5-.2.5-.5 0-1.5-.3-3-.6-4.3zM3.1 9.9c-.3 0-.5.2-.5.5 0 1.5.3 3 .8 4.4C5.8 21 12.6 24 18.9 21.5l.6-.3c.3-.1.4-.5.2-.7l-.5-.5c-.2-.2-.5-.2-.7-.1l-.5.2c-5.4 2-11.2-.6-13.3-5.9-.5-1.3-.7-2.6-.7-3.9 0-.3-.2-.5-.5-.5h-.4z"/></svg>
+            Check Price on Amazon
+          </a>
+          <button class="btn-secondary" onclick="handleSave(this)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            Save to Wishlist
+          </button>
+        </div>
+
+        <hr class="buy-divider" />
+
+        <div>
+          <div class="share-label">Share with your network</div>
+          <div class="share-buttons">
+            <a class="share-btn" href="#" target="_blank" rel="noopener" title="Share on X / Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="share-btn" href="#" target="_blank" rel="noopener" title="Share on Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <button class="share-btn" onclick="copyLink()" title="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+          <p style="font-size:0.73rem; color:var(--muted); margin-top:10px;">Affiliate link — commission earned at no extra cost to you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <h2 class="section-head"><span>📊</span> Score Breakdown</h2>
+  <div class="score-breakdown">
+    <div class="score-row">
+      <span class="score-row-label">Camera Quality</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:75%"></div></div>
+      <span class="score-row-num">7.5</span>
+    </div>
+    <div class="score-row">
+      <span class="score-row-label">Battery Life</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:55%"></div></div>
+      <span class="score-row-num">5.5</span>
+    </div>
+    <div class="score-row">
+      <span class="score-row-label">Meta AI Assistant</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div>
+      <span class="score-row-num">5.0</span>
+    </div>
+    <div class="score-row">
+      <span class="score-row-label">Hardware Reliability</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:55%"></div></div>
+      <span class="score-row-num">5.5</span>
+    </div>
+    <div class="score-row">
+      <span class="score-row-label">Value for Money</span>
+      <div class="score-bar-track"><div class="score-bar-fill" style="width:50%"></div></div>
+      <span class="score-row-num">5.0</span>
+    </div>
+  </div>
+
+  <h2 class="section-head"><span>✦</span> Key Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon">📷</div>
+      <h4>12MP Ultra-Wide Camera</h4>
+      <p>Hands-free photo and video capture in up to 3K resolution, clips capped at 3 minutes per session.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🔋</div>
+      <h4>Up to 8H Battery, 2x Prior Gen</h4>
+      <p>Charging case adds up to 48 hours of on-the-go top-ups — real-world results vary by use.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🎧</div>
+      <h4>Open-Ear Audio</h4>
+      <p>Listen to music and take calls without blocking ambient sound or conversations around you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🤖</div>
+      <h4>Meta AI Built In</h4>
+      <p>Ask questions, get object identification, and hands-free reminders via "Hey Meta."</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🌐</div>
+      <h4>Real-Time Translation</h4>
+      <p>Live translation across several languages without needing WiFi.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🔒</div>
+      <h4>Privacy Controls</h4>
+      <p>Toggle voice commands off and manage privacy settings directly through the app.</p>
+    </div>
+  </div>
+
+  <h2 class="section-head"><span>📝</span> Full Review</h2>
+  <div class="article">
+    <h2>A Genuinely Clever Idea That Doesn't Always Land</h2>
+    <p>On paper, the Gen 2 Wayfarer is one of the more compelling wearables out right now: a camera, a pair of open-ear headphones, and an AI assistant all built into glasses that look completely normal. Several owners praised exactly that — one noted the design "looks just like normal Ray-Bans," so wearing them in public never feels gimmicky or overly techy. Being able to record what you're seeing without pulling out a phone, and having open-ear speakers that let you take calls and listen to music without blocking conversation, are genuinely useful in daily life.</p>
+    <p>The camera earns real praise. Multiple owners called the photo and video quality surprisingly good for glasses, describing footage as clear and vibrant. One long-term user who tested them for six months came away thoroughly convinced, highlighting the freedom of hands-free capture and the built-in AI as standout reasons to buy — though they admitted starting out skeptical.</p>
+
+    <img class="review-img" src="https://m.media-amazon.com/images/I/711I0u1g40L.jpg" alt="Meta Ray-Ban Gen 2 Wayfarer glasses in the box" onclick="openLightbox(this.src)" loading="lazy" />
+    <p class="img-caption">Fresh out of the box.</p>
+
+    <div class="article-more" id="articleMore">
+      <h2>Where the AI Falls Apart</h2>
+      <p>This is where the reviews get genuinely heated. Several owners described Meta AI as actively frustrating to use for anything beyond basic requests — one detailed a maddening loop trying to correct a text message, where the assistant kept trying to swap in a different contact's name and wiping out progress instead of fixing the actual mistake. The same reviewer found live translation nearly unusable in practice: it requires speaking slowly, loudly, and close to the glasses, and struggles badly with natural conversational pace, which somewhat defeats the point of a hands-free translator. A Spanish-language reviewer echoed a version of this complaint, saying the glasses function more like camera-equipped headphones than the complete smart assistant they were marketing themselves as, with limited real integration into apps like Instagram or WhatsApp.</p>
+      <p>Basic app functionality issues came up more than once too — one owner spent a week trying to get Instagram streaming to work, receiving contradictory answers from the assistant about whether it was even supported. Another reviewer went further, stating flatly that Facebook and Instagram app compatibility has been removed entirely and that live streaming isn't possible at all, which conflicts directly with what earlier buyers experienced — a sign that software support may be shifting under existing owners' feet.</p>
+
+      <div class="wr-callout">
+        <div class="icon">🏆</div>
+        <div>
+          <h4>Hands-Free Capture Is the Real Selling Point</h4>
+          <p>Every reviewer, positive or negative, agreed on one thing: capturing a moment without pulling out your phone is a genuinely different experience. Whether that's worth the price depends heavily on how reliable your specific unit turns out to be.</p>
+        </div>
+      </div>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/81UIBT2As6L.jpg" alt="Meta Ray-Ban Gen 2 Wayfarer glasses next to charging case" onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">The glasses alongside their charging case.</p>
+
+      <h2>Battery, Video Quality, and Hardware Reliability</h2>
+      <p>The advertised 8-hour battery life doesn't match everyone's real-world results. Reports ranged widely — one owner using them mainly for music got around 6 hours consistently, which they considered solid, while another described getting only 2 to 3 hours before hitting low battery, far short of the marketed figure. Video quality also drew specific criticism: one reviewer reported that recordings visibly degrade over the length of a clip, dropping as low as 144p by the end regardless of the resolution setting selected, and that the advertised extended 5-minute recording option doesn't actually override the 3-minute cap in practice.</p>
+      <p>Hardware reliability was the most serious recurring issue. One buyer who purchased three pairs at once had exactly one unit develop a fault — a crackling left speaker that worsened when the glasses were adjusted on the face — and after returning it, the replacement pair arrived with zero sound from the left speaker at all, confirmed after multiple factory resets and re-pairings. Another reviewer described the lens coating as feeling nonexistent, saying breath fog or minor adjustments left visible smudging quickly. A separate complaint mentioned that incoming phone calls sometimes don't announce themselves through the glasses at all.</p>
+
+      <img class="review-img" src="https://m.media-amazon.com/images/I/617muOk7MYL.jpg" alt="Meta Ray-Ban Gen 2 Wayfarer glasses close-up" onclick="openLightbox(this.src)" loading="lazy" />
+      <p class="img-caption">A closer look at the Wayfarer frame.</p>
+
+      <h2>The Missing Display, and the Price Question</h2>
+      <p>Even among the more satisfied owners, the lack of any built-in visual display came up as the one real letdown — for a device that can see what you see and has AI capabilities, some kind of visual feedback would have rounded out the experience considerably. On price, opinions split hard. Several owners felt $379 was reasonable for what the glasses deliver day to day. Others were far less forgiving: one reviewer who rated the glasses 3 out of 10 argued they're overpriced for genuinely basic functionality, pointing out that better options exist at more reasonable price points, and another called them a worse experience than the previous generation despite costing more, citing missing features like slow-motion recording that Gen 1 had.</p>
+
+      <h2>Who Should Buy This?</h2>
+      <p>If discreet hands-free photo and video capture is your main goal, and you're comfortable with an AI assistant that's genuinely useful for simple requests but gets frustrating fast for anything complex, the Gen 2 Wayfarer can be a fun and stylish piece of tech — most owners who kept theirs seem happy with the core experience. But the spread of hardware reliability reports, inconsistent battery life, and shifting app support are real enough that it's worth going in with tempered expectations, and worth knowing your return window before you commit.</p>
+    </div>
+
+    <button class="read-more-btn" id="readMoreBtn" onclick="toggleArticle()">Read Full Review ↓</button>
+  </div>
+
+  <h2 class="section-head"><span>📋</span> Specs</h2>
+  <table class="specs-table">
+    <tr><td>Brand</td><td>Meta / Ray-Ban</td></tr>
+    <tr><td>Model</td><td>Wayfarer (Gen 2), Matte Black</td></tr>
+    <tr><td>Price</td><td>$379.00</td></tr>
+    <tr><td>Camera</td><td>12MP ultra-wide, up to 3K video, 3-min clip limit</td></tr>
+    <tr><td>Battery Life</td><td>Up to 8H glasses, up to 48H via charging case (claimed)</td></tr>
+    <tr><td>Audio</td><td>Open-ear speakers, built-in mic</td></tr>
+    <tr><td>AI Assistant</td><td>Meta AI, requires phone Bluetooth + app + internet</td></tr>
+    <tr><td>Translation</td><td>Real-time, multiple languages, no WiFi required</td></tr>
+    <tr><td>Lenses</td><td>Clear</td></tr>
+  </table>
+
+  <h2 class="section-head"><span>⚖️</span> Pros &amp; Cons</h2>
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>Pros</h4>
+      <ul>
+        <li>Looks like normal Ray-Bans, doesn't feel gimmicky</li>
+        <li>Genuinely good camera quality for glasses</li>
+        <li>Open-ear audio works well for calls and casual listening</li>
+        <li>Hands-free capture is a real, noticeable convenience</li>
+        <li>Meta AI is handy for simple, quick requests</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>Cons</h4>
+      <ul>
+        <li>Multiple owners report hardware defects, especially speaker issues</li>
+        <li>AI struggles with anything beyond basic requests, live translation is unreliable</li>
+        <li>Battery life and video quality don't always match advertised specs</li>
+        <li>No built-in display for visual feedback</li>
+        <li>App support (streaming, social integration) reported as inconsistent or removed</li>
+        <li>Steep price given the reliability concerns</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-cta">
+    <h3>Meta Ray-Ban Gen 2 Wayfarer</h3>
+    <p>A stylish, genuinely clever hands-free camera and AI wearable — just go in with realistic expectations.</p>
+    <span class="bottom-price">$379.00</span>
+    <a class="bottom-cta-btn" href="https://amzn.to/4yVeo1i" target="_blank" rel="noopener sponsored">
+      Buy on Amazon →
+    </a>
+    <span class="cta-disclaimer">Affiliate link — commission at no extra cost to you.</span>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Product photo enlarged">
+</div>
+
+<div class="copy-toast" id="copyToast">Link copied!</div>
+
+<footer>
+  <p><strong>JaveomoTech</strong></p>
+  <p>Tech reviewer sharing the best gadgets &amp; gear.</p>
+  <p style="margin-top:12px;">
+    <a href="../about.html">About</a> &nbsp;·&nbsp;
+    <a href="../contact.html">Contact</a> &nbsp;·&nbsp;
+    <a href="../privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="https://www.youtube.com/@JaveomoTech" target="_blank" rel="noopener">YouTube</a>
+  </p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.5;">This site contains affiliate links. I earn a small commission when you buy through my links, at no extra cost to you. Prices may vary on Amazon.</p>
+  <p style="margin-top:12px;">© 2026 JaveomoTech</p>
+</footer>
+
+<script>
+  const stickyBar = document.getElementById('stickyBar');
+  const buyBox = document.querySelector('.header-buy');
+  const observer = new IntersectionObserver(
+    ([entry]) => stickyBar.classList.toggle('visible', !entry.isIntersecting),
+    { threshold: 0 }
+  );
+  if (buyBox) observer.observe(buyBox);
+
+  function toggleArticle() {
+    const more = document.getElementById('articleMore');
+    const btn = document.getElementById('readMoreBtn');
+    more.classList.toggle('open');
+    btn.textContent = more.classList.contains('open') ? 'Show Less ↑' : 'Read Full Review ↓';
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  function handleSave(btn) {
+    btn.textContent = '✓ Saved!';
+    btn.style.color = '#16a34a';
+    btn.style.borderColor = '#16a34a';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> Save to Wishlist';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const t = document.getElementById('copyToast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    });
+  }
+</script>
+
+</body>
+</html>

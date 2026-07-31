@@ -167,6 +167,30 @@
     .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     .yt-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; color: var(--accent); font-size: 14px; font-weight: 500; text-decoration: none; }
 
+    /* REQUEST A REVIEW */
+    .request-review-section { background: var(--white); border-top: 1px solid var(--border); padding: 48px 24px; }
+    .request-review-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .request-review-title { font-family: 'orbitron', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .request-review-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .request-review-form { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+    .request-review-form input, .request-review-form textarea {
+      font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 12px 14px;
+      border: 1.5px solid var(--border); border-radius: 10px; background: var(--white);
+      color: var(--text); outline: none; resize: vertical; transition: border-color 0.2s;
+    }
+    .request-review-form input:focus, .request-review-form textarea:focus { border-color: var(--accent); }
+    .rr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+    .rr-submit-btn {
+      background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 700;
+      font-size: 14px; padding: 13px 20px; border: none; border-radius: 10px; cursor: pointer;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .rr-submit-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .rr-submit-btn:disabled { opacity: 0.6; cursor: default; }
+    .rr-status { margin-top: 14px; font-size: 13px; font-weight: 600; }
+    .rr-status.success { color: #1a7a1a; }
+    .rr-status.error { color: #b91c1c; }
+
     /* FOOTER */
     footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 36px 24px; text-align: center; font-size: 13px; line-height: 1.8; }
     footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
@@ -337,6 +361,22 @@
       </div>
     </div>
 
+    <!-- Generic AI Smart Glasses -->
+    <div class="product-card" data-price="20" data-cat="wearables" data-name="ai smart glasses deepseek r1 gemini bluetooth glasses photochromic ip67">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61UOI0e663L._AC_SL1500_.jpg" loading="lazy" alt="Generic AI Smart Glasses" /></div>
+      <div class="product-body">
+        <div class="product-tags">
+          <span class="product-tag tag-under50">Under $25</span>
+          <span class="product-tag tag-cat">Smartwear</span>
+        </div>
+        <p class="product-name">Generic AI Smart Glasses — DeepSeek R1, Gemini-2.5 & Photochromic Lenses</p>
+        <p class="product-note">164-language real-time translation, open-ear audio & IP67 waterproof frames.</p>
+        <div class="product-price">$19.99</div>
+        <a href="https://amzn.to/3S5A0Y4" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+        <a href="reviews/ai-smart-glasses.html" class="review-btn">Read Review →</a>
+      </div>
+    </div>
+
     <!-- Amazon Smart Air Quality Monitor -->
     <div class="product-card" data-price="70" data-cat="smart-home" data-name="amazon smart air quality monitor pm2.5 vocs co humidity temperature alexa">
       <div class="product-icon">
@@ -354,6 +394,24 @@
         <a href="reviews/amazon-smart-air-quality-monitor.html" class="review-btn">Read Review →</a>
       </div>
     </div>
+    
+    <!-- Meta Ray-Ban Gen 2 Wayfarer Smart Glasses -->
+<div class="product-card" data-price="379" data-cat="gadgets" data-bestseller="true" data-name="meta ray-ban gen 2 wayfarer smart glasses hands-free camera open-ear audio meta ai live translation">
+  <div class="product-icon"><img src="https://m.media-amazon.com/images/I/410NTRSfDzL._SL1200_.jpg" loading="lazy" alt="Meta Ray-Ban Gen 2 Wayfarer Smart Glasses" /></div>
+  <div class="product-body">
+    <div class="product-tags">
+      <span class="product-tag tag-bestseller">🔥 #1 Selling AI Glasses</span>
+      <span class="product-tag tag-under500">Under $500</span>
+    </div>
+    <p class="product-name">Meta Ray-Ban Gen 2 Wayfarer — 12MP Ultra-Wide Camera, Meta AI, Open-Ear Audio</p>
+    <p class="product-note">Hands-free photo & video, up to 8h battery (48h with case), real-time translation.</p>
+    <div class="product-price-row">
+      <span class="product-price">$379.00</span>
+    </div>
+    <a href="https://amzn.to/4yVeo1i" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+    <a href="reviews/meta-ray-ban-gen-2-wayfarer.html" class="review-btn">Read Review →</a>
+  </div>
+</div>
 
     <!-- Amazon Echo Dot -->
     <div class="product-card" data-price="50" data-cat="gadgets" data-bestseller="true" data-name="amazon echo dot newest model smart speaker alexa vibrant sound">
@@ -491,12 +549,12 @@
       </div>  
 
 <!-- Amazon Kindle Paperwhite (2024) -->
-    <div class="product-card" data-price="160" data-cat="gadgets" data-bestseller="true" data-name="amazon kindle paperwhite 12th gen 2024 7 inch display waterproof 12 week battery faster page turns e-reader">
+    <div class="product-card" data-price="500" data-cat="gadgets" data-bestseller="true" data-name="amazon kindle paperwhite 12th gen 2024 7 inch display waterproof 12 week battery faster page turns e-reader">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/61KMlIaN9pL._AC_SL1500_.jpg" loading="lazy" alt="Amazon Kindle Paperwhite 2024" /></div>
       <div class="product-body">
         <div class="product-tags">
           <span class="product-tag tag-bestseller">🔥 Best Seller</span>
-          <span class="product-tag tag-under200">Under $500</span>
+          <span class="product-tag tag-under500">Under $500</span>
         </div>
         <p class="product-name">Amazon Kindle Paperwhite (12th Gen, 2024) — 7" Display & 12-Week Battery</p>
         <p class="product-note">7" glare-free 300 ppi display, 25% faster page turns, IPX8 waterproof, and adjustable warm light.</p>
@@ -506,7 +564,7 @@
           <span class="discount-badge">6% OFF</span>
         </div>
         <a href="https://amzn.to/4h43Pm4" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
-        <a href="reviews/kindle-paperwhite-2024.html" class="review-btn">Read Review →</a>
+        <a href="reviews/amazon-kindle-paperwhite-16gb-glare-free.html" class="review-btn">Read Review →</a>
       </div>
     </div>
 
@@ -877,6 +935,26 @@
       </div>
     </div>
 
+    <!-- BolaButty 20W Wireless Bluetooth Speaker -->
+    <div class="product-card" data-price="50" data-cat="gadgets" data-bestseller="true" data-name="bolabutty 20w wireless bluetooth speaker ipx5 waterproof tws rgb light 24h battery">
+      <div class="product-icon"><img src="https://m.media-amazon.com/images/I/8165VSHcJlL._AC_SL1500_.jpg" loading="lazy" alt="BolaButty 20W Wireless Bluetooth Speaker" /></div>
+      <div class="product-body">
+        <div class="product-tags">
+          <span class="product-tag tag-bestseller">🔥 Amazon's Choice</span>
+          <span class="product-tag tag-under50">Under $50</span>
+        </div>
+        <p class="product-name">BolaButty 20W Wireless Speaker — Big Sound, Small Budget</p>
+        <p class="product-note">IPX5 waterproof, 24H battery, TWS pairing, beat-synced RGB lighting.</p>
+        <div class="product-price-row">
+          <span class="product-price">$29.99</span>
+          <span class="price-original">$39.99</span>
+          <span class="discount-badge">25% OFF</span>
+        </div>
+        <a href="https://www.amazon.com/dp/B0BRKPVZB4" class="buy-btn" target="_blank" rel="noopener sponsored">View on Amazon</a>
+        <a href="reviews/bolabutty-bluetooth-speaker.html" class="review-btn">Read Review →</a>
+      </div>
+    </div>
+
     <!-- Ducati Motorcycle Model -->
     <div class="product-card" data-price="50" data-cat="collectibles" data-bestseller="true" data-name="ducati v4s motorcycle model diecast alloy metal sound light sport bike collectible">
       <div class="product-icon"><img src="https://m.media-amazon.com/images/I/71t+oLOoniL._AC_SL1500_.jpg" loading="lazy" alt="Ducati V4S Diecast Model" /></div>
@@ -911,6 +989,24 @@
       <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCkGtV4aJMTzaMjkWDTlKhHQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="JaveomoTech YouTube Channel"></iframe>
     </div>
     <a href="https://www.youtube.com/@JaveomoTech" class="yt-link" target="_blank" rel="noopener">Visit @JaveomoTech on YouTube →</a>
+  </div>
+</section>
+
+<!-- REQUEST A REVIEW -->
+<section class="request-review-section" id="requestReview">
+  <div class="request-review-inner">
+    <h2 class="request-review-title">Want Me to Review Something?</h2>
+    <p class="request-review-sub">Tell me what product you'd like to see reviewed next — I read every request.</p>
+
+    <form id="reviewRequestForm" class="request-review-form">
+      <input type="text" id="rrProductName" name="productName" placeholder="Product name (e.g. 'Anker 737 Power Bank')" required maxlength="150" />
+      <textarea id="rrReason" name="reason" placeholder="Why do you want this reviewed? (optional)" maxlength="500" rows="3"></textarea>
+      <input type="email" id="rrEmail" name="email" placeholder="Your email (optional — only if you want a reply)" maxlength="150" />
+      <!-- Honeypot field — invisible to real users, catches bots -->
+      <input type="text" id="rrWebsite" name="website" class="rr-hp" tabindex="-1" autocomplete="off" />
+      <button type="submit" class="rr-submit-btn">Submit Request</button>
+    </form>
+    <p id="rrStatus" class="rr-status"></p>
   </div>
 </section>
 
@@ -970,7 +1066,7 @@ function applyFilters() {
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { getFirestore, collection, query, where, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAzXyMHTrlltJLRMWwO9jIszReCbEAb77s",
@@ -1088,6 +1184,44 @@ function applyFilters() {
   }
 
   loadAllComments();
+
+  // ---- Request a Review form ----
+  const rrForm = document.getElementById('reviewRequestForm');
+  const rrStatusEl = document.getElementById('rrStatus');
+
+  if (rrForm) {
+    rrForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (rrForm.website.value) return; // honeypot tripped — silently drop
+
+      const productName = rrForm.productName.value.trim();
+      if (!productName) return;
+
+      const submitBtn = rrForm.querySelector('.rr-submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        await addDoc(collection(db, 'review-requests'), {
+          productName,
+          reason: rrForm.reason.value.trim(),
+          email: rrForm.email.value.trim(),
+          submittedAt: serverTimestamp(),
+          status: 'new'
+        });
+        rrStatusEl.textContent = "Thanks! I'll take a look. 🙌";
+        rrStatusEl.className = 'rr-status success';
+        rrForm.reset();
+      } catch (err) {
+        console.error(err);
+        rrStatusEl.textContent = "Something went wrong — please try again.";
+        rrStatusEl.className = 'rr-status error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+      }
+    });
+  }
 </script>
 <script>
   function toggleCommentForm() {
